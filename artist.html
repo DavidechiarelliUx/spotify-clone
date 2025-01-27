@@ -110,12 +110,19 @@
                 <div style="background-image: url(${bgimg})"></div>
                 <div class="col-md-6">
                   <div>
-                    <p><i class="bi bi-patch-check-fill text-primary"></i> ${artista verificato}</p>
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3D91F4" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"
+                        />
+                      </svg>
+                      ${artista verificato}
+                    </div>
                     <h1 class="display-3">${nome album}</h1>
                     <p class="">${ascoltatori mensili}</p>
                     <div class="btn-group">
-                      <i class="bi bi-play-circle-fill text-success"></i>
-                      <button type="button" class="border border-1 border-light px-4 mx-3">FOLLOWING</button>
+                      <button class="border-0 rounded-circle text-black bg-success fs-2 px-2"><i class="bi bi-play-fill"></i></button>
+                      <button type="button" class="border border-light rounded bg-transparent px-4 mx-3">FOLLOWING</button>
                       <button type="button" class="border-0 bg-transparent text-light">
                         <i class="bi bi-three-dots fs-3 text-secondary"></i>
                       </button>
