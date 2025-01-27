@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spotify-clone</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  </head>
+  <body data-bs-theme="dark" class="bg-black">
+    <main>
+      <div class="container-fluid">
+        <div class="row mt-3">
+          <!--Aside-->
+          <aside id="aside" class="col-lg-2 rounded-0 bg-black" style="height: 100vh">
+            <div class="sticky-top">
+              <ul class="list-group">
+                <a href="#">
+                  <li class="list-group-item border border-0 rounded-0 bg-black">...</li>
+                </a>
+                <li class="list-group-item border border-0 rounded-0 bg-black">
+                  <svg
+                    class="w-6 h-6 text-gray-800 dark:text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="white"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Home</span>
+                </li>
+                <li class="list-group-item border border-0 rounded-0 bg-black">
+                  <i class="bi bi-search">Cerca</i>
+                </li>
+                <li class="list-group-item border border-0 rounded-0 bg-black">
+                  <i class="bi bi-collection">La tua libreria</i>
+                </li>
+              </ul>
+
+              <ul class="list-group">
+                <li class="list-group-item border border-0 rounded-0 bg-black">Crea playlist</li>
+                <li class="list-group-item border border-0 rounded-0 bg-black">Brani che ti piacciono</li>
+                <li class="list-group-item border border-0 rounded-0 bg-black">I tuoi episodi</li>
+              </ul>
+              <hr />
+
+              <!--Contenuto sotto la navbar-->
+              <ul id="personalList" class="list-group"></ul>
+            </div>
+          </aside>
+          <!-- contenuto principale-->
+          <div class="col" style="background: rgb(1, 1, 1); background: linear-gradient(0deg, rgba(1, 1, 1, 1) 0%, rgba(63, 63, 63, 0.867) 88%)">
+            <div class="d-flex justify-content-between">
+              <div>
+                <a href="#">
+                  <button class="border border-0 bg-black rounded-5">
+                    <i class="bi bi-chevron-left bg-black"></i>
+                  </button>
+                </a>
+                <a href="#">
+                  <button class="border border-0 bg-black rounded-5">
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                </a>
+              </div>
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary bg-black border-0 ps-1 py-1 dropdown-toggle rounded-pill"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/02b4d76c-e4da-4cbc-872c-1bf9ac49bafd/anim=false,width=450/ComfyUI_00289_.jpeg"
+                    style="height: 40px"
+                    class="rounded-5 me-2"
+                    alt="avatar"
+                  />
+                  Lidia Nautiluss...
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">Profilo</a></li>
+                  <li><a class="dropdown-item" href="#">Preferenze</a></li>
+                  <li><a class="dropdown-item" id="openAside" href="#">Attività Amici</a></li>
+                  <li><a class="dropdown-item" href="#">Esci</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="container-fluid">
+              <div class="g-0">
+                <div style="background-image: url(${bgimg})"></div>
+                <div class="col-md-6">
+                  <div>
+                    <p><i class="bi bi-patch-check-fill text-primary"></i> ${artista verificato}</p>
+                    <h1 class="display-3">${nome album}</h1>
+                    <p class="">${ascoltatori mensili}</p>
+                    <div class="btn-group">
+                      <i class="bi bi-play-circle-fill text-success"></i>
+                      <button type="button" class="border border-1 border-light px-4 mx-3">FOLLOWING</button>
+                      <button type="button" class="border-0 bg-transparent text-light">
+                        <i class="bi bi-three-dots fs-3 text-secondary"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <h3>Popolari</h3>
+                  <div>
+                    <div class="d-flex justify-content-between">
+                      <p>1 <img src="" alt="" /></p>
+                      <p>ascolti</p>
+                      <p>time</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <p>2 <img src="" alt="" /></p>
+                      <p>ascolti</p>
+                      <p>time</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <p>3 <img src="" alt="" /></p>
+                      <p>ascolti</p>
+                      <p>time</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <p>4 <img src="" alt="" /></p>
+                      <p>ascolti</p>
+                      <p>time</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <p>5 <img src="" alt="" /></p>
+                      <p>ascolti</p>
+                      <p>time</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Attività Amici-->
+          <!--Aside 2-->
+          <div id="aside2" class="col-lg-2 bg-black">
+            <div class="d-flex justify-content-end">
+              <button class="btn btn-0"><i class="bi bi-dash-lg"></i></button>
+              <button class="btn btn-0"><i class="bi bi-copy"></i></button>
+              <button class="btn btn-0 pe-0" id="close-btn"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="d-flex justify-content-between align-content-center mb-4">
+              <div class="align-content-center"><h5 class="fw-bold mb-0">Attività amici</h5></div>
+              <div>
+                <button class="btn btn-0 p-0 px-1"><i class="bi bi-person-add"></i></button>
+                <button class="btn btn-0 p-0 ps-1 pe-0"><i class="bi bi-x-lg"></i></button>
+              </div>
+            </div>
+            <div>
+              <div class="d-flex flex-row justify-content-between mb-4">
+                <div class="mx-1">
+                  <div style="width: 2rem">
+                    <img src="assets/imgs/main/image-10.jpg" class="img-fluid rounded-circle" style="object-fit: cover" alt="foto" />
+                  </div>
+                </div>
+                <div class="mx-1">
+                  <h6 style="font-size: 0.9rem" class="fw-bold mb-2">Charlie Hookham</h6>
+                  <h6 style="font-size: 0.7rem" class="mb-2">In Camera • Yumi Zouma</h6>
+                  <h6 style="font-size: 0.7rem" class="mb-2"><i class="bi bi-disc"></i> EP III</h6>
+                </div>
+                <div class="mx-1 text-right"><h6 style="font-size: 0.7rem">4 ore</h6></div>
+              </div>
+              <div class="d-flex flex-row justify-content-between mb-4">
+                <div class="mx-1">
+                  <div style="width: 2rem">
+                    <img src="assets/imgs/main/image-16.jpg" class="img-fluid rounded-circle" style="object-fit: cover" alt="foto" />
+                  </div>
+                </div>
+                <div class="mx-1">
+                  <h6 style="font-size: 0.9rem" class="fw-bold mb-2">lightdark02</h6>
+                  <h6 style="font-size: 0.7rem" class="mb-2">Aimed to Kill • Jade LeMac</h6>
+                  <h6 style="font-size: 0.7rem" class="mb-2"><i class="bi bi-disc"></i> Aimed to Kill</h6>
+                </div>
+                <div class="mx-1 text-right"><h6 style="font-size: 0.7rem">8 ore</h6></div>
+              </div>
+              <div class="d-flex flex-row justify-content-between mb-4">
+                <div class="mx-1">
+                  <div style="width: 2rem">
+                    <img src="assets/imgs/main/image-14.jpg" class="img-fluid rounded-circle" style="object-fit: cover" alt="foto" />
+                  </div>
+                </div>
+                <div class="mx-1">
+                  <h6 style="font-size: 0.9rem" class="fw-bold mb-2">Valeria Traverso</h6>
+                  <h6 style="font-size: 0.7rem" class="mb-2">New Kings • Sleeping Wolf</h6>
+                  <h6 style="font-size: 0.7rem" class="mb-2"><i class="bi bi-disc"></i> Twint Badass mood</h6>
+                </div>
+                <div class="mx-1 text-right"><h6 style="font-size: 0.7rem">3 giorni</h6></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Media Player-->
+      <div class="d-flex justify-content-between align-items-center fixed-bottom">
+        <!--Album-->
+        <div class="d-flex align-items-center">
+          <img
+            src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/02b4d76c-e4da-4cbc-872c-1bf9ac49bafd/anim=false,width=450/ComfyUI_00289_.jpeg"
+            alt=""
+            height="60px"
+          />
+
+          <div class="ms-2">
+            <h5>Nome Brano</h5>
+            <p>Autore</p>
+          </div>
+          <i class="bi bi-heart ms-4"></i>
+        </div>
+        <!--Comandi riproduzione-->
+        <div>
+          <div class="d-flex align-items-center">
+            <!--Comandi-->
+            <i class="bi bi-shuffle me-3"></i>
+            <i class="fa-solid fa-backward-step me-3"></i>
+            <i class="bi bi-play-circle me-3"></i>
+            <i class="fa-solid fa-forward-step me-3"></i>
+            <i class="fa-solid fa-repeat me-3"></i>
+          </div>
+          <div>
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar w-75"></div>
+            </div>
+          </div>
+        </div>
+        <!--Comandi volume-->
+        <div class="d-flex align-items-center">
+          <a href="#"><i class="fa-solid fa-microphone me-2"></i></a>
+          <a href="#"><i class="fa-solid fa-list me-2"></i></a>
+          <a href="#"><i class="fa-solid fa-computer me-2"></i></a>
+          <a href="#"><i class="fa-solid fa-volume-high me-2"></i></a>
+          <a href="#"><i class="fa-solid fa-up-right-and-down-left-from-center me-2"></i></a>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./Script/script.js"></script>
+  </body>
+</html>
