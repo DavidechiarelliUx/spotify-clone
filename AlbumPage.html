@@ -198,39 +198,64 @@
                     alt="img-album"
                   />
                 </div>
-                <div class="col-6">
+                <div class="col-6 align-content-center">
                   <div class="card-body">
                     <p>Album</p>
                     <h1 class="card-title display-5 fw-bold">VIOLA (feat.Salmo)</h1>
-                    <p class="card-text author">Fedez,salmo</p>
-                    <p class="card-text">
-                      Ascolta il nuovo album di
-                      <span class="author">fedex e salmo</span>!
-                    </p>
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="badge rounded-pill border border-0 text-black py-3 px-4 me-2"
-                        style="background-color: #1bd760; width: 6rem; font-size: 1rem"
-                      >
-                        Play
-                      </button>
-                      <button
-                        type="button"
-                        class="badge rounded-pill border border-1 border-light py-3 px-4 mx-2 bg-black"
-                        style="width: 6rem; font-size: 1rem"
-                      >
-                        Salva
-                      </button>
-                      <button type="button" class="border-0 bg-transparent text-light">
-                        <i class="bi bi-three-dots fs-3 text-secondary"></i>
-                      </button>
+                    <div class="d-flex flex-inline mt-5">
+                      <p class="me-2">Pinguini tattici</p>
+                      <p class="me-2">2017</p>
+                      <p class="me-2">12 brani</p>
+                      <p class="me-2">minuti</p>
                     </div>
                   </div>
                 </div>
                 <div class="col-3 text-end pe-4">
                   <p class="badge rounded-pill bg-dark text-secondary mt-3">NASCONDI ANNUNCI</p>
                 </div>
+              </div>
+              <div class="container ms-2">
+                <button class="border-0 rounded-circle text-black bg-success fs-3 px-2">
+                        <i class="bi bi-play-fill"></i>
+                      </button>
+                <button class="border-0 rounded-circle fs-3 px-2 bg-transparent ps-2 ms-3"><i class="bi bi-heart"></i></button>
+                <button type="button" class="border-0 rounded-circle fs-3 px-2 bg-transparent px-2 mx-2">
+                        <i class="bi bi-arrow-down-circle"></i>
+                      </button>
+                      <button type="button" class="border-0 bg-transparent text-light">
+                        <i class="bi bi-three-dots fs-3 text-secondary"></i>
+                      </button>
+              </div>   
+            </div>
+            <div class="container">
+              <div class="mt-5 row border-bottom ">
+                <div class="col-1">
+                  <p>#</p>
+                </div>
+                <div class="col-1">
+                  <p class="text-secondary">titolo</p>
+                </div>
+                <div class="col-3 offset-4"> 
+                  <p class="text-secondary ">Riproduzione</p>
+                </div>
+                <div class="col-3 d-flex justify-content-end">
+                  <p class="text-secondary"><i class="bi bi-clock"></i></p>
+                </div>
+              </div>
+              <div class="mt-5 row" id="track-list">
+                <!-- <div class="col-1">
+                    <p>1</p>
+                </div>
+                <div class="col-1">
+                  <h5>titolo</h5>
+                  <p class="text-secondary">Artista</p>
+                </div> 
+                <div class="col-3 offset-4">
+                    <p class="text-secondary">48384</p>
+                </div>
+                 <div class="col-3 d-flex justify-content-end">
+                    <p class="text-secondary">minuti</p>
+                </div> -->
               </div>
             </div>
           </div>
@@ -316,16 +341,17 @@
           alt="Copertina album"
           height="60"
           class=""
+          id="imageAuthor"
         />
         <div class="ms-2">
-          <h5 class="my-1 fs-6">Nome Brano</h5>
-          <p class="my-1 mb-0 fs-7">Autore</p>
+          <h5 class="my-1 fs-6" id="nameBrano">Nome Brano</h5>
+          <p class="my-1 mb-0 fs-7" id="nameAuthor">Autore</p>
         </div>
         <i class="bi bi-heart ms-4 fs-5"></i>
       </div>
 
       <!-- Comandi riproduzione -->
-      <div class="col-6 px-4">
+      <div class="col-6 px-4" id="riproduction">
         <div class="d-flex align-items-center justify-content-center">
           <i class="bi bi-shuffle mx-3 fs-5"></i>
           <i class="fa-solid fa-backward-step mx-3 fs-5"></i>
@@ -373,6 +399,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="./Script/script.js"></script>
+    <script src="./Script/AlbumPageScript.js"></script>
   </body>
 </html>
