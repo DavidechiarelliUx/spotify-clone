@@ -33,7 +33,7 @@ fetch(URL)
 
     const divRow = document.getElementById("track-list");
     list.data.forEach((track, index) => {
-      // console.log(track.duration % 60);
+      console.log(track);
 
       const albumCover = document.getElementById("albumCover");
       albumCover.style.backgroundColor = track.album.md5_image;
