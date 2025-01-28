@@ -7,3 +7,12 @@
 #albumCover {
   background: radial-gradient(linear, #6706f1, #154083, #f461a3, #48508c, #28030a);
 }
+
+/**CSS modal**/
+#inputModale:focus {
+  outline: none;
+  border: none;
+}
+#bodyModale {
+  border: none !important; /**non funge-serve sass**/
+}
