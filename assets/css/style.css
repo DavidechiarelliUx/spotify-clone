@@ -3,3 +3,7 @@
     font-size: 0.8rem;
   }
 }
+
+#albumCover {
+  background: radial-gradient(linear, #6706f1, #154083, #f461a3, #48508c, #28030a);
+}
