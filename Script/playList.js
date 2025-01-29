@@ -1,13 +1,18 @@
 //const playList1 = document.getElementById("playList1");
 const URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 
+//inizializzazione contatore durata
 let duration = 0;
+
+//inizializzazione funzione on load
 window.addEventListener("DOMContentLoaded", () => {
   const listTitle = document.getElementById("playListTitle");
 
+  //Titolo dinamico
   const playListTitle = localStorage.getItem("playListTitle");
   listTitle.innerText = playListTitle;
 
+  //Variabile per l'indice randomizzato
   let artistID;
   //const playListFoto = document.getElementById("playListFoto");
   const divRow = document.getElementById("track-list");
@@ -52,6 +57,7 @@ window.addEventListener("DOMContentLoaded", () => {
           playListFoto.appendChild(imgContainer);
         }*/
 
+        //fetch informazioni canzoni dell'artista
         fetch(artistList.tracklist)
           .then((response) => {
             console.log(response);
@@ -65,14 +71,17 @@ window.addEventListener("DOMContentLoaded", () => {
           .then((songList) => {
             console.log(songList.data);
 
+            //costruzione brani
             const titleTrack = document.createElement("p");
-            titleTrack.textContent = songList.data[0].title_short;
+            titleTrack.textContent = songList.data[0].title_short ? songList.data[0].title_short : songList.data[0].title;
             titleTrack.classList.add("mb-0");
             anchorTrack.appendChild(titleTrack);
 
             const artist = document.createElement("p");
             artist.classList.add("text-secondary");
             artist.textContent = artistList.name;
+            let artistName = artistList.name;
+            console.log(artistName);
             anchorTrack.appendChild(artist);
 
             const divRipr = document.createElement("div");
@@ -93,16 +102,11 @@ window.addEventListener("DOMContentLoaded", () => {
             pMin.textContent = durationConvert(songList.data[0].duration);
             divMin.appendChild(pMin);
 
-            function durationConvert(seconds) {
-              const minutes = Math.floor(seconds / 60);
-              const remainingSeconds = seconds % 60;
-              return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
-            }
-
             divRow.appendChild(artistContainer);
 
             pNum.innerHTML = divRow.children.length;
 
+            //Titolo, numero canzoni, durata dinamici
             const totSongNum = document.getElementById("totSongNum");
             totSongNum.innerHTML = divRow.children.length + " songs" + " • ";
 
@@ -111,8 +115,15 @@ window.addEventListener("DOMContentLoaded", () => {
             const totDuration = document.getElementById("totDuration");
             totDuration.innerHTML = "about " + durationConvert(duration) + " minutes";
 
+            //Funzione per passare alla pagina dell'artista
+            artist.addEventListener("click", () => {
+              localStorage.setItem("bandName", artistName);
+              window.location.assign(`./artistProva.html?id=${artistList.id}`);
+            });
+
+            //Funzione per il player
             anchorTrack.addEventListener("click", (e) => {
-              const riproduction = document.getElementById("riproduction");
+              // const riproduction = document.getElementById("riproduction");
 
               const nomeAuthor = document.getElementById("nameAuthor");
               const nomeBrano = document.getElementById("nameBrano");
@@ -133,3 +144,10 @@ window.addEventListener("DOMContentLoaded", () => {
       });
   }
 });
+
+//Funzione per convertire la durata
+function durationConvert(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
+}
