@@ -1,3 +1,4 @@
+//Bottone attività amici
 const closeBtn = document.getElementById("close-btn");
 const aside2 = document.getElementById("aside2");
 closeBtn.addEventListener("click", (e) => {
@@ -9,6 +10,8 @@ const openAside = document.getElementById("openAside");
 openAside.addEventListener("click", (e) => {
   aside2.style = "display:block";
 });
+
+//Bottone visualizza tutto
 
 const visualizzabtn = document.getElementById("visualizza-btn");
 const visualizzaTutto = document.getElementById("visualizzaTutto");
