@@ -35,9 +35,8 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
     }
   })
   .then((list) => {
-    console.log(list);
-
     const artist = list.data[0].artist;
+    const album = list.data[1].album;
 
     const artistGrid = document.getElementById("artistGrid");
 
@@ -72,6 +71,69 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
     artistcard.append(cardImg, cardBody);
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
+
+    const cardAlbum = document.getElementById("cardAlbum5");
+
+    const row = document.createElement("div");
+    const col3 = document.createElement("div");
+    const albumImg = document.createElement("img");
+    const col6 = document.createElement("div");
+    const albumBody = document.createElement("div");
+    const albumTitle = document.createElement("h1");
+    const albumAutore = document.createElement("p");
+    const albumText = document.createElement("p");
+    const btnGroup = document.createElement("div");
+    const playBtn = document.createElement("button");
+    const saveBtn = document.createElement("button");
+    const dotBtn = document.createElement("button");
+
+    row.classList.add("row", "g-0");
+    col3.classList.add("col-3", "p-4", "align-content-center");
+    albumImg.classList.add("img-fluid");
+
+    col6.classList.add("col-9", "align-content-center");
+    albumBody.classList.add("card-body");
+    albumTitle.classList.add("card-title", "display-5", "fw-bold");
+    albumAutore.classList.add("card-text");
+    albumText.classList.add("card-text");
+    btnGroup.classList.add("btn-group");
+    playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
+    saveBtn.classList.add(
+      "badge",
+      "rounded-pill",
+      "border",
+      "border-1",
+      "border-light",
+      "py-3",
+      "px-4",
+      "mx-2",
+      "bg-black"
+    );
+    dotBtn.classList.add("border-0", "bg-transparent", "text-light");
+
+    albumImg.src = album.cover;
+    albumTitle.textContent = album.title;
+    albumAutore.textContent = artist.name;
+    albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
+    playBtn.innerText = "PLAY";
+    saveBtn.innerText = "SAVE";
+    dotBtn.innerHTML = `<i class="bi bi-three-dots fs-3 text-secondary"></i>`;
+
+    //Style
+    albumImg.style.objectFit = "cover";
+    playBtn.style.backgroundColor = "#1bd760";
+    playBtn.style.width = "6rem";
+    playBtn.style.fontSize = "1rem";
+    saveBtn.style.width = "6rem";
+    saveBtn.style.fontSize = "1rem";
+
+    cardAlbum.appendChild(row);
+    row.appendChild(col3);
+    col3.appendChild(albumImg);
+    row.appendChild(col6);
+    col6.appendChild(albumBody);
+    albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
+    btnGroup.append(playBtn, saveBtn, dotBtn);
   })
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
@@ -88,9 +150,8 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=caribou")
     }
   })
   .then((list) => {
-    console.log(list);
-
     const artist = list.data[0].artist;
+    const album = list.data[1].album;
 
     const artistGrid = document.getElementById("artistGrid");
 
@@ -125,6 +186,69 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=caribou")
     artistcard.append(cardImg, cardBody);
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
+
+    const cardAlbum = document.getElementById("cardAlbum4");
+
+    const row = document.createElement("div");
+    const col3 = document.createElement("div");
+    const albumImg = document.createElement("img");
+    const col6 = document.createElement("div");
+    const albumBody = document.createElement("div");
+    const albumTitle = document.createElement("h1");
+    const albumAutore = document.createElement("p");
+    const albumText = document.createElement("p");
+    const btnGroup = document.createElement("div");
+    const playBtn = document.createElement("button");
+    const saveBtn = document.createElement("button");
+    const dotBtn = document.createElement("button");
+
+    row.classList.add("row", "g-0");
+    col3.classList.add("col-3", "p-4", "align-content-center");
+    albumImg.classList.add("img-fluid");
+
+    col6.classList.add("col-9", "align-content-center");
+    albumBody.classList.add("card-body");
+    albumTitle.classList.add("card-title", "display-5", "fw-bold");
+    albumAutore.classList.add("card-text");
+    albumText.classList.add("card-text");
+    btnGroup.classList.add("btn-group");
+    playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
+    saveBtn.classList.add(
+      "badge",
+      "rounded-pill",
+      "border",
+      "border-1",
+      "border-light",
+      "py-3",
+      "px-4",
+      "mx-2",
+      "bg-black"
+    );
+    dotBtn.classList.add("border-0", "bg-transparent", "text-light");
+
+    albumImg.src = album.cover;
+    albumTitle.textContent = album.title;
+    albumAutore.textContent = artist.name;
+    albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
+    playBtn.innerText = "PLAY";
+    saveBtn.innerText = "SAVE";
+    dotBtn.innerHTML = `<i class="bi bi-three-dots fs-3 text-secondary"></i>`;
+
+    //Style
+    albumImg.style.objectFit = "cover";
+    playBtn.style.backgroundColor = "#1bd760";
+    playBtn.style.width = "6rem";
+    playBtn.style.fontSize = "1rem";
+    saveBtn.style.width = "6rem";
+    saveBtn.style.fontSize = "1rem";
+
+    cardAlbum.appendChild(row);
+    row.appendChild(col3);
+    col3.appendChild(albumImg);
+    row.appendChild(col6);
+    col6.appendChild(albumBody);
+    albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
+    btnGroup.append(playBtn, saveBtn, dotBtn);
   })
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
@@ -144,6 +268,9 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=m83")
     console.log(list);
 
     const artist = list.data[0].artist;
+    const album = list.data[1].album;
+
+    //Card artisti
 
     const artistGrid = document.getElementById("artistGrid");
 
@@ -178,6 +305,71 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=m83")
     artistcard.append(cardImg, cardBody);
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
+
+    //Card Album
+
+    const cardAlbum = document.getElementById("cardAlbum1");
+
+    const row = document.createElement("div");
+    const col3 = document.createElement("div");
+    const albumImg = document.createElement("img");
+    const col6 = document.createElement("div");
+    const albumBody = document.createElement("div");
+    const albumTitle = document.createElement("h1");
+    const albumAutore = document.createElement("p");
+    const albumText = document.createElement("p");
+    const btnGroup = document.createElement("div");
+    const playBtn = document.createElement("button");
+    const saveBtn = document.createElement("button");
+    const dotBtn = document.createElement("button");
+
+    row.classList.add("row", "g-0");
+    col3.classList.add("col-3", "p-4", "align-content-center");
+    albumImg.classList.add("img-fluid");
+
+    col6.classList.add("col-9", "align-content-center");
+    albumBody.classList.add("card-body");
+    albumTitle.classList.add("card-title", "display-5", "fw-bold");
+    albumAutore.classList.add("card-text");
+    albumText.classList.add("card-text");
+    btnGroup.classList.add("btn-group");
+    playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
+    saveBtn.classList.add(
+      "badge",
+      "rounded-pill",
+      "border",
+      "border-1",
+      "border-light",
+      "py-3",
+      "px-4",
+      "mx-2",
+      "bg-black"
+    );
+    dotBtn.classList.add("border-0", "bg-transparent", "text-light");
+
+    albumImg.src = album.cover;
+    albumTitle.textContent = album.title;
+    albumAutore.textContent = artist.name;
+    albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
+    playBtn.innerText = "PLAY";
+    saveBtn.innerText = "SAVE";
+    dotBtn.innerHTML = `<i class="bi bi-three-dots fs-3 text-secondary"></i>`;
+
+    //Style
+    albumImg.style.objectFit = "cover";
+    playBtn.style.backgroundColor = "#1bd760";
+    playBtn.style.width = "6rem";
+    playBtn.style.fontSize = "1rem";
+    saveBtn.style.width = "6rem";
+    saveBtn.style.fontSize = "1rem";
+
+    cardAlbum.appendChild(row);
+    row.appendChild(col3);
+    col3.appendChild(albumImg);
+    row.appendChild(col6);
+    col6.appendChild(albumBody);
+    albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
+    btnGroup.append(playBtn, saveBtn, dotBtn);
   })
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
@@ -197,6 +389,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=mythandroid")
     console.log(list);
 
     const artist = list.data[0].artist;
+    const album = list.data[1].album;
 
     const artistGrid = document.getElementById("artistGrid");
 
@@ -231,6 +424,69 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=mythandroid")
     artistcard.append(cardImg, cardBody);
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
+
+    const cardAlbum = document.getElementById("cardAlbum2");
+
+    const row = document.createElement("div");
+    const col3 = document.createElement("div");
+    const albumImg = document.createElement("img");
+    const col6 = document.createElement("div");
+    const albumBody = document.createElement("div");
+    const albumTitle = document.createElement("h1");
+    const albumAutore = document.createElement("p");
+    const albumText = document.createElement("p");
+    const btnGroup = document.createElement("div");
+    const playBtn = document.createElement("button");
+    const saveBtn = document.createElement("button");
+    const dotBtn = document.createElement("button");
+
+    row.classList.add("row", "g-0");
+    col3.classList.add("col-3", "p-4", "align-content-center");
+    albumImg.classList.add("img-fluid");
+
+    col6.classList.add("col-9", "align-content-center");
+    albumBody.classList.add("card-body");
+    albumTitle.classList.add("card-title", "display-5", "fw-bold");
+    albumAutore.classList.add("card-text");
+    albumText.classList.add("card-text");
+    btnGroup.classList.add("btn-group");
+    playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
+    saveBtn.classList.add(
+      "badge",
+      "rounded-pill",
+      "border",
+      "border-1",
+      "border-light",
+      "py-3",
+      "px-4",
+      "mx-2",
+      "bg-black"
+    );
+    dotBtn.classList.add("border-0", "bg-transparent", "text-light");
+
+    albumImg.src = album.cover;
+    albumTitle.textContent = album.title;
+    albumAutore.textContent = artist.name;
+    albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
+    playBtn.innerText = "PLAY";
+    saveBtn.innerText = "SAVE";
+    dotBtn.innerHTML = `<i class="bi bi-three-dots fs-3 text-secondary"></i>`;
+
+    //Style
+    albumImg.style.objectFit = "cover";
+    playBtn.style.backgroundColor = "#1bd760";
+    playBtn.style.width = "6rem";
+    playBtn.style.fontSize = "1rem";
+    saveBtn.style.width = "6rem";
+    saveBtn.style.fontSize = "1rem";
+
+    cardAlbum.appendChild(row);
+    row.appendChild(col3);
+    col3.appendChild(albumImg);
+    row.appendChild(col6);
+    col6.appendChild(albumBody);
+    albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
+    btnGroup.append(playBtn, saveBtn, dotBtn);
   })
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
@@ -250,6 +506,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
     console.log(list);
 
     const artist = list.data[0].artist;
+    const album = list.data[1].album;
 
     const artistGrid = document.getElementById("artistGrid");
 
@@ -284,6 +541,69 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
     artistcard.append(cardImg, cardBody);
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
+
+    const cardAlbum = document.getElementById("cardAlbum3");
+
+    const row = document.createElement("div");
+    const col3 = document.createElement("div");
+    const albumImg = document.createElement("img");
+    const col6 = document.createElement("div");
+    const albumBody = document.createElement("div");
+    const albumTitle = document.createElement("h1");
+    const albumAutore = document.createElement("p");
+    const albumText = document.createElement("p");
+    const btnGroup = document.createElement("div");
+    const playBtn = document.createElement("button");
+    const saveBtn = document.createElement("button");
+    const dotBtn = document.createElement("button");
+
+    row.classList.add("row", "g-0");
+    col3.classList.add("col-3", "p-4", "align-content-center");
+    albumImg.classList.add("img-fluid");
+
+    col6.classList.add("col-9", "align-content-center");
+    albumBody.classList.add("card-body");
+    albumTitle.classList.add("card-title", "display-5", "fw-bold");
+    albumAutore.classList.add("card-text");
+    albumText.classList.add("card-text");
+    btnGroup.classList.add("btn-group");
+    playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
+    saveBtn.classList.add(
+      "badge",
+      "rounded-pill",
+      "border",
+      "border-1",
+      "border-light",
+      "py-3",
+      "px-4",
+      "mx-2",
+      "bg-black"
+    );
+    dotBtn.classList.add("border-0", "bg-transparent", "text-light");
+
+    albumImg.src = album.cover;
+    albumTitle.textContent = album.title;
+    albumAutore.textContent = artist.name;
+    albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
+    playBtn.innerText = "PLAY";
+    saveBtn.innerText = "SAVE";
+    dotBtn.innerHTML = `<i class="bi bi-three-dots fs-3 text-secondary"></i>`;
+
+    //Style
+    albumImg.style.objectFit = "cover";
+    playBtn.style.backgroundColor = "#1bd760";
+    playBtn.style.width = "6rem";
+    playBtn.style.fontSize = "1rem";
+    saveBtn.style.width = "6rem";
+    saveBtn.style.fontSize = "1rem";
+
+    cardAlbum.appendChild(row);
+    row.appendChild(col3);
+    col3.appendChild(albumImg);
+    row.appendChild(col6);
+    col6.appendChild(albumBody);
+    albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
+    btnGroup.append(playBtn, saveBtn, dotBtn);
   })
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
