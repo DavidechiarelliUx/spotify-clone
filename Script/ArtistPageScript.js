@@ -1,3 +1,6 @@
+const params = new URLSearchParams(window.location.search);
+const autoreId = params.get("autoreId");
+
 const closeBtn = document.getElementById("close-btn");
 const aside2 = document.getElementById("aside2");
 closeBtn.addEventListener("click", (e) => {
@@ -16,7 +19,7 @@ openAside.addEventListener("click", (e) => {
 
 console.log("ciao");
 
-const URL = "https://striveschool-api.herokuapp.com/api/deezer/search?q=queen";
+const URL = "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + autoreId;
 
 fetch(URL)
   .then((response) => {
@@ -33,11 +36,10 @@ fetch(URL)
 
     const divRow = document.getElementById("track-list");
     list.data.forEach((track, index) => {
-      // console.log(track.duration % 60);
-
       const albumCover = document.getElementById("albumCover");
       albumCover.style.backgroundColor = track.album.md5_image;
 
+      /*    
       const anchorTrack = document.createElement("a");
       const divNum = document.createElement("div");
       const pNum = document.createElement("p");
@@ -82,9 +84,9 @@ fetch(URL)
         nomeAuthor.textContent = track.artist.name;
         nomeBrano.textContent = track.title;
         imageAuthor.src = track.album.cover;
-
-        // collegare il bottone al preview, rendere dinamico il botton con play e pausa , controllare artist
-      });
+ */
+      // collegare il bottone al preview, rendere dinamico il botton con play e pausa , controllare artist
+      /*   }); */
     });
   })
   .catch((error) => {
