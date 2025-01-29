@@ -1,30 +1,27 @@
-// const params = new URLSearchParams(window.location.search);
-// const tracklist = params.get("tracklist"); 
-// const apiUrl = tracklist;
+const params = new URLSearchParams(window.location.search);
+const tracklist = params.get("track-list");
+const apiUrl = tracklist;
 
-// console.log("Tracklist URL:", tracklist);
-// console.log("API URL:", apiUrl);
+console.log("Tracklist URL:", tracklist);
+console.log("API URL:", apiUrl);
 
+fetch(apiUrl)
+  .then((response) => {
+    console.log(response);
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("errore nel caricamento della pagina");
+    }
+  })
 
+  .then((listTrack) => {
+    console.log(listTrack);
+  })
 
-//   fetch(apiUrl)
-//     .then((response) => {
-
-//      console.log(response)
-//      if(response.ok){
-//        return response.json();
-//      }else{
-//       throw new Error("errore nel caricamento della pagina");
-//      }
-
-//     })
-//     .then((listTrack) => {
-//       console.log(listTrack);
-//     })
-//     .catch((error) => {
-//       console.error("API non raggiungibile", error);
-//     });
-
+  .catch((error) => {
+    console.error("API non raggiungibile", error);
+  });
 
 // fetch(apiUrl)
 //   .then((response) => {
