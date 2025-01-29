@@ -1,6 +1,15 @@
 const params = new URLSearchParams(window.location.search);
 const autoreId = params.get("autoreId");
 
+
+if (autoreId) {
+  console.log("Autore:", autoreId);
+} else {
+  console.error("Parametro 'autoreId' non trovato nell'URL.");
+}
+
+
+// aside open e close
 const closeBtn = document.getElementById("close-btn");
 const aside2 = document.getElementById("aside2");
 closeBtn.addEventListener("click", (e) => {
@@ -17,7 +26,6 @@ openAside.addEventListener("click", (e) => {
   aside2.style = "display:block";
 });
 
-console.log("ciao");
 
 const URL = "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + autoreId;
 
@@ -31,13 +39,76 @@ fetch(URL)
       throw new Error("caricamento della pagina");
     }
   })
-  .then((list) => {
-    console.log(list);
+  .then((album) => {
+    console.log(album);
 
-    const divRow = document.getElementById("track-list");
-    list.data.forEach((track, index) => {
-      const albumCover = document.getElementById("albumCover");
-      albumCover.style.backgroundColor = track.album.md5_image;
+    const sectionAlbum = document.getElementById("sectionAlbum");
+    const nameArtist = document.getElementById("nameArtist");
+
+    nameArtist.textContent=autoreId;
+    const ascoltatoriMensili = document.getElementById("ascoltatoriMensili");
+    ascoltatoriMensili.textContent=`3985760 ascoltatori mensili`;
+
+    album.data.forEach(listAlbum => {
+      console.log(listAlbum.album.cover);
+      const divAlbum = document.createElement("div");
+      const divPAlbum = document.createElement("div");
+      const divPAsc = document.createElement("div");
+      const divPTime = document.createElement("div");
+      const divImage=document.createElement("div");
+      const pAlbum=document.createElement("p");
+      const pAsc=document.createElement("p");
+      const pTime=document.createElement("p");
+      const albumImage=document.createElement("img");
+
+
+      divPAlbum.classList.add("col-3");
+      divPAsc.classList.add("col-3");
+      divPTime.classList.add("col-3");
+      divImage.classList.add("col-1");
+
+      pAlbum.classList.add("text-light");
+      pTime.classList.add("text-light");
+      pAsc.classList.add("text-light");
+      divAlbum.classList.add("row");
+      albumImage.classList.add("mx-2");
+      albumImage.style="width:40px"
+
+      pAlbum.textContent=listAlbum.album.title;
+      pAsc.textContent=listAlbum.rank;
+      pTime.textContent=listAlbum.duration;
+      albumImage.src = listAlbum.album.cover;
+
+      divImage.appendChild(albumImage);
+      divPAlbum.appendChild(pAlbum);
+      divPAsc.appendChild(pAsc);
+      divPTime.appendChild(pTime);
+      divAlbum.append(divImage,divPAlbum, divPAsc, divPTime);
+      sectionAlbum.appendChild(divAlbum);
+
+    });
+    // list.data.forEach(album => {
+    //   console.log(album.album.title)
+    //   const divAlbum=document.createElement("div");
+    //   const pAlbum=document.createElement("p");
+    //   const pAsc=document.createElement("p");
+    //   const pTime=document.createElement("p");
+
+
+    //   // pAlbum.textContent=
+
+
+    // });
+
+    //  <div class="d-flex justify-content-between">
+                    //   <p>1 <img src="./assets/imgs/main/image-1.jpg" alt="img" width="50px" /> titolo</p>
+                    //   <p>ascolti</p>
+                    //   <p>time</p>
+                    // </div>
+
+    // list.data.forEach((track, index) => {
+    //   const albumCover = document.getElementById("albumCover");
+    //   albumCover.style.backgroundColor = track.album.md5_image;
 
       /*    
       const anchorTrack = document.createElement("a");
@@ -87,8 +158,13 @@ fetch(URL)
  */
       // collegare il bottone al preview, rendere dinamico il botton con play e pausa , controllare artist
       /*   }); */
-    });
+    // });
   })
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
   });
+
+  const homePage = document.getElementById("homePage");
+  homePage.addEventListener("click", ()=>{
+    window.location.href="../index.html"
+  })
