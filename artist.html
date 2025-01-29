@@ -23,7 +23,7 @@
             <div class="sticky-top">
               <div class="sticky-top bg-black mb-4">
                 <ul class="list-group my-4">
-                  <li class="list-group-item border border-0 rounded-0 bg-black ps-2 ms-1">
+                  <li class="list-group-item border border-0 rounded-0 bg-black ps-2 ms-1" id="homePage">
                     <svg
                       class="dark:text-white me-1"
                       xmlns="http://www.w3.org/2000/svg"
@@ -194,6 +194,41 @@
                 <div class="container px-4">
                   <div class="col-md-6">
                     <div>
+
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="#3D91F4"
+                        class="bi bi-patch-check-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"
+                        />
+                      </svg>
+                    </div>
+                    <h1 class="display-3 w-bold" id="nameArtist"></h1>
+                    <p id="ascoltatoriMensili"></p>
+                    <div class="btn-group">
+                      <button class="border-0 rounded-circle text-black bg-success fs-3 px-2">
+                        <i class="bi bi-play-fill"></i>
+                      </button>
+                      <button type="button" class="border border-light rounded bg-transparent px-4 mx-3">
+                        FOLLOWING
+                      </button>
+                      <button type="button" class="border-0 bg-transparent text-light">
+                        <i class="bi bi-three-dots fs-3 text-secondary"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <h3>Popolari</h3>
+                  <div id="sectionAlbum">
+
+
+
                       <div>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -256,6 +291,7 @@
                         <p>time</p>
                       </div>
                     </div>
+                    
                   </div>
                 </div>
               </div>
@@ -395,6 +431,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="./Script/script.js"></script>
+    <script src="./Script/ArtistPageScript.js"></script>
   </body>
 </html>
