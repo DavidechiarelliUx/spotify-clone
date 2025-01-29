@@ -89,17 +89,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
     albumText.classList.add("card-text");
     btnGroup.classList.add("btn-group");
     playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add(
-      "badge",
-      "rounded-pill",
-      "border",
-      "border-1",
-      "border-light",
-      "py-3",
-      "px-4",
-      "mx-2",
-      "bg-black"
-    );
+    saveBtn.classList.add("badge", "rounded-pill", "border", "border-1", "border-light", "py-3", "px-4", "mx-2", "bg-black");
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
     albumImg.src = album.cover;
@@ -195,17 +185,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=caribou")
     albumText.classList.add("card-text");
     btnGroup.classList.add("btn-group");
     playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add(
-      "badge",
-      "rounded-pill",
-      "border",
-      "border-1",
-      "border-light",
-      "py-3",
-      "px-4",
-      "mx-2",
-      "bg-black"
-    );
+    saveBtn.classList.add("badge", "rounded-pill", "border", "border-1", "border-light", "py-3", "px-4", "mx-2", "bg-black");
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
     albumImg.src = album.cover;
@@ -307,17 +287,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=m83")
     albumText.classList.add("card-text");
     btnGroup.classList.add("btn-group");
     playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add(
-      "badge",
-      "rounded-pill",
-      "border",
-      "border-1",
-      "border-light",
-      "py-3",
-      "px-4",
-      "mx-2",
-      "bg-black"
-    );
+    saveBtn.classList.add("badge", "rounded-pill", "border", "border-1", "border-light", "py-3", "px-4", "mx-2", "bg-black");
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
     albumImg.src = album.cover;
@@ -415,17 +385,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=mythandroid")
     albumText.classList.add("card-text");
     btnGroup.classList.add("btn-group");
     playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add(
-      "badge",
-      "rounded-pill",
-      "border",
-      "border-1",
-      "border-light",
-      "py-3",
-      "px-4",
-      "mx-2",
-      "bg-black"
-    );
+    saveBtn.classList.add("badge", "rounded-pill", "border", "border-1", "border-light", "py-3", "px-4", "mx-2", "bg-black");
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
     albumImg.src = album.cover;
@@ -523,17 +483,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
     albumText.classList.add("card-text");
     btnGroup.classList.add("btn-group");
     playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add(
-      "badge",
-      "rounded-pill",
-      "border",
-      "border-1",
-      "border-light",
-      "py-3",
-      "px-4",
-      "mx-2",
-      "bg-black"
-    );
+    saveBtn.classList.add("badge", "rounded-pill", "border", "border-1", "border-light", "py-3", "px-4", "mx-2", "bg-black");
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
     albumImg.src = album.cover;
@@ -564,10 +514,36 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
     console.error("errore nel caricamento della list", error);
   });
 
+/** script delle card buonasera **/
 const playList1 = document.getElementById("playList1");
 playList1.addEventListener("click", () => {
   localStorage.setItem("playListTitle", "early stage emily");
   window.location.assign("./playList.html");
   //const playListTitle = document.getElementById("playListTitle");
   //playListTitle.innerText = "early stage emily";
+});
+const playList2 = document.getElementById("playList2");
+playList2.addEventListener("click", () => {
+  localStorage.setItem("playListTitle", "Be The Young");
+  window.location.assign("./playList.html");
+});
+const playList3 = document.getElementById("playList3");
+playList3.addEventListener("click", () => {
+  localStorage.setItem("playListTitle", "saggio vibes 💃🩰");
+  window.location.assign("./playList.html");
+});
+const playList4 = document.getElementById("playList4");
+playList4.addEventListener("click", () => {
+  localStorage.setItem("playListTitle", "Brani che ti piacciono");
+  window.location.assign("./playList.html");
+});
+const playList5 = document.getElementById("playList5");
+playList5.addEventListener("click", () => {
+  localStorage.setItem("playListTitle", "2021 lol");
+  window.location.assign("./playList.html");
+});
+const playList6 = document.getElementById("playList6");
+playList6.addEventListener("click", () => {
+  localStorage.setItem("playListTitle", "Deep Dive with Ali Abdaal");
+  window.location.assign("./playList.html");
 });
