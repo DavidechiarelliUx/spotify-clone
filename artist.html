@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Spotify-clone</title>
+    <title>Artist-Page</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body data-bs-theme="dark" class="bg-black">
     <main>
@@ -61,11 +62,7 @@
               <div class="fixed" style="max-height: 500px; overflow-y: auto">
                 <ul id="personalList" class="list-group">
                   <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-<<<<<<< HEAD
-                    early stage emily syndrome (sett-ott 2022)
-=======
                     early stage emily (sett-ott 2022)
->>>>>>> b77b8b749a4e21bfc170553146d9be442a44c73c
                   </li>
                   <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
                     Be The Young
@@ -145,56 +142,59 @@
           </aside>
           <!-- contenuto principale-->
           <div
-            class="col px-4"
+            class="col px-0"
             style="
               max-height: 900px;
               overflow-y: auto;
               background: linear-gradient(0deg, rgba(1, 1, 1, 1) 0%, rgba(63, 63, 63, 0.867) 88%);
             "
           >
-            <div class="d-flex justify-content-between my-4">
-              <div class="align-content-center">
-                <a href="#" style="text-decoration: none">
-                  <button class="border border-0 bg-black rounded-5">
-                    <i class="bi bi-chevron-left bg-black"></i>
+            <div class="container px-4">
+              <div class="d-flex justify-content-between my-4">
+                <div class="align-content-center">
+                  <a href="#" style="text-decoration: none">
+                    <button class="border border-0 bg-black rounded-5">
+                      <i class="bi bi-chevron-left bg-black"></i>
+                    </button>
+                  </a>
+                  <a href="#" style="text-decoration: none">
+                    <button class="border border-0 bg-black rounded-5">
+                      <i class="bi bi-chevron-right"></i>
+                    </button>
+                  </a>
+                </div>
+                <div class="dropdown">
+                  <button
+                    class="btn btn-secondary bg-black border-0 ps-1 py-1 dropdown-toggle rounded-pill"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/02b4d76c-e4da-4cbc-872c-1bf9ac49bafd/anim=false,width=450/ComfyUI_00289_.jpeg"
+                      style="height: 40px"
+                      class="rounded-5 me-2"
+                      alt="avatar"
+                    />
+                    Lidia Nautiluss...
                   </button>
-                </a>
-                <a href="#" style="text-decoration: none">
-                  <button class="border border-0 bg-black rounded-5">
-                    <i class="bi bi-chevron-right"></i>
-                  </button>
-                </a>
-              </div>
-              <div class="dropdown">
-                <button
-                  class="btn btn-secondary bg-black border-0 ps-1 py-1 dropdown-toggle rounded-pill"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img
-                    src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/02b4d76c-e4da-4cbc-872c-1bf9ac49bafd/anim=false,width=450/ComfyUI_00289_.jpeg"
-                    style="height: 40px"
-                    class="rounded-5 me-2"
-                    alt="avatar"
-                  />
-                  Lidia Nautiluss...
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#">Profilo</a></li>
-                  <li><a class="dropdown-item" href="#">Preferenze</a></li>
-                  <li><a class="dropdown-item" id="openAside" href="#">Attività Amici</a></li>
-                  <li><a class="dropdown-item" href="#">Esci</a></li>
-                </ul>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Profilo</a></li>
+                    <li><a class="dropdown-item" href="#">Preferenze</a></li>
+                    <li><a class="dropdown-item" id="openAside" href="#">Attività Amici</a></li>
+                    <li><a class="dropdown-item" href="#">Esci</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
-
-            <div class="container-fluid">
+            <!--Sezione nome artista-->
+            <div>
               <div class="g-0">
                 <div style="background-image: url(${bgimg})"></div>
-                <div class="col-md-6">
-                  <div>
+                <div class="container px-4">
+                  <div class="col-md-6">
                     <div>
+
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
@@ -228,6 +228,70 @@
                   <div id="sectionAlbum">
 
 
+
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          fill="#3D91F4"
+                          class="bi bi-patch-check-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"
+                          />
+                        </svg>
+                        ${artista verificato}
+                      </div>
+                      <h1 class="display-3">${nome artista}</h1>
+                      <p class="">${ascoltatori mensili}</p>
+                    </div>
+                  </div>
+                </div>
+                <!--Container Album-->
+                <div class="container p-4" style="background-color: rgba(0, 0, 0, 0.226)">
+                  <div class="btn-group">
+                    <button class="border-0 rounded-circle text-black bg-success fs-3 px-2">
+                      <i class="bi bi-play-fill"></i>
+                    </button>
+                    <button type="button" class="border border-light rounded bg-transparent px-4 mx-3">
+                      FOLLOWING
+                    </button>
+                    <button type="button" class="border-0 bg-transparent text-light">
+                      <i class="bi bi-three-dots fs-3 text-secondary"></i>
+                    </button>
+                  </div>
+                  <div class="mt-4">
+                    <h3>Popolari</h3>
+                    <div>
+                      <div class="d-flex justify-content-between">
+                        <p>1 <img src="./assets/imgs/main/image-1.jpg" alt="img" width="50px" /> titolo</p>
+                        <p>ascolti</p>
+                        <p>time</p>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <p>2 <img src="./assets/imgs/main/image-1.jpg" alt="img" width="50px" /> titolo</p>
+                        <p>ascolti</p>
+                        <p>time</p>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <p>3 <img src="./assets/imgs/main/image-1.jpg" alt="img" width="50px" /> titolo</p>
+                        <p>ascolti</p>
+                        <p>time</p>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <p>4 <img src="./assets/imgs/main/image-1.jpg" alt="img" width="50px" /> titolo</p>
+                        <p>ascolti</p>
+                        <p>time</p>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <p>5 <img src="./assets/imgs/main/image-1.jpg" alt="img" width="50px" /> titolo</p>
+                        <p>ascolti</p>
+                        <p>time</p>
+                      </div>
+                    </div>
+                    
                   </div>
                 </div>
               </div>
