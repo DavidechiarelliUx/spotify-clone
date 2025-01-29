@@ -246,6 +246,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
 
 const playList1 = document.getElementById("playList1");
 playList1.addEventListener("click", () => {
+  localStorage.setItem("playListTitle", "early stage emily");
   window.location.assign("./playList.html");
   //const playListTitle = document.getElementById("playListTitle");
   //playListTitle.innerText = "early stage emily";

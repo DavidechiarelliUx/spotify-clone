@@ -1,8 +1,15 @@
 //const playList1 = document.getElementById("playList1");
 const URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 
+let duration = 0;
 window.addEventListener("DOMContentLoaded", () => {
+  const listTitle = document.getElementById("playListTitle");
+
+  const playListTitle = localStorage.getItem("playListTitle");
+  listTitle.innerText = playListTitle;
+
   let artistID;
+  //const playListFoto = document.getElementById("playListFoto");
   const divRow = document.getElementById("track-list");
   for (let i = 0; i < 10; i++) {
     artistID = Math.floor(Math.random() * 200);
@@ -37,6 +44,13 @@ window.addEventListener("DOMContentLoaded", () => {
         divTitle.classList.add("col-3");
         artistContainer.appendChild(divTitle);
         divTitle.appendChild(anchorTrack);
+
+        /*for (let i = 0; i < 4; i++) {
+          const imgContainer = document.createElement("img");
+          imgContainer.classList.add("img-fluid");
+          imgContainer.src = artistList.picture;
+          playListFoto.appendChild(imgContainer);
+        }*/
 
         fetch(artistList.tracklist)
           .then((response) => {
@@ -88,6 +102,14 @@ window.addEventListener("DOMContentLoaded", () => {
             divRow.appendChild(artistContainer);
 
             pNum.innerHTML = divRow.children.length;
+
+            const totSongNum = document.getElementById("totSongNum");
+            totSongNum.innerHTML = divRow.children.length + " songs" + " • ";
+
+            duration += songList.data[0].duration;
+
+            const totDuration = document.getElementById("totDuration");
+            totDuration.innerHTML = "about " + durationConvert(duration) + " minutes";
 
             anchorTrack.addEventListener("click", (e) => {
               const riproduction = document.getElementById("riproduction");
