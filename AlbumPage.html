@@ -150,7 +150,10 @@
             "
             id="albumCover"
           >
-            <div class="container px-4">
+            <div id="barra-superiore-md" class="container my-3">
+              <i class="bi bi-arrow-left fs-1"></i>
+            </div>
+            <div id="barra-superiore-lg" class="container px-4">
               <div class="d-flex justify-content-between my-4">
                 <div class="align-content-center">
                   <a href="#" style="text-decoration: none">
@@ -198,7 +201,7 @@
                   alt="img-album"
                 />
               </div>
-              <div class="d-flex flex-row mb-4">
+              <div class="d-flex flex-row my-3">
                 <div class="mt-3">
                   <h1 class="card-title fw-semibold">Nome album</h1>
                   <div class="d-flex flex-inline align-items-center">
@@ -416,7 +419,37 @@
             <i class="mx-1 bi-play-fill display-3"></i>
           </div>
         </div>
-        <div></div>
+        <div class="py-4 d-flex justify-content-evenly" style="background-color: rgba(0, 0, 0, 0.226)">
+          <div class="d-flex flex-column align-items-center">
+            <svg class="dark:text-white me-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white">
+              <path
+                fill-rule="evenodd"
+                d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Home
+          </div>
+          <div class="d-flex flex-column align-items-center" data-bs-toggle="modal" data-bs-target="#searchModal">
+            <i class="bi bi-search"></i>Cerca
+          </div>
+          <div class="d-flex flex-column align-items-center">
+            <svg
+              data-encore-id="icon"
+              role="img"
+              aria-hidden="true"
+              class="Svg-sc-ytk21e-0 bneLcE e-9541-icon"
+              width="24"
+              height="24"
+              fill="white"
+            >
+              <path
+                d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"
+              ></path>
+            </svg>
+            <span>La tua libreria</span>
+          </div>
+        </div>
       </div>
     </footer>
     <footer id="barra-play-lg" class="sticky-bottom">
