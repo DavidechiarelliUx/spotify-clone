@@ -32,7 +32,7 @@
   aside,
   #card-album-lg,
   #container-brani-lg,
-  barraPlay-lg {
+  #barraPlay-lg {
     display: none;
   }
 }
@@ -40,7 +40,7 @@
 @media screen and (min-width: 768px) {
   #card-album-md,
   #container-brani-md,
-  barraPlay-md {
+  #barraPlay-md {
     display: none;
   }
 }
