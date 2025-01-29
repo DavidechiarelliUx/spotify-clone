@@ -50,16 +50,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
 
     col.classList.add("col");
     artistcard.classList.add("card", "border-0");
-    cardImg.classList.add(
-      "card-img-top",
-      "img-fluid",
-      "img-thumbnail",
-      "border",
-      "border-5",
-      "border-dark",
-      "rounded-4",
-      "mx-auto"
-    );
+    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border", "border-5", "border-dark", "rounded-4", "mx-auto");
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     cardTitle.classList.add("card-title");
     cardText.classList.add("text-muted");
@@ -103,16 +94,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=caribou")
 
     col.classList.add("col");
     artistcard.classList.add("card", "border-0");
-    cardImg.classList.add(
-      "card-img-top",
-      "img-fluid",
-      "img-thumbnail",
-      "border",
-      "border-5",
-      "border-dark",
-      "rounded-4",
-      "mx-auto"
-    );
+    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border", "border-5", "border-dark", "rounded-4", "mx-auto");
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     cardTitle.classList.add("card-title");
     cardText.classList.add("text-muted");
@@ -156,16 +138,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=m83")
 
     col.classList.add("col");
     artistcard.classList.add("card", "border-0");
-    cardImg.classList.add(
-      "card-img-top",
-      "img-fluid",
-      "img-thumbnail",
-      "border",
-      "border-5",
-      "border-dark",
-      "rounded-4",
-      "mx-auto"
-    );
+    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border", "border-5", "border-dark", "rounded-4", "mx-auto");
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     cardTitle.classList.add("card-title");
     cardText.classList.add("text-muted");
@@ -209,16 +182,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=mythandroid")
 
     col.classList.add("col");
     artistcard.classList.add("card", "border-0");
-    cardImg.classList.add(
-      "card-img-top",
-      "img-fluid",
-      "img-thumbnail",
-      "border",
-      "border-5",
-      "border-dark",
-      "rounded-4",
-      "mx-auto"
-    );
+    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border", "border-5", "border-dark", "rounded-4", "mx-auto");
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     cardTitle.classList.add("card-title");
     cardText.classList.add("text-muted");
@@ -262,16 +226,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
 
     col.classList.add("col");
     artistcard.classList.add("card", "border-0");
-    cardImg.classList.add(
-      "card-img-top",
-      "img-fluid",
-      "img-thumbnail",
-      "border",
-      "border-5",
-      "border-dark",
-      "rounded-4",
-      "mx-auto"
-    );
+    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border", "border-5", "border-dark", "rounded-4", "mx-auto");
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     cardTitle.classList.add("card-title");
     cardText.classList.add("text-muted");
@@ -288,3 +243,10 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
   });
+
+const playList1 = document.getElementById("playList1");
+playList1.addEventListener("click", () => {
+  window.location.assign("./playList.html");
+  //const playListTitle = document.getElementById("playListTitle");
+  //playListTitle.innerText = "early stage emily";
+});
