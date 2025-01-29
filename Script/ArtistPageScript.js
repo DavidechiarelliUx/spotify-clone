@@ -50,7 +50,7 @@ fetch(URL)
     ascoltatoriMensili.textContent=`3985760 ascoltatori mensili`;
 
     album.data.forEach(listAlbum => {
-      console.log(listAlbum.album.cover);
+      // console.log(listAlbum.album.cover);
       const divAlbum = document.createElement("div");
       const divPAlbum = document.createElement("div");
       const divPAsc = document.createElement("div");
@@ -85,7 +85,15 @@ fetch(URL)
       divPTime.appendChild(pTime);
       divAlbum.append(divImage,divPAlbum, divPAsc, divPTime);
       sectionAlbum.appendChild(divAlbum);
-
+      
+     
+      divAlbum.addEventListener("click", ()=> {
+        const trackListUrl = listAlbum.album.tracklist;
+        const albumId = listAlbum.album.id;
+        console.log(albumId);
+        window.location.href = `../AlbumPage.html?tracklist=${trackListUrl}&albumId=${albumId}`;
+       
+      })
     });
     // list.data.forEach(album => {
     //   console.log(album.album.title)

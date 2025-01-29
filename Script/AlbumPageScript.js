@@ -1,95 +1,103 @@
-const closeBtn = document.getElementById("close-btn");
-const aside2 = document.getElementById("aside2");
-closeBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+// const params = new URLSearchParams(window.location.search);
+// const tracklist = params.get("tracklist"); 
+// const apiUrl = tracklist;
 
-  aside2.style = "display:none";
-});
+// console.log("Tracklist URL:", tracklist);
+// console.log("API URL:", apiUrl);
 
-const openAside = document.getElementById("openAside");
 
-openAside.addEventListener("click", (e) => {
-  e.preventDefault();
 
-  aside2.style = "display:block";
-});
+//   fetch(apiUrl)
+//     .then((response) => {
 
-console.log("ciao");
+//      console.log(response)
+//      if(response.ok){
+//        return response.json();
+//      }else{
+//       throw new Error("errore nel caricamento della pagina");
+//      }
 
-const URL = "https://striveschool-api.herokuapp.com/api/deezer/search?q=queen";
+//     })
+//     .then((listTrack) => {
+//       console.log(listTrack);
+//     })
+//     .catch((error) => {
+//       console.error("API non raggiungibile", error);
+//     });
 
-fetch(URL)
-  .then((response) => {
-    console.log(response);
 
-    if (response.ok) {
-      return response.json();
-    } else {
-      throw new Error("caricamento della pagina");
-    }
-  })
-  .then((list) => {
-    console.log(list);
+// fetch(apiUrl)
+//   .then((response) => {
+//     console.log(response);
 
-    const divRow = document.getElementById("track-list");
-    list.data.forEach((track, index) => {
-      console.log(track);
+//     if (response.ok) {
+//       return response.json();
+//     } else {
+//       throw new Error("caricamento della pagina");
+//     }
+//   })
+//   .then((listTrack) => {
+//     console.log(listTrack);
 
-      const albumCover = document.getElementById("albumCover");
-      albumCover.style.backgroundColor = track.album.md5_image;
+// const divRow = document.getElementById("track-list");
+// list.data.forEach((track, index) => {
+//   console.log(track);
 
-      const anchorTrack = document.createElement("a");
-      const divNum = document.createElement("div");
-      const pNum = document.createElement("p");
-      const divTitle = document.createElement("div");
-      const titleTrack = document.createElement("p");
-      const artist = document.createElement("p");
-      const divRipr = document.createElement("div");
-      const pRipr = document.createElement("p");
-      const divMin = document.createElement("div");
-      const pMin = document.createElement("p");
+//   const albumCover = document.getElementById("albumCover");
+//   albumCover.style.backgroundColor = track.album.md5_image;
 
-      divNum.classList.add("col-1");
-      divTitle.classList.add("col-3");
-      artist.classList.add("text-secondary");
-      divRipr.classList.add("col-3", "offset-2");
-      pRipr.classList.add("text-secondary");
-      divMin.classList.add("col-3", "d-flex", "justify-content-end");
-      pMin.classList.add("text-secondary");
+//   const anchorTrack = document.createElement("a");
+//   const divNum = document.createElement("div");
+//   const pNum = document.createElement("p");
+//   const divTitle = document.createElement("div");
+//   const titleTrack = document.createElement("p");
+//   const artist = document.createElement("p");
+//   const divRipr = document.createElement("div");
+//   const pRipr = document.createElement("p");
+//   const divMin = document.createElement("div");
+//   const pMin = document.createElement("p");
 
-      pNum.textContent = index + 1;
-      titleTrack.textContent = track.title;
-      artist.textContent = track.artist.name;
-      pRipr.textContent = track.rank;
-      pMin.textContent = track.duration % 60;
+//   divNum.classList.add("col-1");
+//   divTitle.classList.add("col-3");
+//   artist.classList.add("text-secondary");
+//   divRipr.classList.add("col-3", "offset-2");
+//   pRipr.classList.add("text-secondary");
+//   divMin.classList.add("col-3", "d-flex", "justify-content-end");
+//   pMin.classList.add("text-secondary");
 
-      divTitle.appendChild(anchorTrack);
-      anchorTrack.appendChild(titleTrack, artist);
-      divRow.append(divNum, divTitle, divRipr, divMin);
-      divNum.appendChild(pNum);
-      // divTitle.append(titleTrack, artist);
-      divRipr.appendChild(pRipr);
-      divMin.appendChild(pMin);
+//   pNum.textContent = index + 1;
+//   titleTrack.textContent = track.title;
+//   artist.textContent = track.artist.name;
+//   pRipr.textContent = track.rank;
+//   pMin.textContent = track.duration % 60;
 
-      anchorTrack.addEventListener("click", (e) => {
-        console.log("ciao");
-        const riproduction = document.getElementById("riproduction");
+//   divTitle.appendChild(anchorTrack);
+//   anchorTrack.appendChild(titleTrack, artist);
+//   divRow.append(divNum, divTitle, divRipr, divMin);
+//   divNum.appendChild(pNum);
+//   // divTitle.append(titleTrack, artist);
+//   divRipr.appendChild(pRipr);
+//   divMin.appendChild(pMin);
 
-        const nomeAuthor = document.getElementById("nameAuthor");
-        const nomeBrano = document.getElementById("nameBrano");
-        const imageAuthor = document.getElementById("imageAuthor");
+//   anchorTrack.addEventListener("click", (e) => {
+//     console.log("ciao");
+//     const riproduction = document.getElementById("riproduction");
 
-        nomeAuthor.textContent = track.artist.name;
-        nomeBrano.textContent = track.title;
-        imageAuthor.src = track.album.cover;
+//     const nomeAuthor = document.getElementById("nameAuthor");
+//     const nomeBrano = document.getElementById("nameBrano");
+//     const imageAuthor = document.getElementById("imageAuthor");
 
-        // collegare il bottone al preview, rendere dinamico il botton con play e pausa , controllare artist
-      });
-    });
-  })
-  .catch((error) => {
-    console.error("errore nel caricamento della list", error);
-  });
+//     nomeAuthor.textContent = track.artist.name;
+//     nomeBrano.textContent = track.title;
+//     imageAuthor.src = track.album.cover;
+
+// collegare il bottone al preview, rendere dinamico il botton con play e pausa , controllare artist
+// });
+// });
+// })
+// .catch((error) => {
+//   console.error("errore nel caricamento della list", error);
+// });
 // <div class="col-1">
 //                     <p>1</p>
 //                 </div>
@@ -103,3 +111,20 @@ fetch(URL)
 //                  <div class="col-3 d-flex justify-content-end">
 //                     <p class="text-secondary">minuti</p>
 //                 </div>
+
+const closeBtn = document.getElementById("close-btn");
+const aside2 = document.getElementById("aside2");
+
+closeBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  aside2.style = "display:none";
+});
+
+const openAside = document.getElementById("openAside");
+
+openAside.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  aside2.style = "display:block";
+});
