@@ -4,15 +4,6 @@
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-}
-
-.text-secondary {
-  color: rgb(137, 137, 137) !important;
-  font-weight: 500;
-}
-
 #albumCover {
   background: radial-gradient(linear, #6706f1, #154083, #f461a3, #48508c, #28030a);
 }

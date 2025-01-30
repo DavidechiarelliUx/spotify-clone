@@ -1,3 +1,43 @@
-a {
-  text-decoration: none;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#albumCover {
+  background: radial-gradient(linear, #6706f1, #154083, #f461a3, #48508c, #28030a);
+}
+
+/**CSS modal**/
+#inputModale:focus {
+  outline: none;
+  border: none;
+}
+#bodyModale {
+  border: none !important; /**non funge-serve sass**/
+}
+
+@media screen and (max-width: 1300px) {
+  #titBuonasera {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  aside,
+  #card-album-lg,
+  #container-brani-lg,
+  #barra-play-lg,
+  #barra-superiore-lg {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #card-album-md,
+  #container-brani-md,
+  #barra-play-md,
+  #barra-superiore-md {
+    display: none;
+  }
 }
