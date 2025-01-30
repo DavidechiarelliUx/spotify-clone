@@ -193,7 +193,7 @@
             id="container-principale"
             class="col px-4 pb-4"
             style="
-              max-height: 1000px;
+              max-height: 600px;
               overflow-y: auto;
               background: linear-gradient(0deg, rgba(1, 1, 1, 1) 0%, rgba(63, 63, 63, 0.867) 88%);
             "
@@ -546,31 +546,42 @@
             <!--Sezione playlist - md-->
             <div id="playlist-md">
               <div class="container my-4">
-                <div class="row row-cols-sm-2 row-cols-xl-3 gx-5 gy-3 justify-content-between">
+                <div class="row row-cols-1">
                   <!--Prima card-->
-                  <div id="playList1" class="col">
-                    <div class="row rounded-2 p-0 overflow-hidden">
-                      <div class="col-3 p-0">
-                        <div class="row-cols-1 d-flex flex-wrap">
+                  <div id="playList1" class="col my-2">
+                    <div class="row rounded-2 overflow-hidden p-4 pb-2" style="background-color: #2d2d2d">
+                      <div class="col-6 p-0">
+                        <div class="row-cols-2 d-flex flex-wrap">
                           <img class="img-fluid" style="object-fit: cover" src="./assets/imgs/main/image-1.jpg" />
                           <img class="img-fluid" style="object-fit: cover" src="./assets/imgs/main/image-2.jpg" />
                           <img class="img-fluid" style="object-fit: cover" src="./assets/imgs/main/image-3.jpg" />
                           <img class="img-fluid" style="object-fit: cover" src="./assets/imgs/main/image-4.jpg" />
                         </div>
                       </div>
-                      <div class="col-9 align-content-center">
-                        <p id="titBuonasera" class="mb-0 fw-bold">
+                      <div class="col-5 ms-2">
+                        <p class="text-secondary">Playlist</p>
+                        <p id="titBuonasera" class="mb-0 fs-4 fw-bold">
                           early stage emily <br />
                           (sett-ott 2022)
                         </p>
+                      </div>
+                      <div class="p-0 mt-3 d-flex flex-inline justify-content-between align-items-center">
+                        <div>
+                          <i class="bi bi-heart-fill fs-1" style="color: #1bd760"></i>
+                          <i class="bi bi-three-dots-vertical fs-1 mx-3 text-secondary"></i>
+                        </div>
+                        <div class="d-flex flex-inline align-items-center">
+                          <p class="text-secondary m-0 fs-5">n. brani</p>
+                          <i class="bi-play-circle-fill display-4 ms-4" style="color: rgba(0, 0, 0, 0.345)"></i>
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   <!--seconda card-->
-                  <div id="playList2" class="col">
-                    <div class="row rounded-2 p-0 overflow-hidden">
-                      <div class="col-3 p-0">
+                  <div id="playList2" class="col my-2">
+                    <div class="row rounded-2 overflow-hidden p-4 pb-2" style="background-color: #2d2d2d">
+                      <div class="col-6 p-0">
                         <div class="row-cols-2 d-flex flex-wrap">
                           <img class="img-fluid" src="./assets/imgs/main/image-5.jpg" />
                           <img class="img-fluid" src="./assets/imgs/main/image-6.jpg" />
@@ -578,16 +589,27 @@
                           <img class="img-fluid" src="./assets/imgs/main/image-8.jpg" />
                         </div>
                       </div>
-                      <div class="col-9 align-content-center">
-                        <p id="titBuonasera" class="mb-0 fw-bold">Be The Young</p>
+                      <div class="col-5 ms-2">
+                        <p class="text-secondary">Playlist</p>
+                        <p id="titBuonasera" class="mb-0 fs-4 fw-bold">Be The Young</p>
+                      </div>
+                      <div class="p-0 mt-3 d-flex flex-inline justify-content-between align-items-center">
+                        <div>
+                          <i class="bi bi-heart-fill fs-1" style="color: #1bd760"></i>
+                          <i class="bi bi-three-dots-vertical fs-1 mx-3 text-secondary"></i>
+                        </div>
+                        <div class="d-flex flex-inline align-items-center">
+                          <p class="text-secondary m-0 fs-5">n. brani</p>
+                          <i class="bi-play-circle-fill display-4 ms-4" style="color: rgba(0, 0, 0, 0.345)"></i>
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   <!--terza card-->
-                  <div id="playList3" class="col">
-                    <div class="row rounded-2 p-0 overflow-hidden">
-                      <div class="col-3 p-0">
+                  <div id="playList3" class="col my-2">
+                    <div class="row rounded-2 overflow-hidden p-4 pb-2" style="background-color: #2d2d2d">
+                      <div class="col-6 p-0">
                         <div class="row-cols-2 d-flex flex-wrap">
                           <img class="img-fluid" src="./assets/imgs/main/image-9.jpg" />
                           <img class="img-fluid" src="./assets/imgs/main/image-10.jpg" />
@@ -602,23 +624,34 @@
                   </div>
 
                   <!--quarta card-->
-                  <div id="playList4" class="col">
-                    <div class="row rounded-2 p-0 overflow-hidden">
-                      <div class="col-3 p-0">
-                        <div class="d-flex flex-wrap">
+                  <div id="playList4" class="col my-2">
+                    <div class="row rounded-2 overflow-hidden p-4 pb-2" style="background-color: #2d2d2d">
+                      <div class="col-6 p-0">
+                        <div class="row-cols-2 d-flex flex-wrap">
                           <img class="img-fluid" src="https://misc.scdn.co/liked-songs/liked-songs-300.jpg" />
                         </div>
                       </div>
-                      <div class="col-9 align-content-center">
-                        <p id="titBuonasera" class="mb-0 fw-bold">Brani che ti piacciono</p>
+                      <div class="col-5 ms-2">
+                        <p class="text-secondary">Playlist</p>
+                        <p id="titBuonasera" class="mb-0 fs-4 fw-bold">Brani che ti piacciono</p>
+                      </div>
+                      <div class="p-0 mt-3 d-flex flex-inline justify-content-between align-items-center">
+                        <div>
+                          <i class="bi bi-heart-fill fs-1" style="color: #1bd760"></i>
+                          <i class="bi bi-three-dots-vertical fs-1 mx-3 text-secondary"></i>
+                        </div>
+                        <div class="d-flex flex-inline align-items-center">
+                          <p class="text-secondary m-0 fs-5">n. brani</p>
+                          <i class="bi-play-circle-fill display-4 ms-4" style="color: rgba(0, 0, 0, 0.345)"></i>
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   <!--quinta card-->
-                  <div id="playList5" class="col">
-                    <div class="row rounded-2 p-0 overflow-hidden">
-                      <div class="col-3 p-0">
+                  <div id="playList5" class="col my-2">
+                    <div class="row rounded-2 overflow-hidden p-4 pb-2" style="background-color: #2d2d2d">
+                      <div class="col-6 p-0">
                         <div class="row-cols-2 d-flex flex-wrap">
                           <img class="img-fluid" src="./assets/imgs/main/image-13.jpg" />
                           <img class="img-fluid" src="./assets/imgs/main/image-14.jpg" />
@@ -626,22 +659,44 @@
                           <img class="img-fluid" src="./assets/imgs/main/image-16.jpg" />
                         </div>
                       </div>
-                      <div class="col-9 align-content-center">
-                        <p id="titBuonasera" class="mb-0 fw-bold">2021 lol</p>
+                      <div class="col-5 ms-2">
+                        <p class="text-secondary">Playlist</p>
+                        <p id="titBuonasera" class="mb-0 fs-4 fw-bold">2021 lol</p>
+                      </div>
+                      <div class="p-0 mt-3 d-flex flex-inline justify-content-between align-items-center">
+                        <div>
+                          <i class="bi bi-heart-fill fs-1" style="color: #1bd760"></i>
+                          <i class="bi bi-three-dots-vertical fs-1 mx-3 text-secondary"></i>
+                        </div>
+                        <div class="d-flex flex-inline align-items-center">
+                          <p class="text-secondary m-0 fs-5">n. brani</p>
+                          <i class="bi-play-circle-fill display-4 ms-4" style="color: rgba(0, 0, 0, 0.345)"></i>
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   <!--sesta card-->
-                  <div id="playList6" class="col">
-                    <div class="row rounded-2 p-0 overflow-hidden">
-                      <div class="col-3 p-0">
-                        <div class="d-flex flex-wrap">
+                  <div id="playList6" class="col my-2">
+                    <div class="row rounded-2 overflow-hidden p-4 pb-2" style="background-color: #2d2d2d">
+                      <div class="col-6 p-0">
+                        <div class="row-cols-2 d-flex flex-wrap">
                           <img class="img-fluid" src="./assets/imgs/main/image-17.jpg" />
                         </div>
                       </div>
-                      <div class="col-9 align-content-center">
-                        <p id="titBuonasera" class="mb-0 fw-bold">Deep Dive with Ali Abdaal</p>
+                      <div class="col-5 ms-2">
+                        <p class="text-secondary">Playlist</p>
+                        <p id="titBuonasera" class="mb-0 fs-4 fw-bold">Deep Dive with Ali Abdaal</p>
+                      </div>
+                      <div class="p-0 mt-3 d-flex flex-inline justify-content-between align-items-center">
+                        <div>
+                          <i class="bi bi-heart-fill fs-1" style="color: #1bd760"></i>
+                          <i class="bi bi-three-dots-vertical fs-1 mx-3 text-secondary"></i>
+                        </div>
+                        <div class="d-flex flex-inline align-items-center">
+                          <p class="text-secondary m-0 fs-5">n. brani</p>
+                          <i class="bi-play-circle-fill display-4 ms-4" style="color: rgba(0, 0, 0, 0.345)"></i>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -661,9 +716,8 @@
                 <div id="artistGrid" class="row row-cols-5 justify-content-between mt-2"></div>
               </div>
               <div class="container p-0">
-                <div id="visualizzaTutto" class="row  mt-2" style="display: none">
-
-                    <!-- <div class="card border-0 rounded-3 p-1" style="background-color: #171717">
+                <div id="visualizzaTutto" class="row mt-2" style="display: none">
+                  <!-- <div class="card border-0 rounded-3 p-1" style="background-color: #171717">
                       <div class="m-2">
                         <img
                           src="https://api.deezer.com/artist/1037707/image"
@@ -677,19 +731,18 @@
                         <p class="text-muted">Didascalia dell'album</p>
                       </div>
                     </div> -->
-                  </div>
                 </div>
-                <!--Card fisse-->
-                <div class="container">
-                      <h3 class="mt-5">I tuoi Preferiti</h3>
-                    <div class="row mt-2" id="favoritesList"></div>
-                  </div>
-
-                      <!-- qui dentro vengono inseriti i preferiti -->
-                    </div>
               </div>
+              <!--Card fisse-->
+              <div class="container">
+                <h3 class="mt-5">I tuoi Preferiti</h3>
+                <div class="row mt-2" id="favoritesList"></div>
+              </div>
+
+              <!-- qui dentro vengono inseriti i preferiti -->
             </div>
           </div>
+
           <!--Attività Amici-->
           <aside id="aside2" class="col-lg-2 bg-black mt-4 px-4" style="display: none">
             <div class="d-flex justify-content-between align-content-center mb-4">
@@ -754,7 +807,7 @@
                 </div>
                 <div class="mx-1 text-end ms-auto"><h6 style="font-size: 0.7rem">3 giorni</h6></div>
               </div>
-          
+            </div>
           </aside>
         </div>
       </div>

@@ -43,6 +43,7 @@ a {
   }
   #container-principale {
     background: rgb(27, 27, 27) !important;
+    max-height: 100% !important;
   }
 }
 
