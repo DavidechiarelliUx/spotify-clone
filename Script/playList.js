@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
         console.log(artistList);
 
         const artistContainer = document.createElement("div");
-        artistContainer.classList.add("row");
+        artistContainer.classList.add("row", "ms-4");
 
         const anchorTrack = document.createElement("a");
 
@@ -94,7 +94,7 @@ window.addEventListener("DOMContentLoaded", () => {
             divRipr.appendChild(pRipr);
 
             const divMin = document.createElement("div");
-            divMin.classList.add("col-3", "d-flex", "justify-content-end");
+            divMin.classList.add("col-3", "d-flex", "justify-content-center");
             artistContainer.appendChild(divMin);
 
             const pMin = document.createElement("p");
@@ -127,10 +127,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
               const nomeAuthor = document.getElementById("nameAuthor");
               const nomeBrano = document.getElementById("nameBrano");
+              const nomeBrano1 = document.getElementById("nameBrano1");
               const imageAuthor = document.getElementById("imageAuthor");
 
               nomeAuthor.textContent = artistList.name;
               nomeBrano.textContent = songList.data[0].title_short;
+              nomeBrano1.textContent = songList.data[0].title_short;
               imageAuthor.src = songList.data[0].album.cover;
             });
           })

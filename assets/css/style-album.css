@@ -27,7 +27,7 @@ a {
   }
 }
 
-@media screen and (max-width: 768px) {
+/**@media screen and (max-width: 768px) {
   aside,
   #card-album-lg,
   #container-brani-lg,
@@ -44,4 +44,4 @@ a {
   #barra-superiore-md {
     display: none;
   }
-}
+}**/
