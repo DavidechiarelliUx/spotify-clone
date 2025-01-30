@@ -64,7 +64,7 @@ fetch(URL)
       const pTime = document.createElement("p");
       const albumImage = document.createElement("img");
 
-      divPAlbum.classList.add("col-3");
+      divPAlbum.classList.add("col-5");
       divPAsc.classList.add("col-3");
       divPTime.classList.add("col-3");
       divImage.classList.add("col-1");
@@ -72,7 +72,7 @@ fetch(URL)
       pAlbum.classList.add("text-light");
       pTime.classList.add("text-light");
       pAsc.classList.add("text-light");
-      divAlbum.classList.add("row");
+      divAlbum.classList.add("row", "p-2");
       albumImage.classList.add("mx-2");
       albumImage.style = "width:40px";
 
@@ -95,76 +95,6 @@ fetch(URL)
         window.location.href = `../AlbumPage.html?tracklist=${trackListUrl}&albumId=${albumId}`;
       });
     });
-    // list.data.forEach(album => {
-    //   console.log(album.album.title)
-    //   const divAlbum=document.createElement("div");
-    //   const pAlbum=document.createElement("p");
-    //   const pAsc=document.createElement("p");
-    //   const pTime=document.createElement("p");
-
-    //   // pAlbum.textContent=
-
-    // });
-
-    //  <div class="d-flex justify-content-between">
-    //   <p>1 <img src="./assets/imgs/main/image-1.jpg" alt="img" width="50px" /> titolo</p>
-    //   <p>ascolti</p>
-    //   <p>time</p>
-    // </div>
-
-    // list.data.forEach((track, index) => {
-    //   const albumCover = document.getElementById("albumCover");
-    //   albumCover.style.backgroundColor = track.album.md5_image;
-
-    /*    
-      const anchorTrack = document.createElement("a");
-      const divNum = document.createElement("div");
-      const pNum = document.createElement("p");
-      const divTitle = document.createElement("div");
-      const titleTrack = document.createElement("p");
-      const artist = document.createElement("p");
-      const divRipr = document.createElement("div");
-      const pRipr = document.createElement("p");
-      const divMin = document.createElement("div");
-      const pMin = document.createElement("p");
-
-      divNum.classList.add("col-1");
-      divTitle.classList.add("col-3");
-      artist.classList.add("text-secondary");
-      divRipr.classList.add("col-3", "offset-2");
-      pRipr.classList.add("text-secondary");
-      divMin.classList.add("col-3", "d-flex", "justify-content-end");
-      pMin.classList.add("text-secondary");
-
-      pNum.textContent = index + 1;
-      titleTrack.textContent = track.title;
-      artist.textContent = track.artist.name;
-      pRipr.textContent = track.rank;
-      pMin.textContent = track.duration % 60;
-
-      divTitle.appendChild(anchorTrack);
-      anchorTrack.appendChild(titleTrack, artist);
-      divRow.append(divNum, divTitle, divRipr, divMin);
-      divNum.appendChild(pNum);
-      // divTitle.append(titleTrack, artist);
-      divRipr.appendChild(pRipr);
-      divMin.appendChild(pMin);
-
-      anchorTrack.addEventListener("click", (e) => {
-        console.log("ciao");
-        const riproduction = document.getElementById("riproduction");
-
-        const nomeAuthor = document.getElementById("nameAuthor");
-        const nomeBrano = document.getElementById("nameBrano");
-        const imageAuthor = document.getElementById("imageAuthor");
-
-        nomeAuthor.textContent = track.artist.name;
-        nomeBrano.textContent = track.title;
-        imageAuthor.src = track.album.cover;
- */
-    // collegare il bottone al preview, rendere dinamico il botton con play e pausa , controllare artist
-    /*   }); */
-    // });
   })
   .catch((error) => {
     console.error("errore nel caricamento della list", error);

@@ -4,9 +4,8 @@
   box-sizing: border-box;
 }
 
-.text-secondary {
-  color: rgb(137, 137, 137) !important;
-  font-weight: 500;
+a {
+  text-decoration: none;
 }
 
 #albumCover {
