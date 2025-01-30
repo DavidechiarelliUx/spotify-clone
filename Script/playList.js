@@ -7,10 +7,11 @@ let duration = 0;
 //inizializzazione funzione on load
 window.addEventListener("DOMContentLoaded", () => {
   const listTitle = document.getElementById("playListTitle");
-
+  const listTitleSmall = document.getElementById("playListTitleSmall");
   //Titolo dinamico
   const playListTitle = localStorage.getItem("playListTitle");
   listTitle.innerText = playListTitle;
+  listTitleSmall.innerText = playListTitle;
 
   //Variabile per l'indice randomizzato
   let artistID;
@@ -108,12 +109,18 @@ window.addEventListener("DOMContentLoaded", () => {
 
             //Titolo, numero canzoni, durata dinamici
             const totSongNum = document.getElementById("totSongNum");
+            const totSongNumSmall = document.getElementById("totSongNumSmall");
+
             totSongNum.innerHTML = divRow.children.length + " songs" + " • ";
+            totSongNumSmall.innerHTML = divRow.children.length + " songs" + " • ";
 
             duration += songList.data[0].duration;
 
             const totDuration = document.getElementById("totDuration");
             totDuration.innerHTML = "about " + durationConvert(duration) + " minutes";
+
+            const totDurationSmall = document.getElementById("totDurationSmall");
+            totDurationSmall.innerHTML = "about " + durationConvert(duration) + " minutes";
 
             //Funzione per passare alla pagina dell'artista
             artist.addEventListener("click", () => {
