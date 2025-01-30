@@ -27,12 +27,12 @@
                   height="50"
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Spotify_logo_with_text.svg/2560px-Spotify_logo_with_text.svg.png"
                   alt="logo"
-                  class="mt-3"
+                  class="mt-3 ms-3 w-50 h-50"
                 />
-                <ul class="list-group my-4">
-                  <li class="list-group-item border border-0 rounded-0 bg-black ps-2 ms-1">
+                <ul class="list-group my-3">
+                  <li class="list-group-item border border-0 rounded-0 bg-black ps-2 ms-1 d-flex align-content-center">
                     <svg
-                      class="dark:text-white me-1"
+                      class="dark:text-white me-2"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -44,33 +44,34 @@
                         clip-rule="evenodd"
                       />
                     </svg>
-                    <span>Home</span>
+                    <span class="ms-1">Home</span>
                   </li>
                   <li
-                    class="list-group-item border border-0 rounded-0 bg-black"
+                    class="list-group-item border border-0 rounded-0 bg-black d-flex align-content-center"
                     data-bs-toggle="modal"
                     data-bs-target="#searchModal"
                   >
                     <i class="bi bi-search me-3"></i>Cerca
                   </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black">
+                  <li class="list-group-item border border-0 rounded-0 bg-black d-flex align-content-center">
                     <svg
                       data-encore-id="icon"
                       role="img"
                       aria-hidden="true"
-                      class="Svg-sc-ytk21e-0 bneLcE e-9541-icon"
-                      width="24"
-                      height="24"
+                      class="Svg-sc-ytk21e-0 bneLcE e-9541-icon me-2"
+                      width="20"
+                      height="20"
                       fill="white"
                     >
                       <path
                         d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"
                       ></path>
                     </svg>
-                    <span>La tua libreria</span>
+                    <span class="ms-1"> La tua libreria</span>
                   </li>
                 </ul>
-                <ul class="list-group border-bottom">
+
+                <ul class="list-group border-bottom pb-3">
                   <li class="list-group-item border border-0 rounded-0 bg-black">
                     <i class="bi bi-plus-square-fill me-1 fs-4"></i>Crea playlist
                   </li>
@@ -183,7 +184,7 @@
           <div
             class="col px-4 pb-4"
             style="
-              max-height: 800px;
+              max-height: 600px;
               overflow-y: auto;
               background: linear-gradient(0deg, rgba(1, 1, 1, 1) 0%, rgba(63, 63, 63, 0.867) 88%);
             "
