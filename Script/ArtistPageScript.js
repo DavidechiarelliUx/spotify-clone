@@ -170,7 +170,19 @@ fetch(URL)
     console.error("errore nel caricamento della list", error);
   });
 
-  const homePage = document.getElementById("homePage");
-  homePage.addEventListener("click", ()=>{
-    window.location.href="../index.html"
-  })
+const buttonSearch = document.getElementById("buttonSearch");
+
+const search = document.getElementById("inputSearch");
+
+function cercaArtista() {
+  const artistName = search.value;
+  if (artistName) {
+    window.location.href = `./artist.html?autoreId=${artistName}`;
+  } else {
+    console.log("non è stato inserito un nome");
+  }
+}
+
+buttonSearch.addEventListener("click", () => {
+  cercaArtista();
+});
