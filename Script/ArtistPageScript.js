@@ -89,8 +89,8 @@ fetch(URL)
      
       divAlbum.addEventListener("click", ()=> {
         
-        const idAlbum = listAlbum.album.id;
-        window.location.href = `AlbumPage.html?tracklist=${idAlbum}`
+        const idArtist = listAlbum.artist.id;
+        window.location.href = `AlbumPage.html?artistId=${idArtist}`
       })
     });
     // list.data.forEach(album => {
@@ -185,4 +185,22 @@ function cercaArtista() {
 
 buttonSearch.addEventListener("click", () => {
   cercaArtista();
+});
+
+
+// button following : 
+
+const followButton = document.getElementById("buttonFollow");
+
+followButton.addEventListener("click", () => {
+  const artistName = document.getElementById("nameArtist").textContent;
+  const artistImage = document.querySelector("#sectionAlbum img").src; // Prende l'immagine
+
+  let savedArtists = JSON.parse(localStorage.getItem("savedArtists")) || [];
+
+  if (!savedArtists.some((artist) => artist.name === artistName)) {
+    savedArtists.push({ name: artistName, image: artistImage });
+    localStorage.setItem("savedArtists", JSON.stringify(savedArtists));
+  }
+  followButton.textContent="aggiunto a preferiti"
 });

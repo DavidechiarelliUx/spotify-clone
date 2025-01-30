@@ -439,10 +439,9 @@
                 <div id="artistGrid" class="row row-cols-5 justify-content-between mt-2"></div>
               </div>
               <div class="container p-0">
-                <div id="visualizzaTutto" class="row row-cols-5 justify-content-between mt-2" style="display: none">
-                  <!--Card fisse-->
-                  <div class="col">
-                    <div class="card border-0 rounded-3 p-1" style="background-color: #171717">
+                <div id="visualizzaTutto" class="row  mt-2" style="display: none">
+
+                    <!-- <div class="card border-0 rounded-3 p-1" style="background-color: #171717">
                       <div class="m-2">
                         <img
                           src="https://api.deezer.com/artist/1037707/image"
@@ -455,13 +454,20 @@
                         <h5 class="card-title">NF</h5>
                         <p class="text-muted">Didascalia dell'album</p>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
+                <!--Card fisse-->
+                <div class="container">
+                      <h3 class="mt-5">I tuoi Preferiti</h3>
+                    <div class="row mt-2" id="favoritesList"></div>
+                  </div>
+
+                      <!-- qui dentro vengono inseriti i preferiti -->
+                    </div>
               </div>
             </div>
           </div>
-
           <!--Attività Amici-->
           <aside id="aside2" class="col-lg-2 bg-black mt-4 px-4" style="display: none">
             <div class="d-flex justify-content-between align-content-center mb-4">
