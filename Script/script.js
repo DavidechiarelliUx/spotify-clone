@@ -644,3 +644,48 @@ playList6.addEventListener("click", () => {
   localStorage.setItem("playListTitle", "Deep Dive with Ali Abdaal");
   window.location.assign("./playList.html");
 });
+
+
+
+// i tuoi preferiti
+window.addEventListener("DOMContentLoaded", () => {
+  const favoritesContainer = document.getElementById("favoritesList");
+  favoritesContainer.classList.add("row", "gap-3"); 
+
+  const savedArtists = JSON.parse(localStorage.getItem("savedArtists")) || [];
+
+  savedArtists.forEach((artist) => {
+
+    const col = document.createElement("div");
+    const card = document.createElement("div");
+    const img = document.createElement("img");
+    const cardBody = document.createElement("div");
+    const name = document.createElement("h5");
+    const caption = document.createElement("p");
+
+
+    col.classList.add("col-2"); 
+    card.classList.add("card", "border-0");
+    img.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border", "border-5", "border-dark", "rounded-4", "mx-auto");
+    cardBody.classList.add("card-body", "d-flex", "flex-column");
+    name.classList.add("card-title");
+    caption.classList.add("text-muted");
+
+
+    img.src = artist.image;
+    name.textContent = artist.name;
+    caption.textContent = "";
+
+
+    cardBody.appendChild(name);
+    cardBody.appendChild(caption);
+    card.appendChild(img);
+    card.appendChild(cardBody);
+    col.appendChild(card);
+    favoritesContainer.appendChild(col);
+
+    card.addEventListener("click", () => {
+        window.location.href=`artist.html?autoreId=${artist.name}`;
+  });
+})
+})

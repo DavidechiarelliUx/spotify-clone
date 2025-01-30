@@ -1,5 +1,5 @@
 const params = new URLSearchParams(window.location.search);
-const id = params.get("tracklist");
+const id = params.get("artistId");
 
 const URLtracklist = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id}/top?limit=50`;
 
