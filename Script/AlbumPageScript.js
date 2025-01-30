@@ -1,40 +1,126 @@
 const params = new URLSearchParams(window.location.search);
-const tracklist = params.get("track-list");
-const apiUrl = tracklist;
+const id = params.get("artistId");
 
-console.log("Tracklist URL:", tracklist);
-console.log("API URL:", apiUrl);
+const URLtracklist = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id}/top?limit=50`;
 
-fetch(apiUrl)
+let currentAudio = null;
+let currentTrackRow = null;
+
+fetch(URLtracklist)
   .then((response) => {
-    console.log(response);
     if (response.ok) {
       return response.json();
     } else {
-      throw new Error("errore nel caricamento della pagina");
+      throw new Error("Errore nel recupero della tracklist");
     }
   })
+  .then((songList) => {
 
-  .then((listTrack) => {
-    console.log(listTrack);
+
+    const divRow = document.getElementById("trackList");
+    console.log(songList);
+    songList.data.forEach((track, index) => {
+      console.log(track);
+      const divTrackRow = document.createElement("div");
+      divTrackRow.classList.add("row", "track-row");
+      divTrackRow.setAttribute("data-index", index);
+
+      const divNum = document.createElement("div");
+      const pNum = document.createElement("p");
+      const divTitle = document.createElement("div");
+      const anchor = document.createElement("a");
+      const pTitle = document.createElement("p");
+      const pArtist = document.createElement("p");
+      const divRipr = document.createElement("div");
+      const pRipr = document.createElement("p");
+      const divMin = document.createElement("div");
+      const pMin = document.createElement("p");
+      const imageCover = document.createElement("img");
+
+      divNum.classList.add("col-1", "d-flex", "align-items-center");
+      divTitle.classList.add("col-3");
+      pTitle.classList.add("mb-0");
+      pArtist.classList.add("text-secondary");
+      divRipr.classList.add("col-3", "offset-1");
+      pRipr.classList.add("text-secondary");
+      divMin.classList.add("col-3", "d-flex", "justify-content-end");
+      pMin.classList.add("text-secondary");
+      imageCover.classList.add("mb-3", "ms-2", "img-fluid");
+      imageCover.style.maxWidth = "30px";
+
+      pNum.textContent = index + 1;
+      pTitle.textContent = track.title;
+      pArtist.textContent = track.artist.name;
+      pRipr.textContent = track.rank;
+      pMin.textContent = formatDuration(track.duration);
+      imageCover.src = track.album.cover;
+
+      divNum.appendChild(pNum);
+      divNum.appendChild(imageCover);
+      anchor.appendChild(pTitle);
+      anchor.appendChild(pArtist);
+      divTitle.appendChild(anchor);
+      divRipr.appendChild(pRipr);
+      divMin.appendChild(pMin);
+      divTrackRow.appendChild(divNum);
+      divTrackRow.appendChild(divTitle);
+      divTrackRow.appendChild(divRipr);
+      divTrackRow.appendChild(divMin);
+
+      divRow.appendChild(divTrackRow);
+    });
+
+    document.getElementById("trackList").addEventListener("click", (event) => {
+      let trackRow = event.target.closest(".track-row");
+      if (!trackRow) return;
+
+      let trackIndex = trackRow.getAttribute("data-index");
+      let track = songList.data[trackIndex];
+
+      playTrack(track, trackRow);
+    });
   })
-
   .catch((error) => {
-    console.error("API non raggiungibile", error);
+    console.error("Errore nel caricamento della tracklist:", error);
   });
 
-// fetch(apiUrl)
-//   .then((response) => {
-//     console.log(response);
+function playTrack(track, trackRow) {
+  if (currentAudio !== null) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+  }
 
-//     if (response.ok) {
-//       return response.json();
-//     } else {
-//       throw new Error("caricamento della pagina");
-//     }
-//   })
-//   .then((listTrack) => {
-//     console.log(listTrack);
+  if (currentAudio !== null && currentAudio.src === track.preview && !currentAudio.paused) {
+    currentAudio.pause();
+    return;
+  }
+
+  currentAudio = new Audio(track.preview);
+  currentAudio.play();
+
+  if (currentTrackRow !== null) {
+    currentTrackRow.classList.remove("playing");
+  }
+
+  currentTrackRow = trackRow;
+  currentTrackRow.classList.add("playing");
+}
+
+pause.addEventListener("click", () => {
+  if (currentAudio !== null) {
+    if (!currentAudio.paused) {
+      currentAudio.pause();
+    } else {
+      currentAudio.play();
+    }
+  }
+});
+
+function formatDuration(seconds) {
+  const min = Math.floor(seconds / 60);
+  const sec = seconds % 60;
+  return `${min}:${sec.toString().padStart(2, "0")}`;
+}
 
 // const divRow = document.getElementById("track-list");
 // list.data.forEach((track, index) => {
@@ -124,4 +210,21 @@ openAside.addEventListener("click", (e) => {
   e.preventDefault();
 
   aside2.style = "display:block";
+});
+
+const buttonSearch = document.getElementById("buttonSearch");
+
+const search = document.getElementById("inputSearch");
+
+function cercaArtista() {
+  const artistName = search.value;
+  if (artistName) {
+    window.location.href = `./artist.html?autoreId=${artistName}`;
+  } else {
+    console.log("non è stato inserito un nome");
+  }
+}
+
+buttonSearch.addEventListener("click", () => {
+  cercaArtista();
 });

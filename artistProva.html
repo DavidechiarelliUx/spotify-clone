@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Album-Page</title>
+    <title>Artist-Page</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,8 +12,7 @@
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/circular-font.css" />
-    <link rel="stylesheet" href="assets/css/style-album.css" />
+    <link rel="stylesheet" href="assets/css/style-artist.css" />
   </head>
   <body data-bs-theme="dark" class="bg-black">
     <main>
@@ -77,7 +76,6 @@
                       <span class="ms-1"> La tua libreria</span>
                     </li></a
                   >
-
                 </ul>
 
                 <ul class="list-group border-bottom pb-3">
@@ -192,11 +190,10 @@
           <div
             class="col px-0"
             style="
-              max-height: 600px;
+              max-height: 900px;
               overflow-y: auto;
               background: linear-gradient(0deg, rgba(1, 1, 1, 1) 0%, rgba(63, 63, 63, 0.867) 88%);
             "
-            id="albumCover"
           >
             <div id="barra-superiore-md" class="container my-3">
               <i class="bi bi-arrow-left fs-1"></i>
@@ -204,17 +201,17 @@
             <div id="barra-superiore-lg" class="container px-4">
               <div class="d-flex justify-content-end my-4">
                 <!--<div class="align-content-center">
-                <a href="#" style="text-decoration: none">
-                  <button class="border border-0 bg-black rounded-5">
-                    <i class="bi bi-chevron-left bg-black"></i>
-                  </button>
-                </a>
-                <a href="#" style="text-decoration: none">
-                  <button class="border border-0 bg-black rounded-5">
-                    <i class="bi bi-chevron-right"></i>
-                  </button>
-                </a>
-              </div>-->
+              <a href="#" style="text-decoration: none">
+                <button class="border border-0 bg-black rounded-5">
+                  <i class="bi bi-chevron-left bg-black"></i>
+                </button>
+              </a>
+              <a href="#" style="text-decoration: none">
+                <button class="border border-0 bg-black rounded-5">
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+              </a>
+            </div>-->
                 <div class="dropdown">
                   <button
                     class="btn btn-secondary bg-black border-0 ps-1 py-1 dropdown-toggle rounded-pill"
@@ -239,152 +236,89 @@
                 </div>
               </div>
             </div>
-            <!--Card album-->
-            <div id="card-album-md" class="container">
-              <div class="text-center">
-                <img
-                  src="./assets/imgs/main/image-10.jpg"
-                  class="img-fluid"
-                  style="object-fit: cover"
-                  alt="img-album"
-                />
-              </div>
-              <div class="d-flex flex-row my-3">
-                <div class="mt-3">
-                  <h1 class="card-title fw-semibold" id="nomeAlbum">Nome album</h1>
-                  <div class="d-flex flex-inline align-items-center">
-                    <div style="width: 2rem">
-                      <img
-                        src="assets/imgs/main/image-14.jpg"
-                        class="img-fluid rounded-circle"
-                        style="object-fit: cover"
-                        alt="foto"
+            <!--Sezione nome artista-->
+            <div id="nome-artista-md">
+              <div style="background-image: url(${bgimg})"></div>
+              <div class="container px-4">
+                <div class="col-md-6">
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="#3D91F4"
+                      class="bi bi-patch-check-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"
                       />
-                    </div>
-                    <p class="mt-3 ms-3">Nome artista</p>
+                    </svg>
+                    Artista verificato
                   </div>
-                  <div class="d-flex flex-inline text-secondary">
-                    <p>Album •</p>
-                    <p class="ms-2">Anno</p>
-                  </div>
+                  <h1 class="display-3 w-bold" id="nameArtist"></h1>
+                  <p id="ascoltatoriMensili"></p>
                 </div>
               </div>
-            </div>
-            <div id="card-album-lg" class="container">
-              <div class="card mt-2 mb-4 border-0" style="background: none">
-                <div class="row g-0">
-                  <div class="col-3 p-4 align-content-center">
-                    <img
-                      src="./assets/imgs/main/image-10.jpg"
-                      class="img-fluid rounded-start"
-                      style="object-fit: cover"
-                      alt="img-album"
-                    />
-                  </div>
-                  <div class="col-9 align-content-center">
-                    <div class="card-body">
-                      <p>Album</p>
-                      <h1 class="card-title display-5 fw-bold">Nome Album</h1>
-                      <div class="d-flex flex-inline mt-5">
-                        <p class="me-2">Pinguini tattici</p>
-                        <p class="me-2">2017</p>
-                        <p class="me-2">12 brani</p>
-                        <p class="me-2">minuti</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--Container Brani-->
-            <div id="container-brani-md" class="container">
-              <div class="d-flex align-items-center justify-content-between">
-                <div class="d-flex align-items-center">
-                  <button class="border-0 rounded-circle fs-2 pe-2 ps-0 bg-transparent">
-                    <i class="bi bi-heart"></i>
+              <!--Container Album-->
+              <div class="container p-4" style="background-color: rgba(0, 0, 0, 0.226)">
+                <div class="btn-group">
+                  <button class="border-0 rounded-circle text-black bg-success fs-3 px-2">
+                    <i class="bi bi-play-fill"></i>
                   </button>
-                  <button
-                    type="button"
-                    class="text-secondary border-0 rounded-circle fs-3 px-2 bg-transparent px-2 mx-2"
-                  >
-                    <i class="bi bi-arrow-down-circle"></i>
-                  </button>
+                  <button type="button" class="border border-light rounded bg-transparent px-4 mx-3">FOLLOWING</button>
                   <button type="button" class="border-0 bg-transparent text-light">
-                    <i class="bi bi-three-dots-vertical fs-2 text-secondary"></i>
+                    <i class="bi bi-three-dots fs-3 text-secondary"></i>
                   </button>
                 </div>
-                <div class="d-flex align-items-center">
-                  <i class="bi bi-shuffle mx-3 fs-2 text-secondary"></i>
-                  <button class="btn btn-0 pe-0">
-                    <i class="bi-play-circle-fill display-4" style="color: #1bd760"></i>
-                  </button>
+                <div class="mt-4">
+                  <h3 class="mb-4">Popolari</h3>
+                  <div id="sectionAlbum"></div>
                 </div>
-              </div>
-
-              <div class="mt-4 row" id="track-list">
-                <!-- <div class="col-1">
-                    <p>1</p>
-                </div>
-                <div class="col-1">
-                  <h5>titolo</h5>
-                  <p class="text-secondary">Artista</p>
-                </div> 
-                <div class="col-3 offset-4">
-                    <p class="text-secondary">48384</p>
-                </div>
-                 <div class="col-3 d-flex justify-content-end">
-                    <p class="text-secondary">minuti</p>
-                </div> -->
               </div>
             </div>
-            <div id="container-brani-lg" class="container p-4" style="background-color: rgba(0, 0, 0, 0.226)">
-              <div class="ms-3">
-                <button class="border-0 rounded-circle text-black bg-success fs-3 px-2">
-                  <i class="bi bi-play-fill"></i>
-                </button>
-                <button class="border-0 rounded-circle fs-3 px-2 bg-transparent ps-2 ms-3">
-                  <i class="bi bi-heart"></i>
-                </button>
-                <button type="button" class="border-0 rounded-circle fs-3 px-2 bg-transparent px-2 mx-2">
-                  <i class="bi bi-arrow-down-circle"></i>
-                </button>
-                <button type="button" class="border-0 bg-transparent text-light">
-                  <i class="bi bi-three-dots fs-3 text-secondary"></i>
-                </button>
-              </div>
-              <div class="m-4 row border-bottom">
-                <div class="col-1 d-flex flex-inline">
-                  <p>#</p>
-                  <p class="text-secondary ms-2">Image</p>
-                </div>
-                
-                <div class="col-1">
-                  <p class="text-secondary">titolo</p>
-                </div>
-                <div class="col-3 offset-3">
-                  <p class="text-secondary">Riproduzione</p>
-                </div>
-                <div class="col-3 d-flex justify-content-end">
-                  <p class="text-secondary"><i class="bi bi-clock"></i></p>
+            <div id="nome-artista-lg">
+              <div style="background-image: url(${bgimg})"></div>
+              <div class="container px-4">
+                <div class="col-md-6">
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="#3D91F4"
+                      class="bi bi-patch-check-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"
+                      />
+                    </svg>
+                    Artista verificato
+                  </div>
+                  <h1 class="display-3 w-bold" id="nameArtist"></h1>
+                  <p id="ascoltatoriMensili"></p>
                 </div>
               </div>
-              <div class="m-4 row" id="trackList">
-                <!-- <div class="col-1">
-                    <p>1</p>
+              <!--Container Album-->
+              <div class="container p-4" style="background-color: rgba(0, 0, 0, 0.226)">
+                <div class="btn-group">
+                  <button class="border-0 rounded-circle text-black bg-success fs-3 px-2">
+                    <i class="bi bi-play-fill"></i>
+                  </button>
+                  <button type="button" class="border border-light rounded bg-transparent px-4 mx-3">FOLLOWING</button>
+                  <button type="button" class="border-0 bg-transparent text-light">
+                    <i class="bi bi-three-dots fs-3 text-secondary"></i>
+                  </button>
                 </div>
-                <div class="col-1">
-                  <h5>titolo</h5>
-                  <p class="text-secondary">Artista</p>
-                </div> 
-                <div class="col-3 offset-4">
-                    <p class="text-secondary">48384</p>
+                <div class="mt-4">
+                  <h3 class="mb-4">Popolari</h3>
+                  <div id="sectionAlbum"></div>
                 </div>
-                 <div class="col-3 d-flex justify-content-end">
-                    <p class="text-secondary">minuti</p>
-                </div> -->
               </div>
             </div>
           </div>
+
           <!--Attività Amici-->
           <aside id="aside2" class="col-lg-2 bg-black mt-4 px-4">
             <div class="d-flex justify-content-between align-content-center mb-4">
@@ -456,7 +390,7 @@
     </main>
 
     <!--Media Player-->
-    <footer id="barra-play-md" class="sticky-bottom">
+    <footer id="barra-play-md" class="fixed-bottom">
       <div>
         <div class="container bg-dark rounded-2 p-4 d-flex justify-content-between align-items-center">
           <h5 class="m-0">Titolo canzone</h5>
@@ -508,7 +442,7 @@
         </div>
       </div>
     </footer>
-    <footer id="barra-play-lg" class="sticky-bottom">
+    <footer id="barra-play-lg" class="fixed-bottom">
       <div
         class="d-flex justify-content-between align-items-center border-top pb-3 px-3"
         style="background-color: #181818"
@@ -532,7 +466,7 @@
           <div class="d-flex align-items-center justify-content-center">
             <i class="bi bi-shuffle mx-3 fs-5" style="color: #1bd760"></i>
             <i class="fa-solid fa-backward-step mx-3 fs-5"></i>
-            <button class="btn btn-0" id="pause"><i class="bi-play-circle-fill fs-2"></i></button>
+            <button class="btn btn-0"><i class="bi-play-circle-fill fs-2"></i></button>
             <i class="fa-solid fa-forward-step mx-3 fs-5"></i>
             <i class="fa-solid fa-repeat mx-3 fs-5" style="color: #1bd760"></i>
           </div>
@@ -570,6 +504,7 @@
         </div>
       </div>
     </footer>
+
     <!--Inizio modal-cerca-->
     <div id="searchModal" class="modal fade">
       <div class="modal-dialog">
@@ -700,11 +635,13 @@
       </div>
     </div>
     <!--Fine modal-cerca-->
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="./Script/AlbumPageScript.js"></script>
+    <script src="./Script/ArtistPageScriptProva.js"></script>
+    <script src="./Script/cerca.js"></script>
   </body>
 </html>

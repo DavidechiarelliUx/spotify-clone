@@ -88,11 +88,9 @@ fetch(URL)
       
      
       divAlbum.addEventListener("click", ()=> {
-        const trackListUrl = listAlbum.album.tracklist;
-        const albumId = listAlbum.album.id;
-        console.log(albumId);
-        window.location.href = `../AlbumPage.html?tracklist=${trackListUrl}&albumId=${albumId}`;
-       
+        
+        const idArtist = listAlbum.artist.id;
+        window.location.href = `AlbumPage.html?artistId=${idArtist}`
       })
     });
     // list.data.forEach(album => {
@@ -172,7 +170,37 @@ fetch(URL)
     console.error("errore nel caricamento della list", error);
   });
 
-  const homePage = document.getElementById("homePage");
-  homePage.addEventListener("click", ()=>{
-    window.location.href="../index.html"
-  })
+const buttonSearch = document.getElementById("buttonSearch");
+
+const search = document.getElementById("inputSearch");
+
+function cercaArtista() {
+  const artistName = search.value;
+  if (artistName) {
+    window.location.href = `./artist.html?autoreId=${artistName}`;
+  } else {
+    console.log("non è stato inserito un nome");
+  }
+}
+
+buttonSearch.addEventListener("click", () => {
+  cercaArtista();
+});
+
+
+// button following : 
+
+const followButton = document.getElementById("buttonFollow");
+
+followButton.addEventListener("click", () => {
+  const artistName = document.getElementById("nameArtist").textContent;
+  const artistImage = document.querySelector("#sectionAlbum img").src; // Prende l'immagine
+
+  let savedArtists = JSON.parse(localStorage.getItem("savedArtists")) || [];
+
+  if (!savedArtists.some((artist) => artist.name === artistName)) {
+    savedArtists.push({ name: artistName, image: artistImage });
+    localStorage.setItem("savedArtists", JSON.stringify(savedArtists));
+  }
+  followButton.textContent="aggiunto a preferiti"
+});

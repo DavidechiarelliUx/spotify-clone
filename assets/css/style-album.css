@@ -4,9 +4,12 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 .text-secondary {
-  color: rgb(137, 137, 137) !important;
-  font-weight: 500;
+  color: rgb(135, 135, 135) !important;
 }
 
 #albumCover {
@@ -28,7 +31,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+/**@media screen and (max-width: 768px) {
   aside,
   #card-album-lg,
   #container-brani-lg,
@@ -45,4 +48,4 @@
   #barra-superiore-md {
     display: none;
   }
-}
+}**/
