@@ -134,6 +134,8 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
     col6.appendChild(albumBody);
     albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
     btnGroup.append(playBtn, saveBtn, dotBtn);
+
+    playBtn.addEventListener("click", () => {});
   })
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
