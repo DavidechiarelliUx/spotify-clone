@@ -23,39 +23,85 @@
           <aside id="aside" class="col-lg-2 rounded-0 bg-black" style="height: 100vh">
             <div class="sticky-top">
               <div class="sticky-top bg-black mb-4">
-                <ul class="list-group my-4">
-                  <li class="list-group-item border border-0 rounded-0 bg-black ps-2 ms-1">
-                    <svg
-                      class="dark:text-white me-1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      fill="white"
+                <img
+                  height="50"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Spotify_logo_with_text.svg/2560px-Spotify_logo_with_text.svg.png"
+                  alt="logo"
+                  class="mt-3 ms-3 w-50 h-50"
+                />
+                <ul class="list-group my-3">
+                  <a href="./index.html">
+                    <li
+                      class="list-group-item border border-0 rounded-0 bg-black ps-2 ms-1 d-flex align-content-center"
                     >
-                      <path
-                        fill-rule="evenodd"
-                        d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    Home
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black">
-                    <i class="bi bi-search me-3"></i>Cerca
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black">
-                    <i class="bi bi-collection me-3"></i>La tua libreria
-                  </li>
+                      <svg
+                        class="dark:text-white me-2"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="white"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                      <span class="ms-1">Home</span>
+                    </li></a
+                  >
+                  <a href="#"
+                    ><li
+                      class="list-group-item border border-0 rounded-0 bg-black d-flex align-content-center"
+                      data-bs-toggle="modal"
+                      data-bs-target="#searchModal"
+                    >
+                      <i class="bi bi-search me-3"></i>Cerca
+                    </li></a
+                  >
+                  <a href=""
+                    ><li class="list-group-item border border-0 rounded-0 bg-black d-flex align-content-center">
+                      <svg
+                        data-encore-id="icon"
+                        role="img"
+                        aria-hidden="true"
+                        class="Svg-sc-ytk21e-0 bneLcE e-9541-icon me-2"
+                        width="20"
+                        height="20"
+                        fill="white"
+                      >
+                        <path
+                          d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"
+                        ></path>
+                      </svg>
+                      <span class="ms-1"> La tua libreria</span>
+                    </li></a
+                  >
                 </ul>
-                <ul class="list-group">
+
+                <ul class="list-group border-bottom pb-3">
                   <li class="list-group-item border border-0 rounded-0 bg-black">
-                    <i class="bi bi-plus-square-fill me-3"></i>Crea playlist
+                    <i class="bi bi-plus-square-fill me-1 fs-4"></i>Crea playlist
+                  </li>
+                  <li class="list-group-item border border-0 bg-black">
+                    <img
+                      class="rounded-1"
+                      height="24"
+                      width="24"
+                      src="https://misc.scdn.co/liked-songs/liked-songs-300.jpg"
+                      alt="Brani che ti piacciono"
+                    />
+                    Brani che ti piacciono
                   </li>
                   <li class="list-group-item border border-0 rounded-0 bg-black">
-                    <i class="bi bi-bookmark-heart-fill me-3"></i>Brani che ti piacciono
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black">
-                    <i class="bi bi-bookmark-fill me-3"></i>I tuoi episodi
+                    <span
+                      ><img
+                        height="24"
+                        width="24"
+                        src="./assets/imgs/search/Schermata 2025-01-30 alle 10.28.08 (2).png"
+                        alt=""
+                    /></span>
+                    I tuoi episodi
                   </li>
                 </ul>
               </div>
@@ -143,80 +189,144 @@
           </aside>
           <!-- contenuto principale-->
           <div
-            class="col px-4"
+            class="col px-0"
             style="
-              max-height: 900px;
+              max-height: 600px;
               overflow-y: auto;
               background: linear-gradient(0deg, rgba(1, 1, 1, 1) 0%, rgba(63, 63, 63, 0.867) 88%);
             "
             id="albumCover"
           >
-            <div class="d-flex justify-content-end my-4">
-              <!--<div class="align-content-center">
-                <a href="#" style="text-decoration: none">
-                  <button class="border border-0 bg-black rounded-5">
-                    <i class="bi bi-chevron-left bg-black"></i>
+            <div id="barra-superiore-md" class="container my-3">
+              <i class="bi bi-arrow-left fs-1"></i>
+            </div>
+            <div id="barra-superiore-lg" class="container px-4">
+              <div class="d-flex justify-content-end my-4">
+                <!--<div class="align-content-center">
+                  <a href="#" style="text-decoration: none">
+                    <button class="border border-0 bg-black rounded-5">
+                      <i class="bi bi-chevron-left bg-black"></i>
+                    </button>
+                  </a>
+                  <a href="#" style="text-decoration: none">
+                    <button class="border border-0 bg-black rounded-5">
+                      <i class="bi bi-chevron-right"></i>
+                    </button>
+                  </a>
+                </div>-->
+                <div class="dropdown">
+                  <button
+                    class="btn btn-secondary bg-black border-0 ps-1 py-1 dropdown-toggle rounded-pill"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/02b4d76c-e4da-4cbc-872c-1bf9ac49bafd/anim=false,width=450/ComfyUI_00289_.jpeg"
+                      style="height: 40px"
+                      class="rounded-5 me-2"
+                      alt="avatar"
+                    />
+                    Lidia Nautiluss...
                   </button>
-                </a>
-                <a href="#" style="text-decoration: none">
-                  <button class="border border-0 bg-black rounded-5">
-                    <i class="bi bi-chevron-right"></i>
-                  </button>
-                </a>
-              </div>-->
-              <div class="dropdown">
-                <button
-                  class="btn btn-secondary bg-black border-0 ps-1 py-1 dropdown-toggle rounded-pill"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img
-                    src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/02b4d76c-e4da-4cbc-872c-1bf9ac49bafd/anim=false,width=450/ComfyUI_00289_.jpeg"
-                    style="height: 40px"
-                    class="rounded-5 me-2"
-                    alt="avatar"
-                  />
-                  Lidia Nautiluss...
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#">Profilo</a></li>
-                  <li><a class="dropdown-item" href="#">Preferenze</a></li>
-                  <li><a class="dropdown-item" id="openAside" href="#">Attività Amici</a></li>
-                  <li><a class="dropdown-item" href="#">Esci</a></li>
-                </ul>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Profilo</a></li>
+                    <li><a class="dropdown-item" href="#">Preferenze</a></li>
+                    <li><a class="dropdown-item" id="openAside" href="#">Attività Amici</a></li>
+                    <li><a class="dropdown-item" href="#">Esci</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
             <!--Card album-->
-            <div
-              class="card mt-2 mb-4 border-0"
-              style="
-                background: rgb(1, 1, 1);
-                background: linear-gradient(34deg, rgba(1, 1, 1, 1) 0%, rgba(29, 29, 29, 0.8674063375350141) 88%);
-              "
-            >
-              <div class="row g-0">
-                <div class="col-3 p-4 align-content-center">
-                  <!--<div id="playListFoto" class="row row-cols-2"></div>-->
-                  <img
-                    src="./assets/imgs/main/image-10.jpg"
-                    class="img-fluid rounded-start"
-                    style="object-fit: cover"
-                    alt="img-album"
-                  />
+            <div id="card-album-md" class="container">
+              <div class="text-center">
+                <img
+                  src="./assets/imgs/main/image-10.jpg"
+                  class="img-fluid"
+                  style="object-fit: cover"
+                  alt="img-album"
+                />
+              </div>
+              <div class="d-flex flex-row my-3">
+                <div class="mt-3">
+                  <h1 class="card-title fw-semibold">Nome Playlist</h1>
+                  <div class="d-flex flex-inline align-items-center"></div>
+                  <div class="d-flex flex-inline text-secondary">
+                    <p>Album •</p>
+                    <p class="ms-2">Anno</p>
+                  </div>
                 </div>
-                <div class="col-6 align-content-center">
-                  <div class="card-body">
-                    <p>Your Playlist</p>
-                    <h1 id="playListTitle" class="card-title fw-bold"></h1>
-                    <div class="d-flex flex-inline mt-5">
-                      <p id="totSongNum" class="me-2"></p>
-                      <p id="totDuration" class="me-2"></p>
+              </div>
+            </div>
+            <div id="card-album-lg" class="container">
+              <div class="card mt-2 mb-4 border-0" style="background: none">
+                <div class="row g-0">
+                  <div class="col-3 p-4 align-content-center">
+                    <!--<div id="playListFoto" class="row row-cols-2"></div>-->
+                    <img
+                      src="./assets/imgs/main/image-10.jpg"
+                      class="img-fluid rounded-start"
+                      style="object-fit: cover"
+                      alt="img-album"
+                    />
+                  </div>
+                  <div class="col-9 align-content-center">
+                    <div class="card-body">
+                      <p>Your Playlist</p>
+                      <h1 id="playListTitle" class="card-title display-5 fw-bold"></h1>
+                      <div class="d-flex flex-inline mt-5">
+                        <p id="totSongNum" class="me-2"></p>
+                        <p id="totDuration" class="me-2"></p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="container mb-3 ms-2">
+            </div>
+            <!--Container Brani-->
+            <div id="container-brani-md" class="container">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <button class="border-0 rounded-circle fs-2 pe-2 ps-0 bg-transparent">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="text-secondary border-0 rounded-circle fs-3 px-2 bg-transparent px-2 mx-2"
+                  >
+                    <i class="bi bi-arrow-down-circle"></i>
+                  </button>
+                  <button type="button" class="border-0 bg-transparent text-light">
+                    <i class="bi bi-three-dots-vertical fs-2 text-secondary"></i>
+                  </button>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-shuffle mx-3 fs-2 text-secondary"></i>
+                  <button class="btn btn-0 pe-0">
+                    <i class="bi-play-circle-fill display-4" style="color: #1bd760"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="mt-4 row" id="track-list">
+                <!-- <div class="col-1">
+                    <p>1</p>
+                </div>
+                <div class="col-1">
+                  <h5>titolo</h5>
+                  <p class="text-secondary">Artista</p>
+                </div> 
+                <div class="col-3 offset-4">
+                    <p class="text-secondary">48384</p>
+                </div>
+                 <div class="col-3 d-flex justify-content-end">
+                    <p class="text-secondary">minuti</p>
+                </div> -->
+              </div>
+            </div>
+            <div id="container-brani-lg" class="container p-4" style="background-color: rgba(0, 0, 0, 0.226)">
+              <div class="ms-3">
                 <button class="border-0 rounded-circle text-black bg-success fs-3 px-2">
                   <i class="bi bi-play-fill"></i>
                 </button>
@@ -230,9 +340,7 @@
                   <i class="bi bi-three-dots fs-3 text-secondary"></i>
                 </button>
               </div>
-            </div>
-            <div class="container">
-              <div class="mt-5 row border-bottom">
+              <div class="m-4 row border-bottom">
                 <div class="col-1">
                   <p>#</p>
                 </div>
@@ -447,7 +555,6 @@
         </div>
       </div>
     </footer>
-    </div>
 
     <!--Inizio modal-cerca-->
     <div id="searchModal" class="modal fade">
