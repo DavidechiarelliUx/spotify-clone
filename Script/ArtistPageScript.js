@@ -88,11 +88,9 @@ fetch(URL)
       
      
       divAlbum.addEventListener("click", ()=> {
-        const trackListUrl = listAlbum.album.tracklist;
-        const albumId = listAlbum.album.id;
-        console.log(albumId);
-        window.location.href = `../AlbumPage.html?tracklist=${trackListUrl}&albumId=${albumId}`;
-       
+        
+        const idAlbum = listAlbum.album.id;
+        window.location.href = `AlbumPage.html?tracklist=${idAlbum}`
       })
     });
     // list.data.forEach(album => {

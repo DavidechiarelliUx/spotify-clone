@@ -23,6 +23,31 @@
           <aside id="aside" class="col-lg-2 rounded-0 bg-black" style="height: 100vh">
             <div class="sticky-top">
               <div class="sticky-top bg-black mb-4">
+
+                <ul class="list-group my-4">
+                  <li class="list-group-item border border-0 rounded-0 bg-black ps-2 ms-1" id="homePage">
+                    <svg
+                      class="dark:text-white me-1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="white"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Home
+                  </li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black" id="buttonSearch">
+                    <i class="bi bi-search me-3"></i>Cerca
+                  </li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black">
+                    <i class="bi bi-collection me-3"></i>La tua libreria
+                  </li>
+
                 <img
                   height="50"
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Spotify_logo_with_text.svg/2560px-Spotify_logo_with_text.svg.png"
@@ -77,6 +102,7 @@
                       <span class="ms-1"> La tua libreria</span>
                     </li></a
                   >
+
                 </ul>
 
                 <ul class="list-group border-bottom pb-3">
@@ -250,7 +276,7 @@
               </div>
               <div class="d-flex flex-row my-3">
                 <div class="mt-3">
-                  <h1 class="card-title fw-semibold">Nome album</h1>
+                  <h1 class="card-title fw-semibold" id="nomeAlbum">Nome album</h1>
                   <div class="d-flex flex-inline align-items-center">
                     <div style="width: 2rem">
                       <img
@@ -352,20 +378,22 @@
                 </button>
               </div>
               <div class="m-4 row border-bottom">
-                <div class="col-1">
+                <div class="col-1 d-flex flex-inline">
                   <p>#</p>
+                  <p class="text-secondary ms-2">Image</p>
                 </div>
+                
                 <div class="col-1">
                   <p class="text-secondary">titolo</p>
                 </div>
-                <div class="col-3 offset-4">
+                <div class="col-3 offset-3">
                   <p class="text-secondary">Riproduzione</p>
                 </div>
                 <div class="col-3 d-flex justify-content-end">
                   <p class="text-secondary"><i class="bi bi-clock"></i></p>
                 </div>
               </div>
-              <div class="m-4 row" id="track-list">
+              <div class="m-4 row" id="trackList">
                 <!-- <div class="col-1">
                     <p>1</p>
                 </div>
@@ -529,7 +557,7 @@
           <div class="d-flex align-items-center justify-content-center">
             <i class="bi bi-shuffle mx-3 fs-5" style="color: #1bd760"></i>
             <i class="fa-solid fa-backward-step mx-3 fs-5"></i>
-            <button class="btn btn-0"><i class="bi-play-circle-fill fs-2"></i></button>
+            <button class="btn btn-0" id="pause"><i class="bi-play-circle-fill fs-2"></i></button>
             <i class="fa-solid fa-forward-step mx-3 fs-5"></i>
             <i class="fa-solid fa-repeat mx-3 fs-5" style="color: #1bd760"></i>
           </div>
