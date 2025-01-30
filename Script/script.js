@@ -23,7 +23,7 @@ visualizzabtn.addEventListener("click", () => {
     visualizzaTutto.style.display = "none";
   }
 });
-
+//OASIS
 fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
   .then((response) => {
     console.log(response);
@@ -140,7 +140,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
   });
-
+//CARIBOU
 fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=caribou")
   .then((response) => {
     console.log(response);
@@ -255,7 +255,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=caribou")
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
   });
-
+//M83
 fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=m83")
   .then((response) => {
     console.log(response);
@@ -376,7 +376,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=m83")
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
   });
-
+//MYTHANDROID
 fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=mythandroid")
   .then((response) => {
     console.log(response);
@@ -493,7 +493,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=mythandroid")
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
   });
-
+//QUEEN
 fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
   .then((response) => {
     console.log(response);
