@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 .text-secondary {
   color: rgb(137, 137, 137) !important;
   font-weight: 500;
