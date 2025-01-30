@@ -49,7 +49,16 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
 
     col.classList.add("col");
     artistcard.classList.add("card", "border-0");
-    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border", "border-5", "border-dark", "rounded-4", "mx-auto");
+    cardImg.classList.add(
+      "card-img-top",
+      "img-fluid",
+      "img-thumbnail",
+      "border",
+      "border-5",
+      "border-dark",
+      "rounded-4",
+      "mx-auto"
+    );
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     cardTitle.classList.add("card-title");
     cardText.classList.add("text-muted");
@@ -89,7 +98,17 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
     albumText.classList.add("card-text");
     btnGroup.classList.add("btn-group");
     playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add("badge", "rounded-pill", "border", "border-1", "border-light", "py-3", "px-4", "mx-2", "bg-black");
+    saveBtn.classList.add(
+      "badge",
+      "rounded-pill",
+      "border",
+      "border-1",
+      "border-light",
+      "py-3",
+      "px-4",
+      "mx-2",
+      "bg-black"
+    );
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
     albumImg.src = album.cover;
@@ -145,7 +164,16 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=caribou")
 
     col.classList.add("col");
     artistcard.classList.add("card", "border-0");
-    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border", "border-5", "border-dark", "rounded-4", "mx-auto");
+    cardImg.classList.add(
+      "card-img-top",
+      "img-fluid",
+      "img-thumbnail",
+      "border",
+      "border-5",
+      "border-dark",
+      "rounded-4",
+      "mx-auto"
+    );
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     cardTitle.classList.add("card-title");
     cardText.classList.add("text-muted");
@@ -185,7 +213,17 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=caribou")
     albumText.classList.add("card-text");
     btnGroup.classList.add("btn-group");
     playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add("badge", "rounded-pill", "border", "border-1", "border-light", "py-3", "px-4", "mx-2", "bg-black");
+    saveBtn.classList.add(
+      "badge",
+      "rounded-pill",
+      "border",
+      "border-1",
+      "border-light",
+      "py-3",
+      "px-4",
+      "mx-2",
+      "bg-black"
+    );
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
     albumImg.src = album.cover;
@@ -245,7 +283,16 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=m83")
 
     col.classList.add("col");
     artistcard.classList.add("card", "border-0");
-    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border", "border-5", "border-dark", "rounded-4", "mx-auto");
+    cardImg.classList.add(
+      "card-img-top",
+      "img-fluid",
+      "img-thumbnail",
+      "border",
+      "border-5",
+      "border-dark",
+      "rounded-4",
+      "mx-auto"
+    );
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     cardTitle.classList.add("card-title");
     cardText.classList.add("text-muted");
@@ -287,7 +334,17 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=m83")
     albumText.classList.add("card-text");
     btnGroup.classList.add("btn-group");
     playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add("badge", "rounded-pill", "border", "border-1", "border-light", "py-3", "px-4", "mx-2", "bg-black");
+    saveBtn.classList.add(
+      "badge",
+      "rounded-pill",
+      "border",
+      "border-1",
+      "border-light",
+      "py-3",
+      "px-4",
+      "mx-2",
+      "bg-black"
+    );
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
     albumImg.src = album.cover;
@@ -345,7 +402,16 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=mythandroid")
 
     col.classList.add("col");
     artistcard.classList.add("card", "border-0");
-    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border", "border-5", "border-dark", "rounded-4", "mx-auto");
+    cardImg.classList.add(
+      "card-img-top",
+      "img-fluid",
+      "img-thumbnail",
+      "border",
+      "border-5",
+      "border-dark",
+      "rounded-4",
+      "mx-auto"
+    );
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     cardTitle.classList.add("card-title");
     cardText.classList.add("text-muted");
@@ -385,7 +451,17 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=mythandroid")
     albumText.classList.add("card-text");
     btnGroup.classList.add("btn-group");
     playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add("badge", "rounded-pill", "border", "border-1", "border-light", "py-3", "px-4", "mx-2", "bg-black");
+    saveBtn.classList.add(
+      "badge",
+      "rounded-pill",
+      "border",
+      "border-1",
+      "border-light",
+      "py-3",
+      "px-4",
+      "mx-2",
+      "bg-black"
+    );
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
     albumImg.src = album.cover;
@@ -430,7 +506,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
     console.log(list);
 
     const artist = list.data[0].artist;
-    const album = list.data[1].album;
+    const album = list.data[3].album;
 
     const artistGrid = document.getElementById("artistGrid");
 
@@ -443,7 +519,16 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
 
     col.classList.add("col");
     artistcard.classList.add("card", "border-0");
-    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border", "border-5", "border-dark", "rounded-4", "mx-auto");
+    cardImg.classList.add(
+      "card-img-top",
+      "img-fluid",
+      "img-thumbnail",
+      "border",
+      "border-5",
+      "border-dark",
+      "rounded-4",
+      "mx-auto"
+    );
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     cardTitle.classList.add("card-title");
     cardText.classList.add("text-muted");
@@ -483,7 +568,17 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
     albumText.classList.add("card-text");
     btnGroup.classList.add("btn-group");
     playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add("badge", "rounded-pill", "border", "border-1", "border-light", "py-3", "px-4", "mx-2", "bg-black");
+    saveBtn.classList.add(
+      "badge",
+      "rounded-pill",
+      "border",
+      "border-1",
+      "border-light",
+      "py-3",
+      "px-4",
+      "mx-2",
+      "bg-black"
+    );
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
     albumImg.src = album.cover;
