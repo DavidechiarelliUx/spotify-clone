@@ -13,9 +13,38 @@ window.addEventListener("DOMContentLoaded", () => {
   listTitle.innerText = playListTitle;
   listTitleSmall.innerText = playListTitle;
 
+  let artistFotoIndex;
+  const playListFoto = document.getElementById("playListFoto");
+  for (let i = 0; i < 4; i++) {
+    artistFotoIndex = Math.floor(Math.random() * 200);
+    console.log(artistFotoIndex);
+
+    fetch(URL + artistFotoIndex)
+      .then((response) => {
+        console.log(response);
+
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Fetch non andato a buon fine");
+        }
+      })
+      .then((artista) => {
+        console.log(artista);
+
+        const imgContainer = document.createElement("img");
+        imgContainer.classList.add("img-fluid", "px-0");
+        imgContainer.src = artista.picture;
+        playListFoto.appendChild(imgContainer);
+      })
+      .catch((error) => {
+        console.error("errore nel caricamento della list", error);
+      });
+  }
+
   //Variabile per l'indice randomizzato
   let artistID;
-  //const playListFoto = document.getElementById("playListFoto");
+
   const divRow = document.getElementById("track-list");
   for (let i = 0; i < 10; i++) {
     artistID = Math.floor(Math.random() * 200);
