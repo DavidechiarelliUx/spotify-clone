@@ -13,7 +13,9 @@ window.addEventListener("DOMContentLoaded", () => {
   listTitle.innerText = playListTitle;
   listTitleSmall.innerText = playListTitle;
 
+  //Variabile per math random
   let artistFotoIndex;
+  //Creazione funzione per foto dinamica dell'album
   const playListFoto = document.getElementById("playListFoto");
   for (let i = 0; i < 4; i++) {
     artistFotoIndex = Math.floor(Math.random() * 200);
@@ -44,7 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   //Variabile per l'indice randomizzato
   let artistID;
-
+  //Funzione per creare random playlist
   const divRow = document.getElementById("track-list");
   for (let i = 0; i < 10; i++) {
     artistID = Math.floor(Math.random() * 200);
@@ -69,23 +71,22 @@ window.addEventListener("DOMContentLoaded", () => {
         const anchorTrack = document.createElement("a");
 
         const divNum = document.createElement("div");
-        divNum.classList.add("col-1");
+        divNum.classList.add("col-1", "d-flex", "align-items-center");
         artistContainer.appendChild(divNum);
 
         const pNum = document.createElement("p");
         divNum.appendChild(pNum);
 
+        const imageCover = document.createElement("img");
+        imageCover.classList.add("mb-3", "ms-2", "img-fluid");
+        imageCover.style.maxWidth = "30px";
+        imageCover.src = artistList.picture;
+        divNum.appendChild(imageCover);
+
         const divTitle = document.createElement("div");
         divTitle.classList.add("col-3");
         artistContainer.appendChild(divTitle);
         divTitle.appendChild(anchorTrack);
-
-        /*for (let i = 0; i < 4; i++) {
-          const imgContainer = document.createElement("img");
-          imgContainer.classList.add("img-fluid");
-          imgContainer.src = artistList.picture;
-          playListFoto.appendChild(imgContainer);
-        }*/
 
         //fetch informazioni canzoni dell'artista
         fetch(artistList.tracklist)
