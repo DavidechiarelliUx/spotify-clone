@@ -1,5 +1,5 @@
 const params = new URLSearchParams(window.location.search);
-const id = params.get("tracklist");
+const id = params.get("artistId");
 
 const URLtracklist = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id}/top?limit=50`;
 
@@ -212,9 +212,19 @@ openAside.addEventListener("click", (e) => {
   aside2.style = "display:block";
 });
 
-const homePage = document.getElementById("homePage");
-homePage.addEventListener("click", () => {
-  window.location.href = "../index.html";
+const buttonSearch = document.getElementById("buttonSearch");
+
+const search = document.getElementById("inputSearch");
+
+function cercaArtista() {
+  const artistName = search.value;
+  if (artistName) {
+    window.location.href = `./artist.html?autoreId=${artistName}`;
+  } else {
+    console.log("non è stato inserito un nome");
+  }
+}
+
+buttonSearch.addEventListener("click", () => {
+  cercaArtista();
 });
-
-

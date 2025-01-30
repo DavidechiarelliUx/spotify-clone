@@ -20,7 +20,7 @@
       <div class="container-fluid">
         <div class="row">
           <!--Aside Navbar-->
-          <aside id="aside" class="col-lg-2 rounded-0 bg-black" style="height: 100vh">
+          <aside id="aside" class="col-lg-2 rounded-0 bg-black d-none d-md-block" style="height: 100vh">
             <div class="sticky-top">
               <div class="sticky-top bg-black mb-4">
                 <img
@@ -31,16 +31,8 @@
                 />
                 <ul class="list-group my-3">
                   <a href="./index.html">
-                    <li
-                      class="list-group-item border border-0 rounded-0 bg-black ps-2 ms-1 d-flex align-content-center"
-                    >
-                      <svg
-                        class="dark:text-white me-2"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        fill="white"
-                      >
+                    <li class="list-group-item border border-0 rounded-0 bg-black ps-2 ms-1 d-flex align-content-center">
+                      <svg class="dark:text-white me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white">
                         <path
                           fill-rule="evenodd"
                           d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z"
@@ -80,27 +72,13 @@
                 </ul>
 
                 <ul class="list-group border-bottom pb-3">
-                  <li class="list-group-item border border-0 rounded-0 bg-black">
-                    <i class="bi bi-plus-square-fill me-1 fs-4"></i>Crea playlist
-                  </li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black"><i class="bi bi-plus-square-fill me-1 fs-4"></i>Crea playlist</li>
                   <li class="list-group-item border border-0 bg-black">
-                    <img
-                      class="rounded-1"
-                      height="24"
-                      width="24"
-                      src="https://misc.scdn.co/liked-songs/liked-songs-300.jpg"
-                      alt="Brani che ti piacciono"
-                    />
+                    <img class="rounded-1" height="24" width="24" src="https://misc.scdn.co/liked-songs/liked-songs-300.jpg" alt="Brani che ti piacciono" />
                     Brani che ti piacciono
                   </li>
                   <li class="list-group-item border border-0 rounded-0 bg-black">
-                    <span
-                      ><img
-                        height="24"
-                        width="24"
-                        src="./assets/imgs/search/Schermata 2025-01-30 alle 10.28.08 (2).png"
-                        alt=""
-                    /></span>
+                    <span><img height="24" width="24" src="./assets/imgs/search/Schermata 2025-01-30 alle 10.28.08 (2).png" alt="" /></span>
                     I tuoi episodi
                   </li>
                 </ul>
@@ -108,81 +86,35 @@
               <!--Contenuto sotto la navbar-->
               <div class="fixed" style="max-height: 500px; overflow-y: auto">
                 <ul id="personalList" class="list-group">
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    early stage emily (sett-ott 2022)
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    Be The Young
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    " ... " cit. Kimiko (lug-ago 2022)
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    saggio vibes
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    main character energy (mag-giu 2022)
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    that fucking mood
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    VEE, CARLOTTA E GIACOMO VANNO A BOSIO
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    An Emily Winchester kind of mood
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    landing page (mar-apr 2022)
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    2021 lol
-                  </li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">early stage emily (sett-ott 2022)</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">Be The Young</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">" ... " cit. Kimiko (lug-ago 2022)</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">saggio vibes</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">main character energy (mag-giu 2022)</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">that fucking mood</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">VEE, CARLOTTA E GIACOMO VANNO A BOSIO</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">An Emily Winchester kind of mood</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">landing page (mar-apr 2022)</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">2021 lol</li>
                   <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
                     cosa cazzo vuol dire questa affermazione (gen-fe ...
                   </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    honey and glass (nov-dic 2021)
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    (Revenge) Training Arc
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    Lidia Emily
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    minecraft e nintendo switch (sep-oct 2021)
-                  </li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">honey and glass (nov-dic 2021)</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">(Revenge) Training Arc</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">Lidia Emily</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">minecraft e nintendo switch (sep-oct 2021)</li>
                   <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
                     silvano d'orba? I hardly know her (lug - ago 2021)
                   </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    Culo 2021
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    Frah Quintale Mix
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    Francesco Guccini Mix
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    early stage emily syndrome (sett-ott 2022)
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    Be The Young
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    " ... " cit. Kimiko (lug-ago 2022)
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    saggio vibes
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    main character energy (mag-giu 2022)
-                  </li>
-                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">
-                    that fucking mood
-                  </li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">Culo 2021</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">Frah Quintale Mix</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">Francesco Guccini Mix</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">early stage emily syndrome (sett-ott 2022)</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">Be The Young</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">" ... " cit. Kimiko (lug-ago 2022)</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">saggio vibes</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">main character energy (mag-giu 2022)</li>
+                  <li class="list-group-item border border-0 rounded-0 bg-black py-1" style="font-size: 0.7rem">that fucking mood</li>
                 </ul>
               </div>
             </div>
@@ -190,11 +122,7 @@
           <!-- contenuto principale-->
           <div
             class="col px-0"
-            style="
-              max-height: 600px;
-              overflow-y: auto;
-              background: linear-gradient(0deg, rgba(1, 1, 1, 1) 0%, rgba(63, 63, 63, 0.867) 88%);
-            "
+            style="max-height: 600px; overflow-y: auto; background: linear-gradient(0deg, rgba(1, 1, 1, 1) 0%, rgba(63, 63, 63, 0.867) 88%)"
             id="albumCover"
           >
             <div id="barra-superiore-md" class="container my-3">
@@ -239,37 +167,27 @@
               </div>
             </div>
             <!--Card album-->
-            <div id="card-album-md" class="container">
+            <div id="card-album-md " class="container d-md-none">
               <div class="text-center">
-                <img
-                  src="./assets/imgs/main/image-10.jpg"
-                  class="img-fluid"
-                  style="object-fit: cover"
-                  alt="img-album"
-                />
+                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid" style="object-fit: cover" alt="img-album" />
               </div>
               <div class="d-flex flex-row my-3">
                 <div class="mt-3">
-                  <h1 class="card-title fw-semibold">Nome Playlist</h1>
+                  <h1 id="playListTitleSmall" class="card-title fw-semibold">Nome Playlist</h1>
                   <div class="d-flex flex-inline align-items-center"></div>
                   <div class="d-flex flex-inline text-secondary">
-                    <p>Album •</p>
-                    <p class="ms-2">Anno</p>
+                    <p id="totSongNumSmall" class="me-2"></p>
+                    <p id="totDurationSmall" class="me-2"></p>
                   </div>
                 </div>
               </div>
             </div>
-            <div id="card-album-lg" class="container">
+            <div id="card-album-lg " class="container d-none d-md-block">
               <div class="card mt-2 mb-4 border-0" style="background: none">
                 <div class="row g-0">
                   <div class="col-3 p-4 align-content-center">
                     <!--<div id="playListFoto" class="row row-cols-2"></div>-->
-                    <img
-                      src="./assets/imgs/main/image-10.jpg"
-                      class="img-fluid rounded-start"
-                      style="object-fit: cover"
-                      alt="img-album"
-                    />
+                    <img src="./assets/imgs/main/image-10.jpg" class="img-fluid rounded-start" style="object-fit: cover" alt="img-album" />
                   </div>
                   <div class="col-9 align-content-center">
                     <div class="card-body">
@@ -285,48 +203,8 @@
               </div>
             </div>
             <!--Container Brani-->
-            <div id="container-brani-md" class="container">
-              <div class="d-flex align-items-center justify-content-between">
-                <div class="d-flex align-items-center">
-                  <button class="border-0 rounded-circle fs-2 pe-2 ps-0 bg-transparent">
-                    <i class="bi bi-heart"></i>
-                  </button>
-                  <button
-                    type="button"
-                    class="text-secondary border-0 rounded-circle fs-3 px-2 bg-transparent px-2 mx-2"
-                  >
-                    <i class="bi bi-arrow-down-circle"></i>
-                  </button>
-                  <button type="button" class="border-0 bg-transparent text-light">
-                    <i class="bi bi-three-dots-vertical fs-2 text-secondary"></i>
-                  </button>
-                </div>
-                <div class="d-flex align-items-center">
-                  <i class="bi bi-shuffle mx-3 fs-2 text-secondary"></i>
-                  <button class="btn btn-0 pe-0">
-                    <i class="bi-play-circle-fill display-4" style="color: #1bd760"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="mt-4 row" id="track-list">
-                <!-- <div class="col-1">
-                    <p>1</p>
-                </div>
-                <div class="col-1">
-                  <h5>titolo</h5>
-                  <p class="text-secondary">Artista</p>
-                </div> 
-                <div class="col-3 offset-4">
-                    <p class="text-secondary">48384</p>
-                </div>
-                 <div class="col-3 d-flex justify-content-end">
-                    <p class="text-secondary">minuti</p>
-                </div> -->
-              </div>
-            </div>
             <div id="container-brani-lg" class="container p-4" style="background-color: rgba(0, 0, 0, 0.226)">
-              <div class="ms-3">
+              <div class="ms-3 d-none d-md-block">
                 <button class="border-0 rounded-circle text-black bg-success fs-3 px-2">
                   <i class="bi bi-play-fill"></i>
                 </button>
@@ -340,6 +218,25 @@
                   <i class="bi bi-three-dots fs-3 text-secondary"></i>
                 </button>
               </div>
+              <div class="d-flex align-items-center justify-content-between d-md-none">
+                <div class="d-flex align-items-center">
+                  <button class="border-0 rounded-circle fs-2 pe-2 ps-0 bg-transparent">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                  <button type="button" class="text-secondary border-0 rounded-circle fs-3 px-2 bg-transparent px-2 mx-2">
+                    <i class="bi bi-arrow-down-circle"></i>
+                  </button>
+                  <button type="button" class="border-0 bg-transparent text-light">
+                    <i class="bi bi-three-dots-vertical fs-2 text-secondary"></i>
+                  </button>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-shuffle mx-3 fs-2 text-secondary"></i>
+                  <button class="btn btn-0 pe-0">
+                    <i class="bi-play-circle-fill display-4" style="color: #1bd760"></i>
+                  </button>
+                </div>
+              </div>
               <div class="m-4 row border-bottom">
                 <div class="col-1">
                   <p>#</p>
@@ -350,7 +247,7 @@
                 <div class="col-3 offset-4">
                   <p class="text-secondary">Riproduzione</p>
                 </div>
-                <div class="col-3 d-flex justify-content-end">
+                <div class="col-3 d-flex justify-content-center">
                   <p class="text-secondary"><i class="bi bi-clock"></i></p>
                 </div>
               </div>
@@ -370,9 +267,29 @@
                 </div> -->
               </div>
             </div>
+            <!--  <div id="container-brani-md d-md-none" class="container">
+              
+
+                <div class="mt-4 row" id="track-list">
+                   <div class="col-1">
+                      <p>1</p>
+                  </div>
+                  <div class="col-1">
+                    <h5>titolo</h5>
+                    <p class="text-secondary">Artista</p>
+                  </div> 
+                  <div class="col-3 offset-4">
+                      <p class="text-secondary">48384</p>
+                  </div>
+                   <div class="col-3 d-flex justify-content-end">
+                      <p class="text-secondary">minuti</p>
+                  </div> 
+                </div> 
+              </div>
+            </div> -->
           </div>
           <!--Attività Amici-->
-          <aside id="aside2" class="col-lg-2 bg-black mt-4 px-4">
+          <aside id="aside2" class="col-lg-2 bg-black mt-4 px-4 d-none d-md-block">
             <div class="d-flex justify-content-between align-content-center mb-4">
               <div class="align-content-center"><h5 class="fw-bold mb-0">Attività amici</h5></div>
               <div>
@@ -384,12 +301,7 @@
               <div class="d-flex flex-row mb-4">
                 <div class="mx-1">
                   <div style="width: 2rem">
-                    <img
-                      src="assets/imgs/main/image-10.jpg"
-                      class="img-fluid rounded-circle"
-                      style="object-fit: cover"
-                      alt="foto"
-                    />
+                    <img src="assets/imgs/main/image-10.jpg" class="img-fluid rounded-circle" style="object-fit: cover" alt="foto" />
                   </div>
                 </div>
                 <div class="mx-3">
@@ -402,12 +314,7 @@
               <div class="d-flex flex-row mb-4">
                 <div class="mx-1">
                   <div style="width: 2rem">
-                    <img
-                      src="assets/imgs/main/image-16.jpg"
-                      class="img-fluid rounded-circle"
-                      style="object-fit: cover"
-                      alt="foto"
-                    />
+                    <img src="assets/imgs/main/image-16.jpg" class="img-fluid rounded-circle" style="object-fit: cover" alt="foto" />
                   </div>
                 </div>
                 <div class="mx-3">
@@ -420,12 +327,7 @@
               <div class="d-flex flex-row mb-4">
                 <div class="mx-1">
                   <div style="width: 2rem">
-                    <img
-                      src="assets/imgs/main/image-14.jpg"
-                      class="img-fluid rounded-circle"
-                      style="object-fit: cover"
-                      alt="foto"
-                    />
+                    <img src="assets/imgs/main/image-14.jpg" class="img-fluid rounded-circle" style="object-fit: cover" alt="foto" />
                   </div>
                 </div>
                 <div class="mx-3">
@@ -441,26 +343,19 @@
       </div>
     </main>
     <!--Media Player-->
-    <footer id="barra-play-md" class="sticky-bottom">
+    <footer id="barra-play-md" class="sticky-bottom d-md-none">
       <div>
         <div class="container bg-dark rounded-2 p-4 d-flex justify-content-between align-items-center">
-          <h5 class="m-0">Titolo canzone</h5>
+          <h5 id="nameBrano1" class="m-0">Titolo canzone</h5>
           <div class="d-flex align-items-center">
             <i class="mx-2 bi bi-music-player fs-1 text-secondary"></i>
             <i class="mx-2 bi bi-heart fs-1"></i>
             <i class="mx-1 bi-play-fill display-3"></i>
           </div>
         </div>
-        <div class="py-3 d-flex justify-content-evenly px-5" style="background-color: rgba(0, 0, 0, 0.705)">
+        <div class="py-3 d-flex justify-content-evenly px-5 d-md-none" style="background-color: rgba(0, 0, 0, 0.705)">
           <div class="d-flex flex-column align-items-center w-25">
-            <svg
-              viewBox="3 3 18 18"
-              class="dark:text-white my-2"
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="25"
-              fill="white"
-            >
+            <svg viewBox="3 3 18 18" class="dark:text-white my-2" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white">
               <path
                 fill-rule="evenodd"
                 d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z"
@@ -493,11 +388,8 @@
         </div>
       </div>
     </footer>
-    <footer id="barra-play-lg" class="sticky-bottom">
-      <div
-        class="d-flex justify-content-between align-items-center border-top pb-3 px-3"
-        style="background-color: #181818"
-      >
+    <footer id="barra-play-lg " class="sticky-bottom d-none d-md-block">
+      <div class="d-flex justify-content-between align-items-center border-top pb-3 px-3" style="background-color: #181818">
         <!-- Album -->
         <div class="col-2 d-flex align-items-center pt-3">
           <img
@@ -523,14 +415,7 @@
             <i class="fa-solid fa-repeat mx-3 fs-5" style="color: #1bd760"></i>
           </div>
           <div class="progress my-2" style="height: 3px">
-            <div
-              class="progress-bar bg-light"
-              role="progressbar"
-              style="width: 25%"
-              aria-valuenow="25"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            ></div>
+            <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
         </div>
 
@@ -542,14 +427,7 @@
           <div class="d-flex align-items-center mx-1">
             <a href=""><i class="bi bi-volume-up me-2 fs-3 text-secondary"></i></a>
             <div class="progress" style="width: 50px; height: 3px">
-              <div
-                class="progress-bar bg-light"
-                role="progressbar"
-                style="width: 50%"
-                aria-valuenow="50"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
+              <div class="progress-bar bg-light" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
           <a href="#"><i class="fa-solid fa-up-right-and-down-left-from-center mx-2 fs-5 text-secondary"></i></a>
@@ -567,21 +445,12 @@
               <span class="input-group-text border border-0" style="background-color: #121212">
                 <i class="bi bi-search" id="buttonSearch"></i>
               </span>
-              <input
-                id="inputSearch"
-                class="border border-0 rounded-end fw-bold py-2"
-                style="width: 90%"
-                type="search"
-                placeholder="Cosa vuoi ascoltare?"
-              />
+              <input id="inputSearch" class="border border-0 rounded-end fw-bold py-2" style="width: 90%" type="search" placeholder="Cosa vuoi ascoltare?" />
             </div>
             <h5 class="text-center mt-4 mb-3">Sfoglia tutto</h5>
             <div id="cardContainerModale" class="row row-cols-2 g-3">
               <div class="col">
-                <div
-                  class="rounded-2 position-relative overflow-hidden"
-                  style="background-color: #e13300; height: 100px"
-                >
+                <div class="rounded-2 position-relative overflow-hidden" style="background-color: #e13300; height: 100px">
                   <p class="px-3 py-2 fw-bold">Podcast</p>
                   <img
                     class="position-absolute bottom-0 end-0 rounded-2"
@@ -591,10 +460,7 @@
                 </div>
               </div>
               <div class="col">
-                <div
-                  class="rounded-2 position-relative overflow-hidden"
-                  style="background-color: #1e3264; height: 100px"
-                >
+                <div class="rounded-2 position-relative overflow-hidden" style="background-color: #1e3264; height: 100px">
                   <p class="px-3 py-2 fw-bold">Create per te</p>
                   <img
                     class="position-absolute bottom-0 end-0 rounded-2"
@@ -604,10 +470,7 @@
                 </div>
               </div>
               <div class="col">
-                <div
-                  class="rounded-2 position-relative overflow-hidden"
-                  style="background-color: #e8135c; height: 100px"
-                >
+                <div class="rounded-2 position-relative overflow-hidden" style="background-color: #e8135c; height: 100px">
                   <p class="px-3 py-2 fw-bold">Nuove Uscite</p>
                   <img
                     class="position-absolute bottom-0 end-0 rounded-2"
@@ -617,10 +480,7 @@
                 </div>
               </div>
               <div class="col">
-                <div
-                  class="rounded-2 position-relative overflow-hidden"
-                  style="background-color: #138a09; height: 100px"
-                >
+                <div class="rounded-2 position-relative overflow-hidden" style="background-color: #138a09; height: 100px">
                   <p class="px-3 py-2 fw-bold">Pop</p>
                   <img
                     class="position-absolute bottom-0 end-0 rounded-2"
@@ -630,10 +490,7 @@
                 </div>
               </div>
               <div class="col">
-                <div
-                  class="rounded-2 position-relative overflow-hidden"
-                  style="background-color: #bb5801; height: 100px"
-                >
+                <div class="rounded-2 position-relative overflow-hidden" style="background-color: #bb5801; height: 100px">
                   <p class="px-3 py-2 fw-bold">Hip Hop</p>
                   <img
                     class="position-absolute bottom-0 end-0 rounded-2"
@@ -643,10 +500,7 @@
                 </div>
               </div>
               <div class="col">
-                <div
-                  class="rounded-2 position-relative overflow-hidden"
-                  style="background-color: #d74100; height: 100px"
-                >
+                <div class="rounded-2 position-relative overflow-hidden" style="background-color: #d74100; height: 100px">
                   <p class="px-3 py-2 fw-bold">Dance/Elettronica</p>
                   <img
                     class="position-absolute bottom-0 end-0 rounded-2"
@@ -656,10 +510,7 @@
                 </div>
               </div>
               <div class="col">
-                <div
-                  class="rounded-2 position-relative overflow-hidden"
-                  style="background-color: #e1108b; height: 100px"
-                >
+                <div class="rounded-2 position-relative overflow-hidden" style="background-color: #e1108b; height: 100px">
                   <p class="px-3 py-2 fw-bold">Latina</p>
                   <img
                     class="position-absolute bottom-0 end-0 rounded-2"
@@ -669,10 +520,7 @@
                 </div>
               </div>
               <div class="col">
-                <div
-                  class="rounded-2 position-relative overflow-hidden"
-                  style="background-color: #8c68ac; height: 100px"
-                >
+                <div class="rounded-2 position-relative overflow-hidden" style="background-color: #8c68ac; height: 100px">
                   <p class="px-3 py-2 fw-bold">Classifiche</p>
                   <img
                     class="position-absolute bottom-0 end-0 rounded-2"

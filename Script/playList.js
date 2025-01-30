@@ -7,10 +7,11 @@ let duration = 0;
 //inizializzazione funzione on load
 window.addEventListener("DOMContentLoaded", () => {
   const listTitle = document.getElementById("playListTitle");
-
+  const listTitleSmall = document.getElementById("playListTitleSmall");
   //Titolo dinamico
   const playListTitle = localStorage.getItem("playListTitle");
   listTitle.innerText = playListTitle;
+  listTitleSmall.innerText = playListTitle;
 
   //Variabile per l'indice randomizzato
   let artistID;
@@ -34,7 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
         console.log(artistList);
 
         const artistContainer = document.createElement("div");
-        artistContainer.classList.add("row");
+        artistContainer.classList.add("row", "ms-4");
 
         const anchorTrack = document.createElement("a");
 
@@ -94,7 +95,7 @@ window.addEventListener("DOMContentLoaded", () => {
             divRipr.appendChild(pRipr);
 
             const divMin = document.createElement("div");
-            divMin.classList.add("col-3", "d-flex", "justify-content-end");
+            divMin.classList.add("col-3", "d-flex", "justify-content-center");
             artistContainer.appendChild(divMin);
 
             const pMin = document.createElement("p");
@@ -108,12 +109,18 @@ window.addEventListener("DOMContentLoaded", () => {
 
             //Titolo, numero canzoni, durata dinamici
             const totSongNum = document.getElementById("totSongNum");
+            const totSongNumSmall = document.getElementById("totSongNumSmall");
+
             totSongNum.innerHTML = divRow.children.length + " songs" + " • ";
+            totSongNumSmall.innerHTML = divRow.children.length + " songs" + " • ";
 
             duration += songList.data[0].duration;
 
             const totDuration = document.getElementById("totDuration");
             totDuration.innerHTML = "about " + durationConvert(duration) + " minutes";
+
+            const totDurationSmall = document.getElementById("totDurationSmall");
+            totDurationSmall.innerHTML = "about " + durationConvert(duration) + " minutes";
 
             //Funzione per passare alla pagina dell'artista
             artist.addEventListener("click", () => {
@@ -127,10 +134,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
               const nomeAuthor = document.getElementById("nameAuthor");
               const nomeBrano = document.getElementById("nameBrano");
+              const nomeBrano1 = document.getElementById("nameBrano1");
               const imageAuthor = document.getElementById("imageAuthor");
 
               nomeAuthor.textContent = artistList.name;
               nomeBrano.textContent = songList.data[0].title_short;
+              nomeBrano1.textContent = songList.data[0].title_short;
               imageAuthor.src = songList.data[0].album.cover;
             });
           })
