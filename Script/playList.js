@@ -13,6 +13,10 @@ window.addEventListener("DOMContentLoaded", () => {
   listTitle.innerText = playListTitle;
   listTitleSmall.innerText = playListTitle;
 
+  const personalList = localStorage.getItem("content");
+  listTitle.innerText = personalList;
+  listTitleSmall.innerText = personalList;
+
   //Variabile per math random
   let artistFotoIndex;
   //Creazione funzione per foto dinamica dell'album
@@ -309,3 +313,11 @@ function durationConvert(seconds) {
   const remainingSeconds = seconds % 60;
   return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
 }
+
+//F
+const personalList = document.getElementById("personalList");
+personalList.addEventListener("click", (event) => {
+  let content = event.target.textContent;
+  localStorage.setItem("content", content);
+  window.location.href = "playList.html";
+});
