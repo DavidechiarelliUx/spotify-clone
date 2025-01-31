@@ -103,64 +103,71 @@ fetch(URLtracklist)
 
 
   // playtrack pause e play
-  let currentAudio = null;
-  let currentTrackRow = null;
+let currentAudio = null;
+let currentTrackRow = null;
 
-  const pauseButton = document.getElementById("pauseButton");
-  const playIcon = document.getElementById("playIcon");
-  const pauseIcon = document.getElementById("pauseIcon");
+const pauseButton = document.getElementById("pauseButton");
+const playIcon = document.getElementById("playIcon");
+const pauseIcon = document.getElementById("pauseIcon");
 
-  function playTrack(track, trackRow) {
-   
-    if (currentAudio !== null) {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
-      playIcon.style.display = "block";
-      pauseIcon.style.display = "none";
-    }
-
-    if (currentAudio !== null && currentAudio.src === track.preview && !currentAudio.paused) {
+pauseButton.addEventListener("click", () => {
+  if (currentAudio !== null) {
+    if (!currentAudio.paused) {
       currentAudio.pause();
       playIcon.style.display = "block";
       pauseIcon.style.display = "none";
-      return;
+    } else {
+      currentAudio.play();
+      playIcon.style.display = "none";
+      pauseIcon.style.display = "block";
     }
+  }
+});
 
-    currentAudio = new Audio(track.preview);
-    currentAudio.play();
+function playTrack(track, trackRow) {
+  const footer = document.getElementById("barra-play-lg");
+  const currentTrackContainer = document.getElementById("currentTrackContainer");
+  const currentTrackImage = document.getElementById("currentTrackImage");
+  const currentTrackName = document.getElementById("currentTrackName");
+  const currentTrackArtist = document.getElementById("currentTrackArtist");
 
-    playIcon.style.display = "none";
-    pauseIcon.style.display = "block";
+  footer.classList.remove("d-none");
+  currentTrackContainer.style.display = "flex";
+  currentTrackImage.src = track.album.cover;
+  currentTrackName.textContent = track.title;
+  currentTrackArtist.textContent = track.artist.name;
 
-
-    if (currentTrackRow !== null) {
-      currentTrackRow.classList.remove("playing");
-    }
-
-    currentTrackRow = trackRow;
-    currentTrackRow.classList.add("playing");
-
-
-    currentAudio.addEventListener("ended", () => {
-      playIcon.style.display = "block";
-      pauseIcon.style.display = "none";
-    });
+  if (currentAudio !== null) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
   }
 
-  // 🎵 Pulsante di Play/Pausa
-  pauseButton.addEventListener("click", () => {
-    if (currentAudio !== null) {
-      if (!currentAudio.paused) {
-        currentAudio.pause();
-        playIcon.style.display = "block";
-        pauseIcon.style.display = "none";
-      } else {
-        currentAudio.play();
-        playIcon.style.display = "none";
-        pauseIcon.style.display = "block";
-      }
-    }
+  if (currentAudio !== null && currentAudio.src === track.preview && !currentAudio.paused) {
+    currentAudio.pause();
+    playIcon.style.display = "block";
+    pauseIcon.style.display = "none";
+    return;
+  }
+
+  currentAudio = new Audio(track.preview);
+  currentAudio.play();
+
+  playIcon.style.display = "none";
+  pauseIcon.style.display = "block";
+
+  if (currentTrackRow !== null) {
+    currentTrackRow.classList.remove("playing");
+  }
+
+  currentTrackRow = trackRow;
+  currentTrackRow.classList.add("playing");
+
+  currentAudio.addEventListener("ended", () => {
+    playIcon.style.display = "block";
+    pauseIcon.style.display = "none";
   });
+}
+
 
   // Funzione per formattare la durata delle tracce
   function formatDuration(seconds) {
