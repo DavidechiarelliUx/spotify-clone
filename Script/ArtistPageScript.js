@@ -39,8 +39,15 @@ fetch(URL)
   .then((album) => {
     console.log(album);
 
+    const artista = album.data[0].artist;
+
+    const authordiv = document.getElementById("authordiv");
+    authordiv.style.backgroundImage = `url(${artista.picture_xl})`;
+    authordiv.style.backgroundPosition = "center";
+
     const sectionAlbum = document.getElementById("sectionAlbum");
     const nameArtist = document.getElementById("nameArtist");
+    nameArtist.classList.add("display-1", "fw-bold");
 
     nameArtist.textContent = autoreId;
     const ascoltatoriMensili = document.getElementById("ascoltatoriMensili");

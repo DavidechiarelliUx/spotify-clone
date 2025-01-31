@@ -1,8 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 const autoreId = params.get("id");
 console.log(autoreId);
-const Token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzkzNjBmYmI3NDcwMTAwMTU4YjJiMmUiLCJpYXQiOjE3Mzc3MTE4NjcsImV4cCI6MTczODkyMTQ2N30.OwPnHMmsZmgoEr48ZzpNHEt6n2qkKnAU1MpqhlcpRNY";
 
 if (autoreId) {
   console.log("Autore:", autoreId);
@@ -53,7 +51,7 @@ fetch(URL)
     ascoltatoriMensili.textContent = `3985760 ascoltatori mensili`;
 
     album.data.forEach((listAlbum) => {
-      // console.log(listAlbum.album.cover);
+      console.log(listAlbum);
       const divAlbum = document.createElement("div");
       const divPAlbum = document.createElement("div");
       const divPAsc = document.createElement("div");
@@ -89,10 +87,11 @@ fetch(URL)
       sectionAlbum.appendChild(divAlbum);
 
       divAlbum.addEventListener("click", () => {
-        const trackListUrl = listAlbum.album.tracklist;
-        const albumId = listAlbum.album.id;
+        const trackListUrl = listAlbum.tracklist;
+        const albumId = listAlbum.id;
         console.log(albumId);
-        window.location.href = `../AlbumPageProva.html?tracklist=${trackListUrl}&albumId=${albumId}`;
+        console.log(trackListUrl);
+        window.location.assign(`../AlbumPage.html?albumId=${albumId}`);
       });
     });
   })

@@ -1,15 +1,17 @@
 const params = new URLSearchParams(window.location.search);
-const autoreId = params.get("id");
+const albumId = params.get("albumId");
 //const apiUrl = tracklist;
 
-albumID = localStorage.getItem("albumId");
+//albumID = localStorage.getItem("albumId");
 
-const URL = "https://striveschool-api.herokuapp.com/api/deezer/album/" + albumID;
+const URL = "https://api.deezer.com/album/" + albumId;
 
 //console.log("Tracklist URL:", tracklist);
 //console.log("API URL:", apiUrl);
 
-fetch(URL)
+fetch(URL, {
+  mode: "no-cors",
+})
   .then((response) => {
     console.log(response);
     if (response.ok) {

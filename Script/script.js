@@ -45,6 +45,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
 
     const col = document.createElement("div");
     const artistcard = document.createElement("div");
+
     const divImg = document.createElement("div");
     const cardImg = document.createElement("img");
     const cardBody = document.createElement("div");
@@ -133,6 +134,10 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
     col6.appendChild(albumBody);
     albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
     btnGroup.append(playBtn, saveBtn, dotBtn);
+
+    artistcard.addEventListener("click", () => {
+      window.location.href = `artist.html?autoreId=${artist.name}`;
+    });
 
     playBtn.addEventListener("click", () => {
       //console.log("mi hai cliccato!");
@@ -250,6 +255,10 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=caribou")
     col6.appendChild(albumBody);
     albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
     btnGroup.append(playBtn, saveBtn, dotBtn);
+
+    artistcard.addEventListener("click", () => {
+      window.location.href = `artist.html?autoreId=${artist.name}`;
+    });
 
     playBtn.addEventListener("click", () => {
       window.location.assign(`AlbumPage.html?artistId=${index}`);
@@ -371,6 +380,10 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=m83")
     albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
     btnGroup.append(playBtn, saveBtn, dotBtn);
 
+    artistcard.addEventListener("click", () => {
+      window.location.href = `artist.html?autoreId=${artist.name}`;
+    });
+
     playBtn.addEventListener("click", () => {
       window.location.assign(`AlbumPage.html?artistId=${index}`);
     });
@@ -489,6 +502,10 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=mythandroid")
     albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
     btnGroup.append(playBtn, saveBtn, dotBtn);
 
+    artistcard.addEventListener("click", () => {
+      window.location.href = `artist.html?autoreId=${artist.name}`;
+    });
+
     playBtn.addEventListener("click", () => {
       window.location.assign(`AlbumPage.html?artistId=${index}`);
     });
@@ -605,6 +622,10 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
     col6.appendChild(albumBody);
     albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
     btnGroup.append(playBtn, saveBtn, dotBtn);
+
+    artistcard.addEventListener("click", () => {
+      window.location.href = `artist.html?autoreId=${artist.name}`;
+    });
 
     playBtn.addEventListener("click", () => {
       window.location.assign(`AlbumPage.html?artistId=${index}`);
