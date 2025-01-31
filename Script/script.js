@@ -42,6 +42,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
 
     const col = document.createElement("div");
     const artistcard = document.createElement("div");
+    const divImg = document.createElement("div");
     const cardImg = document.createElement("img");
     const cardBody = document.createElement("div");
     const cardTitle = document.createElement("h5");
@@ -49,30 +50,25 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
 
     col.classList.add("col");
     artistcard.classList.add("card", "border-0");
-    cardImg.classList.add(
-      "card-img-top",
-      "img-fluid",
-      "img-thumbnail",
-      "border",
-      "border-5",
-      "border-dark",
-      "rounded-4",
-      "mx-auto"
-    );
+    divImg.classList.add("m-2");
+    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border-0", "rounded-3", "mx-auto", "p-0");
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     cardTitle.classList.add("card-title");
     cardText.classList.add("text-muted");
 
+    artistcard.style.backgroundColor = "#171717";
     cardImg.src = artist.picture;
     cardTitle.textContent = artist.name;
+    cardImg.style.objectFit = "cover";
 
     artistGrid.appendChild(col);
     col.appendChild(artistcard);
-    artistcard.append(cardImg, cardBody);
+    artistcard.append(divImg, cardBody);
+    divImg.appendChild(cardImg);
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
 
-    const cardAlbum = document.getElementById("cardAlbum5");
+    const cardAlbum = document.getElementById("cardAlbum1");
 
     const row = document.createElement("div");
     const col3 = document.createElement("div");
@@ -159,6 +155,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=caribou")
 
     const col = document.createElement("div");
     const artistcard = document.createElement("div");
+    const divImg = document.createElement("div");
     const cardImg = document.createElement("img");
     const cardBody = document.createElement("div");
     const cardTitle = document.createElement("h5");
@@ -166,30 +163,25 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=caribou")
 
     col.classList.add("col");
     artistcard.classList.add("card", "border-0");
-    cardImg.classList.add(
-      "card-img-top",
-      "img-fluid",
-      "img-thumbnail",
-      "border",
-      "border-5",
-      "border-dark",
-      "rounded-4",
-      "mx-auto"
-    );
+    divImg.classList.add("m-2");
+    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border-0", "rounded-3", "mx-auto", "p-0");
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     cardTitle.classList.add("card-title");
     cardText.classList.add("text-muted");
 
+    artistcard.style.backgroundColor = "#171717";
     cardImg.src = artist.picture;
     cardTitle.textContent = artist.name;
+    cardImg.style.objectFit = "cover";
 
     artistGrid.appendChild(col);
     col.appendChild(artistcard);
-    artistcard.append(cardImg, cardBody);
+    artistcard.append(divImg, cardBody);
+    divImg.appendChild(cardImg);
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
 
-    const cardAlbum = document.getElementById("cardAlbum4");
+    const cardAlbum = document.getElementById("cardAlbum2");
 
     const row = document.createElement("div");
     const col3 = document.createElement("div");
@@ -278,6 +270,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=m83")
 
     const col = document.createElement("div");
     const artistcard = document.createElement("div");
+    const divImg = document.createElement("div");
     const cardImg = document.createElement("img");
     const cardBody = document.createElement("div");
     const cardTitle = document.createElement("h5");
@@ -285,32 +278,25 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=m83")
 
     col.classList.add("col");
     artistcard.classList.add("card", "border-0");
-    cardImg.classList.add(
-      "card-img-top",
-      "img-fluid",
-      "img-thumbnail",
-      "border",
-      "border-5",
-      "border-dark",
-      "rounded-4",
-      "mx-auto"
-    );
+    divImg.classList.add("m-2");
+    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border-0", "rounded-3", "mx-auto", "p-0");
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     cardTitle.classList.add("card-title");
     cardText.classList.add("text-muted");
 
+    artistcard.style.backgroundColor = "#171717";
     cardImg.src = artist.picture;
     cardTitle.textContent = artist.name;
+    cardImg.style.objectFit = "cover";
 
     artistGrid.appendChild(col);
     col.appendChild(artistcard);
-    artistcard.append(cardImg, cardBody);
+    artistcard.append(divImg, cardBody);
+    divImg.appendChild(cardImg);
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
 
-    //Card Album
-
-    const cardAlbum = document.getElementById("cardAlbum1");
+    const cardAlbum = document.getElementById("cardAlbum3");
 
     const row = document.createElement("div");
     const col3 = document.createElement("div");
@@ -397,6 +383,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=mythandroid")
 
     const col = document.createElement("div");
     const artistcard = document.createElement("div");
+    const divImg = document.createElement("div");
     const cardImg = document.createElement("img");
     const cardBody = document.createElement("div");
     const cardTitle = document.createElement("h5");
@@ -404,30 +391,25 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=mythandroid")
 
     col.classList.add("col");
     artistcard.classList.add("card", "border-0");
-    cardImg.classList.add(
-      "card-img-top",
-      "img-fluid",
-      "img-thumbnail",
-      "border",
-      "border-5",
-      "border-dark",
-      "rounded-4",
-      "mx-auto"
-    );
+    divImg.classList.add("m-2");
+    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border-0", "rounded-3", "mx-auto", "p-0");
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     cardTitle.classList.add("card-title");
     cardText.classList.add("text-muted");
 
+    artistcard.style.backgroundColor = "#171717";
     cardImg.src = artist.picture;
     cardTitle.textContent = artist.name;
+    cardImg.style.objectFit = "cover";
 
     artistGrid.appendChild(col);
     col.appendChild(artistcard);
-    artistcard.append(cardImg, cardBody);
+    artistcard.append(divImg, cardBody);
+    divImg.appendChild(cardImg);
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
 
-    const cardAlbum = document.getElementById("cardAlbum2");
+    const cardAlbum = document.getElementById("cardAlbum4");
 
     const row = document.createElement("div");
     const col3 = document.createElement("div");
@@ -508,12 +490,13 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
     console.log(list);
 
     const artist = list.data[0].artist;
-    const album = list.data[3].album;
+    const album = list.data[2].album;
 
     const artistGrid = document.getElementById("artistGrid");
 
     const col = document.createElement("div");
     const artistcard = document.createElement("div");
+    const divImg = document.createElement("div");
     const cardImg = document.createElement("img");
     const cardBody = document.createElement("div");
     const cardTitle = document.createElement("h5");
@@ -521,30 +504,25 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
 
     col.classList.add("col");
     artistcard.classList.add("card", "border-0");
-    cardImg.classList.add(
-      "card-img-top",
-      "img-fluid",
-      "img-thumbnail",
-      "border",
-      "border-5",
-      "border-dark",
-      "rounded-4",
-      "mx-auto"
-    );
+    divImg.classList.add("m-2");
+    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border-0", "rounded-3", "mx-auto", "p-0");
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     cardTitle.classList.add("card-title");
     cardText.classList.add("text-muted");
 
+    artistcard.style.backgroundColor = "#171717";
     cardImg.src = artist.picture;
     cardTitle.textContent = artist.name;
+    cardImg.style.objectFit = "cover";
 
     artistGrid.appendChild(col);
     col.appendChild(artistcard);
-    artistcard.append(cardImg, cardBody);
+    artistcard.append(divImg, cardBody);
+    divImg.appendChild(cardImg);
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
 
-    const cardAlbum = document.getElementById("cardAlbum3");
+    const cardAlbum = document.getElementById("cardAlbum5");
 
     const row = document.createElement("div");
     const col3 = document.createElement("div");
@@ -645,47 +623,46 @@ playList6.addEventListener("click", () => {
   window.location.assign("./playList.html");
 });
 
-
-
 // i tuoi preferiti
 window.addEventListener("DOMContentLoaded", () => {
   const favoritesContainer = document.getElementById("favoritesList");
-  favoritesContainer.classList.add("row", "gap-3"); 
 
   const savedArtists = JSON.parse(localStorage.getItem("savedArtists")) || [];
 
   savedArtists.forEach((artist) => {
-
     const col = document.createElement("div");
     const card = document.createElement("div");
+    const div = document.createElement("div");
     const img = document.createElement("img");
     const cardBody = document.createElement("div");
     const name = document.createElement("h5");
     const caption = document.createElement("p");
 
-
-    col.classList.add("col-2"); 
+    col.classList.add("col");
     card.classList.add("card", "border-0");
-    img.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border", "border-5", "border-dark", "rounded-4", "mx-auto");
+    div.classList.add("m-2");
+    img.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border-0", "rounded-3", "mx-auto", "p-0");
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     name.classList.add("card-title");
     caption.classList.add("text-muted");
 
-
+    card.style.backgroundColor = "#171717";
     img.src = artist.image;
+    img.style.objectFit = "cover";
+
     name.textContent = artist.name;
     caption.textContent = "";
 
-
+    favoritesContainer.appendChild(col);
+    col.appendChild(card);
+    card.appendChild(div);
+    div.appendChild(img);
+    card.appendChild(cardBody);
     cardBody.appendChild(name);
     cardBody.appendChild(caption);
-    card.appendChild(img);
-    card.appendChild(cardBody);
-    col.appendChild(card);
-    favoritesContainer.appendChild(col);
 
     card.addEventListener("click", () => {
-        window.location.href=`artist.html?autoreId=${artist.name}`;
+      window.location.href = `artist.html?autoreId=${artist.name}`;
+    });
   });
-})
-})
+});
