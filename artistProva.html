@@ -195,54 +195,19 @@
               background: linear-gradient(0deg, rgba(1, 1, 1, 1) 0%, rgba(63, 63, 63, 0.867) 88%);
             "
           >
-            <div id="barra-superiore-md" class="container my-3">
-              <i class="bi bi-arrow-left fs-1"></i>
-            </div>
-            <div id="barra-superiore-lg" class="container px-4">
-              <div class="d-flex justify-content-end my-4">
-                <!--<div class="align-content-center">
-              <a href="#" style="text-decoration: none">
-                <button class="border border-0 bg-black rounded-5">
-                  <i class="bi bi-chevron-left bg-black"></i>
-                </button>
-              </a>
-              <a href="#" style="text-decoration: none">
-                <button class="border border-0 bg-black rounded-5">
-                  <i class="bi bi-chevron-right"></i>
-                </button>
-              </a>
-            </div>-->
-                <div class="dropdown">
-                  <button
-                    class="btn btn-secondary bg-black border-0 ps-1 py-1 dropdown-toggle rounded-pill"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <img
-                      src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/02b4d76c-e4da-4cbc-872c-1bf9ac49bafd/anim=false,width=450/ComfyUI_00289_.jpeg"
-                      style="height: 40px"
-                      class="rounded-5 me-2"
-                      alt="avatar"
-                    />
-                    Lidia Nautiluss...
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#">Profilo</a></li>
-                    <li><a class="dropdown-item" href="#">Preferenze</a></li>
-                    <li><a class="dropdown-item" id="openAside" href="#">Attività Amici</a></li>
-                    <li><a class="dropdown-item" href="#">Esci</a></li>
-                  </ul>
+            <!--Sezione nome artista - md-->
+            <div id="sezione-artista-md">
+              <div id="authordiv-md" style="height: 300px">
+                <div id="barra-superiore-md" class="container my-3">
+                  <i class="bi bi-arrow-left fs-1"></i>
                 </div>
-              </div>
-            </div>
-            <!--Sezione nome artista-->
-
-            <div id="nome-artista-md">
-              <div style="background-image: url(${bgimg})">
-                <div class="container px-4">
-                  <div class="col-md-6">
-                    <h1 class="display-3 fw-bold" id="nameArtist"></h1>
+                <div id="nome-artista-md">
+                  <div style="background-image: url(${bgimg})">
+                    <div class="container px-4">
+                      <div class="col-md-6">
+                        <h1 class="display-3 fw-bold" id="nameArtist"></h1>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -271,27 +236,71 @@
                 </div>
               </div>
             </div>
-            <div id="nome-artista-lg">
-              <div style="background-image: url(${bgimg})"></div>
-              <div class="container px-4">
-                <div class="col-md-6">
-                  <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      fill="#3D91F4"
-                      class="bi bi-patch-check-fill"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"
-                      />
-                    </svg>
-                    Artista verificato
+            <!--Sezione nome artista -lg-->
+
+            <div id="sezione-artista-lg">
+              <div id="authordiv-lg" class="container py-4" style="height: 300px">
+                <div id="barra-superiore-lg" class="container px-4">
+                  <div class="d-flex justify-content-end my-4">
+                    <!--<div class="align-content-center">
+              <a href="#" style="text-decoration: none">
+                <button class="border border-0 bg-black rounded-5">
+                  <i class="bi bi-chevron-left bg-black"></i>
+                </button>
+              </a>
+              <a href="#" style="text-decoration: none">
+                <button class="border border-0 bg-black rounded-5">
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+              </a>
+            </div>-->
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-secondary bg-black border-0 ps-1 py-1 dropdown-toggle rounded-pill"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <img
+                          src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/02b4d76c-e4da-4cbc-872c-1bf9ac49bafd/anim=false,width=450/ComfyUI_00289_.jpeg"
+                          style="height: 40px"
+                          class="rounded-5 me-2"
+                          alt="avatar"
+                        />
+                        Lidia Nautiluss...
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profilo</a></li>
+                        <li><a class="dropdown-item" href="#">Preferenze</a></li>
+                        <li><a class="dropdown-item" id="openAside" href="#">Attività Amici</a></li>
+                        <li><a class="dropdown-item" href="#">Esci</a></li>
+                      </ul>
+                    </div>
                   </div>
-                  <h1 class="display-3 w-bold" id="nameArtist"></h1>
-                  <p id="ascoltatoriMensili"></p>
+                </div>
+                <div id="nome-artista-lg">
+                  <div style="background-image: url(${bgimg})"></div>
+                  <div class="container px-4">
+                    <div class="col-md-6">
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          fill="#3D91F4"
+                          class="bi bi-patch-check-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"
+                          />
+                        </svg>
+                        Artista verificato
+                      </div>
+                      <h1 class="display-3 w-bold" id="nameArtist"></h1>
+                      <p id="ascoltatoriMensili"></p>
+                    </div>
+                  </div>
                 </div>
               </div>
               <!--Container Album-->

@@ -37,7 +37,9 @@ a {
   #container-brani-lg,
   #barra-play-lg,
   #barra-superiore-lg,
-  #nome-artista-lg {
+  #nome-artista-lg,
+  #authordiv-lg,
+  #sezione-artista-lg {
     display: none;
   }
 }
@@ -47,7 +49,9 @@ a {
   #container-brani-md,
   #barra-play-md,
   #barra-superiore-md,
-  #nome-artista-md {
+  #nome-artista-md,
+  #authordiv-md,
+  #sezione-artista-md {
     display: none;
   }
 }
