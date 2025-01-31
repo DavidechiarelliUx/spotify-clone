@@ -214,9 +214,3 @@ function durationConvert(seconds) {
   const remainingSeconds = seconds % 60;
   return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
 }
-
-//Funzione per tornare all'Home Page
-const homePage = document.getElementById("homePage");
-homePage.addEventListener("click", () => {
-  window.location.href = "../index.html";
-});
