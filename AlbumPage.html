@@ -299,7 +299,7 @@
               </div>
             </div>
             <!--Container Brani-->
-            <div id="container-brani-md" class="container">
+            <div id="container-brani-md" class="container ">
               <div class="d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
                   <button class="border-0 rounded-circle fs-2 pe-2 ps-0 bg-transparent">
@@ -315,7 +315,7 @@
                     <i class="bi bi-three-dots-vertical fs-2 text-secondary"></i>
                   </button>
                 </div>
-                <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center ">
                   <i class="bi bi-shuffle mx-3 fs-2 text-secondary"></i>
                   <button class="btn btn-0 pe-0">
                     <i class="bi-play-circle-fill display-4" style="color: #1bd760"></i>
@@ -339,10 +339,10 @@
                 </div> -->
               </div>
             </div>
-            <div id="container-brani-lg" class="container p-4" style="background-color: rgba(0, 0, 0, 0.226)">
-              <div class="ms-3">
+            <div id="container-brani" class="container p-4 " style="background-color: rgba(0, 0, 0, 0.226)">
+              <div class="ms-3 d-none d-md-block">
                 <button class="border-0 rounded-circle text-black bg-success fs-3 px-2">
-                  <i class="bi bi-play-fill"></i>
+                  <i class="bi bi-play-fill d-none d-md-block"></i>
                 </button>
                 <button class="border-0 rounded-circle fs-3 px-2 bg-transparent ps-2 ms-3">
                   <i class="bi bi-heart"></i>
@@ -354,18 +354,18 @@
                   <i class="bi bi-three-dots fs-3 text-secondary"></i>
                 </button>
               </div>
-              <div class="m-4 row border-bottom">
-                <div class="col-1 d-flex flex-inline">
+              <div class="m-4 row border-bottom border-sm-0">
+                <div class="col-1 d-flex flex-inline d-none d-md-block">
                   <p>#</p>
                 </div>
 
-                <div class="col-1">
+                <div class="col-1 d-none d-md-block">
                   <p class="text-secondary">titolo</p>
                 </div>
-                <div class="col-3 offset-3">
+                <div class="col-3 offset-3 d-none d-md-block">
                   <p class="text-secondary">Riproduzione</p>
                 </div>
-                <div class="col-3 d-flex justify-content-end">
+                <div class="col-3 d-flex justify-content-end d-none d-md-block">
                   <p class="text-secondary"><i class="bi bi-clock"></i></p>
                 </div>
               </div>
@@ -464,7 +464,11 @@
           <div class="d-flex align-items-center">
             <i class="mx-2 bi bi-music-player fs-1 text-secondary"></i>
             <i class="mx-2 bi bi-heart fs-1"></i>
-            <i class="mx-1 bi-play-fill display-3"></i>
+            <button class="btn btn-0" id="pauseButton2">
+              <i class="mx-1 bi-play-fill display-3" id="playIcon2"></i>
+              <i class="mx-1 bi-pause-fill display-3" id="pauseIcon2" style="display: none"></i>
+            </button>
+            <!-- <i class="mx-1 bi-play-fill display-3"></i> -->
           </div>
         </div>
         <div class="py-3 d-flex justify-content-evenly px-5" style="background-color: rgba(0, 0, 0, 0.705)">
@@ -544,6 +548,7 @@
           <div class="progress my-2" style="height: 3px">
             <div
               class="progress-bar bg-light"
+              id="progressBar"
               role="progressbar"
               style="width: 25%"
               aria-valuenow="25"
