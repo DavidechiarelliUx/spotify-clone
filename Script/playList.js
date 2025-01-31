@@ -217,10 +217,15 @@ window.addEventListener("DOMContentLoaded", () => {
             const totDurationSmall = document.getElementById("totDurationSmall");
             totDurationSmall.innerHTML = "about " + durationConvert(duration) + " minutes";
 
-            //Funzione per passare alla pagina dell'artista
+            /**Funzione per passare alla pagina dell'artista
             artist.addEventListener("click", () => {
               localStorage.setItem("bandName", artistName);
               window.location.assign(`./artistProva.html?id=${artistList.id}`);
+            });**/
+
+            artist.addEventListener("click", () => {
+              console.log(artistName);
+              window.location.href = `./artist.html?autoreId=${artistName}`;
             });
 
             //Funzione per il player
