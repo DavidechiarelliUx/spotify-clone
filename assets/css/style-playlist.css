@@ -30,22 +30,3 @@ a {
     font-size: 0.8rem;
   }
 }
-
-@media screen and (max-width: 768px) {
-  aside,
-  #card-album-lg,
-  #container-brani-lg,
-  #barra-play-lg,
-  #barra-superiore-lg {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  #card-album-md,
-  #container-brani-md,
-  #barra-play-md,
-  #barra-superiore-md {
-    display: none;
-  }
-}
