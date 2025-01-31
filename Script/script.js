@@ -111,7 +111,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
     );
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
-    albumImg.src = album.cover;
+    albumImg.src = album.cover_medium;
     albumTitle.textContent = album.title;
     albumAutore.textContent = artist.name;
     albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
@@ -232,7 +232,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=caribou")
     );
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
-    albumImg.src = album.cover;
+    albumImg.src = album.cover_medium;
     albumTitle.textContent = album.title;
     albumAutore.textContent = artist.name;
     albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
@@ -356,7 +356,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=m83")
     );
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
-    albumImg.src = album.cover;
+    albumImg.src = album.cover_medium;
     albumTitle.textContent = album.title;
     albumAutore.textContent = artist.name;
     albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
@@ -478,7 +478,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=mythandroid")
     );
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
-    albumImg.src = album.cover;
+    albumImg.src = album.cover_medium;
     albumTitle.textContent = album.title;
     albumAutore.textContent = artist.name;
     albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
@@ -599,7 +599,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
     );
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
-    albumImg.src = album.cover;
+    albumImg.src = album.cover_medium;
     albumTitle.textContent = album.title;
     albumAutore.textContent = artist.name;
     albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
