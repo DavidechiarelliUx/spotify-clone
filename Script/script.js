@@ -669,3 +669,10 @@ personalList.addEventListener("click", (event) => {
   localStorage.setItem("content", content);
   window.location.href = "playList.html";
 });
+const playList7 = document.getElementById("playList7");
+playList7.addEventListener("click", () => {
+  localStorage.setItem("playListTitle", "early stage emily");
+  window.location.assign("./playList.html");
+  //const playListTitle = document.getElementById("playListTitle");
+  //playListTitle.innerText = "early stage emily";
+});

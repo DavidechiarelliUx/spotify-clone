@@ -9,13 +9,14 @@ window.addEventListener("DOMContentLoaded", () => {
   const listTitle = document.getElementById("playListTitle");
   const listTitleSmall = document.getElementById("playListTitleSmall");
   //Titolo dinamico
-  const playListTitle = localStorage.getItem("playListTitle");
-  listTitle.innerText = playListTitle;
-  listTitleSmall.innerText = playListTitle;
-
   const personalList = localStorage.getItem("content");
-  listTitle.innerText = personalList;
-  listTitleSmall.innerText = personalList;
+
+  const playListTitle = localStorage.getItem("playListTitle");
+  listTitle.innerText = playListTitle ? playListTitle : personalList;
+  listTitleSmall.innerText = playListTitle ? playListTitle : personalList;
+
+  //listTitle.innerText = personalList;
+  //listTitleSmall.innerText = personalList;
 
   //Variabile per math random
   let artistFotoIndex;
