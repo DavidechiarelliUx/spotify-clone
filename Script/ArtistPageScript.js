@@ -73,7 +73,7 @@ fetch(URL)
       pAlbum.classList.add("text-light");
       pTime.classList.add("text-light");
       pAsc.classList.add("text-light");
-      divAlbum.classList.add("row");
+      divAlbum.classList.add("row", "my-4");
       albumImage.classList.add("mx-2");
       albumImage.style = "width:40px";
 
