@@ -196,71 +196,113 @@
               background: linear-gradient(0deg, rgba(1, 1, 1, 1) 0%, rgba(63, 63, 63, 0.867) 88%);
             "
           >
-            <div id="authordiv" class="container py-4" style="height: 300px">
-              <div class="dropdown d-flex justify-content-end">
-                <button
-                  class="btn btn-secondary bg-black border-0 ps-1 py-1 dropdown-toggle rounded-pill"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img
-                    src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/02b4d76c-e4da-4cbc-872c-1bf9ac49bafd/anim=false,width=450/ComfyUI_00289_.jpeg"
-                    style="height: 40px"
-                    class="rounded-5 me-2"
-                    alt="avatar"
-                  />
-                  Lidia Nautiluss...
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#">Profilo</a></li>
-                  <li><a class="dropdown-item" href="#">Preferenze</a></li>
-                  <li><a class="dropdown-item" id="openAside" href="#">Attività Amici</a></li>
-                  <li><a class="dropdown-item" href="#">Esci</a></li>
-                </ul>
-              </div>
-
-              <!--Sezione nome artista-->
-
-              <div class="container px-4">
-                <div class="col-md-6">
-                  <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      fill="#3D91F4"
-                      class="bi bi-patch-check-fill"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"
-                      />
-                    </svg>
-                    Artista verificato
+            <!--Sezione nome artista - md-->
+            <div id="sezione-artista-md">
+              <div id="authordiv" style="height: 300px">
+                <div id="barra-superiore-md" class="container py-3">
+                  <i class="bi bi-arrow-left fs-1"></i>
+                </div>
+                <div id="nome-artista-md">
+                  <div style="background-image: url(${bgimg})">
+                    <div class="container px-4 mt-5">
+                      <h1 class="display-3 fw-bold" id="nameArtist"></h1>
+                    </div>
                   </div>
-                  <h1 class="display-3 w-bold" id="nameArtist"></h1>
-                  <p id="ascoltatoriMensili"></p>
+                </div>
+              </div>
+              <!--Container Album-->
+              <div class="container-fluid p-4 px-5" style="background-color: rgba(0, 0, 0, 0.226)">
+                <p id="ascoltatoriMensili" class="fs-5 text-secondary"></p>
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="btn-group">
+                    <button type="button" class="border border-dark-subtitle rounded bg-transparent px-4 mx-3">
+                      Seguiti
+                    </button>
+                    <button type="button" class="border-0 bg-transparent text-light">
+                      <i class="bi bi-three-dots-vertical fs-1 text-secondary"></i>
+                    </button>
+                  </div>
+                  <div class="btn-group d-flex align-items-center">
+                    <i class="bi bi-shuffle mx-3 fs-1" style="color: #1bd760"></i>
+                    <button class="btn btn-0 pe-0">
+                      <i class="bi-play-circle-fill display-4" style="color: #1bd760"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <h3 class="mb-4">Popolari</h3>
+                  <div id="sectionAlbum"></div>
                 </div>
               </div>
             </div>
+            <!--Sezione nome artista -lg-->
 
-            <!--Container Album-->
-            <div class="container p-4" style="background-color: rgba(0, 0, 0, 0.226)">
-              <div class="btn-group">
-                <button class="border-0 rounded-circle text-black bg-success fs-3 px-2">
-                  <i class="bi bi-play-fill"></i>
-                </button>
-                <button type="button" class="border border-light rounded bg-transparent px-4 mx-3" id="buttonFollow">
-                  Aggiungi a preferiti
-                </button>
-                <button type="button" class="border-0 bg-transparent text-light">
-                  <i class="bi bi-three-dots fs-3 text-secondary"></i>
-                </button>
+            <div id="sezione-artista-lg">
+              <div id="authordiv" class="container py-4" style="height: 300px">
+                <div class="dropdown d-flex justify-content-end">
+                  <button
+                    class="btn btn-secondary bg-black border-0 ps-1 py-1 dropdown-toggle rounded-pill"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/02b4d76c-e4da-4cbc-872c-1bf9ac49bafd/anim=false,width=450/ComfyUI_00289_.jpeg"
+                      style="height: 40px"
+                      class="rounded-5 me-2"
+                      alt="avatar"
+                    />
+                    Lidia Nautiluss...
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Profilo</a></li>
+                    <li><a class="dropdown-item" href="#">Preferenze</a></li>
+                    <li><a class="dropdown-item" id="openAside" href="#">Attività Amici</a></li>
+                    <li><a class="dropdown-item" href="#">Esci</a></li>
+                  </ul>
+                </div>
+                <div id="nome-artista-lg">
+                  <div style="background-image: url(${bgimg})"></div>
+                  <div class="container px-4">
+                    <div class="col-md-6">
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          fill="#3D91F4"
+                          class="bi bi-patch-check-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"
+                          />
+                        </svg>
+                        Artista verificato
+                      </div>
+                      <h1 class="display-3 w-bold" id="nameArtist"></h1>
+                      <p id="ascoltatoriMensili"></p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="mt-4">
-                <h3>Popolari</h3>
-                <div id="sectionAlbum"></div>
+              <!--Container Album-->
+              <div class="container p-4" style="background-color: rgba(0, 0, 0, 0.226)">
+                <div class="btn-group">
+                  <button class="border-0 rounded-circle text-black bg-success fs-3 px-2">
+                    <i class="bi bi-play-fill"></i>
+                  </button>
+                  <button type="button" class="border border-light rounded bg-transparent px-4 mx-3" id="buttonFollow">
+                    Aggiungi a preferiti
+                  </button>
+                  <button type="button" class="border-0 bg-transparent text-light">
+                    <i class="bi bi-three-dots fs-3 text-secondary"></i>
+                  </button>
+                </div>
+                <div class="mt-4">
+                  <h3>Popolari</h3>
+                  <div id="sectionAlbum"></div>
+                </div>
               </div>
             </div>
           </div>

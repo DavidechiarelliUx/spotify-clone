@@ -217,14 +217,19 @@ window.addEventListener("DOMContentLoaded", () => {
             const totDurationSmall = document.getElementById("totDurationSmall");
             totDurationSmall.innerHTML = "about " + durationConvert(duration) + " minutes";
 
-            //Funzione per passare alla pagina dell'artista
+            /**Funzione per passare alla pagina dell'artista
             artist.addEventListener("click", () => {
               localStorage.setItem("bandName", artistName);
               window.location.assign(`./artistProva.html?id=${artistList.id}`);
+            });**/
+
+            artist.addEventListener("click", () => {
+              console.log(artistName);
+              window.location.href = `./artist.html?autoreId=${artistName}`;
             });
 
             //Funzione per il player
-            anchorTrack.addEventListener("click", (e) => {
+            artistContainer.addEventListener("click", (e) => {
               // const riproduction = document.getElementById("riproduction");
               const audioPlayer = document.getElementById("audioPlayer");
               const nomeAuthor = document.getElementById("nameAuthor");
@@ -247,7 +252,7 @@ window.addEventListener("DOMContentLoaded", () => {
             });
 
             //Funzione per il player
-            anchorTrack1.addEventListener("click", (e) => {
+            artistContainer1.addEventListener("click", (e) => {
               // const riproduction = document.getElementById("riproduction");
               const audioPlayer = document.getElementById("audioPlayer");
               const nomeAuthor = document.getElementById("nameAuthor");
