@@ -196,8 +196,8 @@
               background: linear-gradient(0deg, rgba(1, 1, 1, 1) 0%, rgba(63, 63, 63, 0.867) 88%);
             "
           >
-            <div class="container px-4">
-              <div class="dropdown d-flex justify-content-end my-4">
+            <div id="authordiv" class="container py-4" style="height: 300px">
+              <div class="dropdown d-flex justify-content-end">
                 <button
                   class="btn btn-secondary bg-black border-0 ps-1 py-1 dropdown-toggle rounded-pill"
                   type="button"
@@ -219,10 +219,9 @@
                   <li><a class="dropdown-item" href="#">Esci</a></li>
                 </ul>
               </div>
-            </div>
-            <!--Sezione nome artista-->
-            <div>
-              <div style="background-image: url(${bgimg})"></div>
+
+              <!--Sezione nome artista-->
+
               <div class="container px-4">
                 <div class="col-md-6">
                   <div>
@@ -244,21 +243,24 @@
                   <p id="ascoltatoriMensili"></p>
                 </div>
               </div>
-              <!--Container Album-->
-              <div class="container p-4" style="background-color: rgba(0, 0, 0, 0.226)">
-                <div class="btn-group">
-                  <button class="border-0 rounded-circle text-black bg-success fs-3 px-2">
-                    <i class="bi bi-play-fill"></i>
-                  </button>
-                  <button type="button" class="border border-light rounded bg-transparent px-4 mx-3 " id="buttonFollow">Aggiungi a preferiti</button>
-                  <button type="button" class="border-0 bg-transparent text-light">
-                    <i class="bi bi-three-dots fs-3 text-secondary"></i>
-                  </button>
-                </div>
-                <div class="mt-4">
-                  <h3>Popolari</h3>
-                  <div id="sectionAlbum"></div>
-                </div>
+            </div>
+
+            <!--Container Album-->
+            <div class="container p-4" style="background-color: rgba(0, 0, 0, 0.226)">
+              <div class="btn-group">
+                <button class="border-0 rounded-circle text-black bg-success fs-3 px-2">
+                  <i class="bi bi-play-fill"></i>
+                </button>
+                <button type="button" class="border border-light rounded bg-transparent px-4 mx-3" id="buttonFollow">
+                  Aggiungi a preferiti
+                </button>
+                <button type="button" class="border-0 bg-transparent text-light">
+                  <i class="bi bi-three-dots fs-3 text-secondary"></i>
+                </button>
+              </div>
+              <div class="mt-4">
+                <h3>Popolari</h3>
+                <div id="sectionAlbum"></div>
               </div>
             </div>
           </div>
@@ -448,7 +450,7 @@
         </div>
       </div>
     </footer>
-<div id="searchModal" class="modal fade">
+    <div id="searchModal" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
           <div id="bodyModale" class="modal-body bg-black border-0 rounded-2 p-4">
