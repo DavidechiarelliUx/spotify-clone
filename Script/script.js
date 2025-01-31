@@ -35,8 +35,11 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
     }
   })
   .then((list) => {
+    console.log(list);
     const artist = list.data[0].artist;
     const album = list.data[1].album;
+    const index = list.data[0].artist.id;
+    console.log(index);
 
     const artistGrid = document.getElementById("artistGrid");
 
@@ -131,7 +134,10 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
     albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
     btnGroup.append(playBtn, saveBtn, dotBtn);
 
-    playBtn.addEventListener("click", () => {});
+    playBtn.addEventListener("click", () => {
+      //console.log("mi hai cliccato!");
+      window.location.assign(`AlbumPage.html?artistId=${index}`);
+    });
   })
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
@@ -150,6 +156,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=caribou")
   .then((list) => {
     const artist = list.data[0].artist;
     const album = list.data[1].album;
+    const index = list.data[1].artist.id;
 
     const artistGrid = document.getElementById("artistGrid");
 
@@ -243,6 +250,10 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=caribou")
     col6.appendChild(albumBody);
     albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
     btnGroup.append(playBtn, saveBtn, dotBtn);
+
+    playBtn.addEventListener("click", () => {
+      window.location.assign(`AlbumPage.html?artistId=${index}`);
+    });
   })
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
@@ -263,6 +274,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=m83")
 
     const artist = list.data[0].artist;
     const album = list.data[1].album;
+    const index = list.data[1].artist.id;
 
     //Card artisti
 
@@ -358,6 +370,10 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=m83")
     col6.appendChild(albumBody);
     albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
     btnGroup.append(playBtn, saveBtn, dotBtn);
+
+    playBtn.addEventListener("click", () => {
+      window.location.assign(`AlbumPage.html?artistId=${index}`);
+    });
   })
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
@@ -378,6 +394,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=mythandroid")
 
     const artist = list.data[0].artist;
     const album = list.data[1].album;
+    const index = list.data[1].artist.id;
 
     const artistGrid = document.getElementById("artistGrid");
 
@@ -471,6 +488,10 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=mythandroid")
     col6.appendChild(albumBody);
     albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
     btnGroup.append(playBtn, saveBtn, dotBtn);
+
+    playBtn.addEventListener("click", () => {
+      window.location.assign(`AlbumPage.html?artistId=${index}`);
+    });
   })
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
@@ -584,6 +605,10 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
     col6.appendChild(albumBody);
     albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
     btnGroup.append(playBtn, saveBtn, dotBtn);
+
+    playBtn.addEventListener("click", () => {
+      window.location.assign(`AlbumPage.html?artistId=${index}`);
+    });
   })
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
