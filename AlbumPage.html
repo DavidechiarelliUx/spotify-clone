@@ -535,8 +535,11 @@
           <div class="d-flex align-items-center justify-content-center">
             <i class="bi bi-shuffle mx-3 fs-5" style="color: #1bd760"></i>
             <i class="fa-solid fa-backward-step mx-3 fs-5"></i>
-            <button class="btn btn-0" id="pause"><i class="bi-play-circle-fill fs-2"></i></button>
-            <i class="fa-solid fa-forward-step mx-3 fs-5"></i>
+            <button class="btn btn-0" id="pauseButton">
+              <i class="bi-play-circle-fill fs-2" id="playIcon"></i>
+              <i class="bi-pause-circle-fill fs-2" id="pauseIcon" style="display: none;"></i>
+            </button>
+            <i class="fa-solid fa-forward-step mx-3 fs-5" id="playIcon"></i>
             <i class="fa-solid fa-repeat mx-3 fs-5" style="color: #1bd760"></i>
           </div>
           <div class="progress my-2" style="height: 3px">

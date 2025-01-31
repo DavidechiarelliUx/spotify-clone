@@ -4,9 +4,6 @@ const id = params.get("artistId");
 const URLtracklist = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id}/top?limit=50`;
 
 
-let currentAudio = null;
-let currentTrackRow = null;
-
 fetch(URLtracklist)
   .then((response) => {
     if (response.ok) {
@@ -104,43 +101,74 @@ fetch(URLtracklist)
     console.error("Errore nel caricamento della tracklist:", error);
   });
 
-function playTrack(track, trackRow) {
-  if (currentAudio !== null) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-  }
 
-  if (currentAudio !== null && currentAudio.src === track.preview && !currentAudio.paused) {
-    currentAudio.pause();
-    return;
-  }
+  // playtrack pause e play
+  let currentAudio = null;
+  let currentTrackRow = null;
 
-  currentAudio = new Audio(track.preview);
-  currentAudio.play();
+  const pauseButton = document.getElementById("pauseButton");
+  const playIcon = document.getElementById("playIcon");
+  const pauseIcon = document.getElementById("pauseIcon");
 
-  if (currentTrackRow !== null) {
-    currentTrackRow.classList.remove("playing");
-  }
-
-  currentTrackRow = trackRow;
-  currentTrackRow.classList.add("playing");
-}
-
-pause.addEventListener("click", () => {
-  if (currentAudio !== null) {
-    if (!currentAudio.paused) {
+  function playTrack(track, trackRow) {
+   
+    if (currentAudio !== null) {
       currentAudio.pause();
-    } else {
-      currentAudio.play();
+      currentAudio.currentTime = 0;
+      playIcon.style.display = "block";
+      pauseIcon.style.display = "none";
     }
-  }
-});
 
-function formatDuration(seconds) {
-  const min = Math.floor(seconds / 60);
-  const sec = seconds % 60;
-  return `${min}:${sec.toString().padStart(2, "0")}`;
-}
+    if (currentAudio !== null && currentAudio.src === track.preview && !currentAudio.paused) {
+      currentAudio.pause();
+      playIcon.style.display = "block";
+      pauseIcon.style.display = "none";
+      return;
+    }
+
+    currentAudio = new Audio(track.preview);
+    currentAudio.play();
+
+    playIcon.style.display = "none";
+    pauseIcon.style.display = "block";
+
+
+    if (currentTrackRow !== null) {
+      currentTrackRow.classList.remove("playing");
+    }
+
+    currentTrackRow = trackRow;
+    currentTrackRow.classList.add("playing");
+
+
+    currentAudio.addEventListener("ended", () => {
+      playIcon.style.display = "block";
+      pauseIcon.style.display = "none";
+    });
+  }
+
+  // 🎵 Pulsante di Play/Pausa
+  pauseButton.addEventListener("click", () => {
+    if (currentAudio !== null) {
+      if (!currentAudio.paused) {
+        currentAudio.pause();
+        playIcon.style.display = "block";
+        pauseIcon.style.display = "none";
+      } else {
+        currentAudio.play();
+        playIcon.style.display = "none";
+        pauseIcon.style.display = "block";
+      }
+    }
+  });
+
+  // Funzione per formattare la durata delle tracce
+  function formatDuration(seconds) {
+    const min = Math.floor(seconds / 60);
+    const sec = seconds % 60;
+    return `${min}:${sec.toString().padStart(2, "0")}`;
+  }
+
 
 // const divRow = document.getElementById("track-list");
 // list.data.forEach((track, index) => {
