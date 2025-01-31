@@ -92,7 +92,7 @@ fetch(URL)
         const trackListUrl = listAlbum.album.tracklist;
         const albumId = listAlbum.album.id;
         console.log(albumId);
-        window.location.href = `../AlbumPage.html?tracklist=${trackListUrl}&albumId=${albumId}`;
+        window.location.href = `../AlbumPageProva.html?tracklist=${trackListUrl}&albumId=${albumId}`;
       });
     });
   })

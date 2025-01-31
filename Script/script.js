@@ -35,13 +35,17 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
     }
   })
   .then((list) => {
+    console.log(list);
     const artist = list.data[0].artist;
     const album = list.data[1].album;
+    const index = list.data[0].artist.id;
+    console.log(index);
 
     const artistGrid = document.getElementById("artistGrid");
 
     const col = document.createElement("div");
     const artistcard = document.createElement("div");
+    const divImg = document.createElement("div");
     const cardImg = document.createElement("img");
     const cardBody = document.createElement("div");
     const cardTitle = document.createElement("h5");
@@ -49,26 +53,493 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
 
     col.classList.add("col");
     artistcard.classList.add("card", "border-0");
-    cardImg.classList.add(
-      "card-img-top",
-      "img-fluid",
-      "img-thumbnail",
-      "border",
-      "border-5",
-      "border-dark",
-      "rounded-4",
-      "mx-auto"
-    );
+    divImg.classList.add("m-2");
+    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border-0", "rounded-3", "mx-auto", "p-0");
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     cardTitle.classList.add("card-title");
     cardText.classList.add("text-muted");
 
+    artistcard.style.backgroundColor = "#171717";
     cardImg.src = artist.picture;
     cardTitle.textContent = artist.name;
+    cardImg.style.objectFit = "cover";
 
     artistGrid.appendChild(col);
     col.appendChild(artistcard);
-    artistcard.append(cardImg, cardBody);
+    artistcard.append(divImg, cardBody);
+    divImg.appendChild(cardImg);
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(cardText);
+
+    const cardAlbum = document.getElementById("cardAlbum1");
+
+    const row = document.createElement("div");
+    const col3 = document.createElement("div");
+    const albumImg = document.createElement("img");
+    const col6 = document.createElement("div");
+    const albumBody = document.createElement("div");
+    const albumTitle = document.createElement("h1");
+    const albumAutore = document.createElement("p");
+    const albumText = document.createElement("p");
+    const btnGroup = document.createElement("div");
+    const playBtn = document.createElement("button");
+    const saveBtn = document.createElement("button");
+    const dotBtn = document.createElement("button");
+
+    row.classList.add("row", "g-0");
+    col3.classList.add("col-3", "p-4", "align-content-center");
+    albumImg.classList.add("img-fluid");
+
+    col6.classList.add("col-9", "align-content-center");
+    albumBody.classList.add("card-body");
+    albumTitle.classList.add("card-title", "display-5", "fw-bold");
+    albumAutore.classList.add("card-text");
+    albumText.classList.add("card-text");
+    btnGroup.classList.add("btn-group");
+    playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
+    saveBtn.classList.add(
+      "badge",
+      "rounded-pill",
+      "border",
+      "border-1",
+      "border-light",
+      "py-3",
+      "px-4",
+      "mx-2",
+      "bg-black"
+    );
+    dotBtn.classList.add("border-0", "bg-transparent", "text-light");
+
+    albumImg.src = album.cover;
+    albumTitle.textContent = album.title;
+    albumAutore.textContent = artist.name;
+    albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
+    playBtn.innerText = "PLAY";
+    saveBtn.innerText = "SAVE";
+    dotBtn.innerHTML = `<i class="bi bi-three-dots fs-3 text-secondary"></i>`;
+
+    //Style
+    albumImg.style.objectFit = "cover";
+    playBtn.style.backgroundColor = "#1bd760";
+    playBtn.style.width = "6rem";
+    playBtn.style.fontSize = "1rem";
+    saveBtn.style.width = "6rem";
+    saveBtn.style.fontSize = "1rem";
+
+    cardAlbum.appendChild(row);
+    row.appendChild(col3);
+    col3.appendChild(albumImg);
+    row.appendChild(col6);
+    col6.appendChild(albumBody);
+    albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
+    btnGroup.append(playBtn, saveBtn, dotBtn);
+
+    playBtn.addEventListener("click", () => {
+      //console.log("mi hai cliccato!");
+      window.location.assign(`AlbumPage.html?artistId=${index}`);
+    });
+  })
+  .catch((error) => {
+    console.error("errore nel caricamento della list", error);
+  });
+//CARIBOU
+fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=caribou")
+  .then((response) => {
+    console.log(response);
+
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("caricamento della pagina");
+    }
+  })
+  .then((list) => {
+    const artist = list.data[0].artist;
+    const album = list.data[1].album;
+    const index = list.data[1].artist.id;
+
+    const artistGrid = document.getElementById("artistGrid");
+
+    const col = document.createElement("div");
+    const artistcard = document.createElement("div");
+    const divImg = document.createElement("div");
+    const cardImg = document.createElement("img");
+    const cardBody = document.createElement("div");
+    const cardTitle = document.createElement("h5");
+    const cardText = document.createElement("p");
+
+    col.classList.add("col");
+    artistcard.classList.add("card", "border-0");
+    divImg.classList.add("m-2");
+    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border-0", "rounded-3", "mx-auto", "p-0");
+    cardBody.classList.add("card-body", "d-flex", "flex-column");
+    cardTitle.classList.add("card-title");
+    cardText.classList.add("text-muted");
+
+    artistcard.style.backgroundColor = "#171717";
+    cardImg.src = artist.picture;
+    cardTitle.textContent = artist.name;
+    cardImg.style.objectFit = "cover";
+
+    artistGrid.appendChild(col);
+    col.appendChild(artistcard);
+    artistcard.append(divImg, cardBody);
+    divImg.appendChild(cardImg);
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(cardText);
+
+    const cardAlbum = document.getElementById("cardAlbum2");
+
+    const row = document.createElement("div");
+    const col3 = document.createElement("div");
+    const albumImg = document.createElement("img");
+    const col6 = document.createElement("div");
+    const albumBody = document.createElement("div");
+    const albumTitle = document.createElement("h1");
+    const albumAutore = document.createElement("p");
+    const albumText = document.createElement("p");
+    const btnGroup = document.createElement("div");
+    const playBtn = document.createElement("button");
+    const saveBtn = document.createElement("button");
+    const dotBtn = document.createElement("button");
+
+    row.classList.add("row", "g-0");
+    col3.classList.add("col-3", "p-4", "align-content-center");
+    albumImg.classList.add("img-fluid");
+
+    col6.classList.add("col-9", "align-content-center");
+    albumBody.classList.add("card-body");
+    albumTitle.classList.add("card-title", "display-5", "fw-bold");
+    albumAutore.classList.add("card-text");
+    albumText.classList.add("card-text");
+    btnGroup.classList.add("btn-group");
+    playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
+    saveBtn.classList.add(
+      "badge",
+      "rounded-pill",
+      "border",
+      "border-1",
+      "border-light",
+      "py-3",
+      "px-4",
+      "mx-2",
+      "bg-black"
+    );
+    dotBtn.classList.add("border-0", "bg-transparent", "text-light");
+
+    albumImg.src = album.cover;
+    albumTitle.textContent = album.title;
+    albumAutore.textContent = artist.name;
+    albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
+    playBtn.innerText = "PLAY";
+    saveBtn.innerText = "SAVE";
+    dotBtn.innerHTML = `<i class="bi bi-three-dots fs-3 text-secondary"></i>`;
+
+    //Style
+    albumImg.style.objectFit = "cover";
+    playBtn.style.backgroundColor = "#1bd760";
+    playBtn.style.width = "6rem";
+    playBtn.style.fontSize = "1rem";
+    saveBtn.style.width = "6rem";
+    saveBtn.style.fontSize = "1rem";
+
+    cardAlbum.appendChild(row);
+    row.appendChild(col3);
+    col3.appendChild(albumImg);
+    row.appendChild(col6);
+    col6.appendChild(albumBody);
+    albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
+    btnGroup.append(playBtn, saveBtn, dotBtn);
+
+    playBtn.addEventListener("click", () => {
+      window.location.assign(`AlbumPage.html?artistId=${index}`);
+    });
+  })
+  .catch((error) => {
+    console.error("errore nel caricamento della list", error);
+  });
+//M83
+fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=m83")
+  .then((response) => {
+    console.log(response);
+
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("caricamento della pagina");
+    }
+  })
+  .then((list) => {
+    console.log(list);
+
+    const artist = list.data[0].artist;
+    const album = list.data[1].album;
+    const index = list.data[1].artist.id;
+
+    //Card artisti
+
+    const artistGrid = document.getElementById("artistGrid");
+
+    const col = document.createElement("div");
+    const artistcard = document.createElement("div");
+    const divImg = document.createElement("div");
+    const cardImg = document.createElement("img");
+    const cardBody = document.createElement("div");
+    const cardTitle = document.createElement("h5");
+    const cardText = document.createElement("p");
+
+    col.classList.add("col");
+    artistcard.classList.add("card", "border-0");
+    divImg.classList.add("m-2");
+    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border-0", "rounded-3", "mx-auto", "p-0");
+    cardBody.classList.add("card-body", "d-flex", "flex-column");
+    cardTitle.classList.add("card-title");
+    cardText.classList.add("text-muted");
+
+    artistcard.style.backgroundColor = "#171717";
+    cardImg.src = artist.picture;
+    cardTitle.textContent = artist.name;
+    cardImg.style.objectFit = "cover";
+
+    artistGrid.appendChild(col);
+    col.appendChild(artistcard);
+    artistcard.append(divImg, cardBody);
+    divImg.appendChild(cardImg);
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(cardText);
+
+    const cardAlbum = document.getElementById("cardAlbum3");
+
+    const row = document.createElement("div");
+    const col3 = document.createElement("div");
+    const albumImg = document.createElement("img");
+    const col6 = document.createElement("div");
+    const albumBody = document.createElement("div");
+    const albumTitle = document.createElement("h1");
+    const albumAutore = document.createElement("p");
+    const albumText = document.createElement("p");
+    const btnGroup = document.createElement("div");
+    const playBtn = document.createElement("button");
+    const saveBtn = document.createElement("button");
+    const dotBtn = document.createElement("button");
+
+    row.classList.add("row", "g-0");
+    col3.classList.add("col-3", "p-4", "align-content-center");
+    albumImg.classList.add("img-fluid");
+
+    col6.classList.add("col-9", "align-content-center");
+    albumBody.classList.add("card-body");
+    albumTitle.classList.add("card-title", "display-5", "fw-bold");
+    albumAutore.classList.add("card-text");
+    albumText.classList.add("card-text");
+    btnGroup.classList.add("btn-group");
+    playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
+    saveBtn.classList.add(
+      "badge",
+      "rounded-pill",
+      "border",
+      "border-1",
+      "border-light",
+      "py-3",
+      "px-4",
+      "mx-2",
+      "bg-black"
+    );
+    dotBtn.classList.add("border-0", "bg-transparent", "text-light");
+
+    albumImg.src = album.cover;
+    albumTitle.textContent = album.title;
+    albumAutore.textContent = artist.name;
+    albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
+    playBtn.innerText = "PLAY";
+    saveBtn.innerText = "SAVE";
+    dotBtn.innerHTML = `<i class="bi bi-three-dots fs-3 text-secondary"></i>`;
+
+    //Style
+    albumImg.style.objectFit = "cover";
+    playBtn.style.backgroundColor = "#1bd760";
+    playBtn.style.width = "6rem";
+    playBtn.style.fontSize = "1rem";
+    saveBtn.style.width = "6rem";
+    saveBtn.style.fontSize = "1rem";
+
+    cardAlbum.appendChild(row);
+    row.appendChild(col3);
+    col3.appendChild(albumImg);
+    row.appendChild(col6);
+    col6.appendChild(albumBody);
+    albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
+    btnGroup.append(playBtn, saveBtn, dotBtn);
+
+    playBtn.addEventListener("click", () => {
+      window.location.assign(`AlbumPage.html?artistId=${index}`);
+    });
+  })
+  .catch((error) => {
+    console.error("errore nel caricamento della list", error);
+  });
+//MYTHANDROID
+fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=mythandroid")
+  .then((response) => {
+    console.log(response);
+
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("caricamento della pagina");
+    }
+  })
+  .then((list) => {
+    console.log(list);
+
+    const artist = list.data[0].artist;
+    const album = list.data[1].album;
+    const index = list.data[1].artist.id;
+
+    const artistGrid = document.getElementById("artistGrid");
+
+    const col = document.createElement("div");
+    const artistcard = document.createElement("div");
+    const divImg = document.createElement("div");
+    const cardImg = document.createElement("img");
+    const cardBody = document.createElement("div");
+    const cardTitle = document.createElement("h5");
+    const cardText = document.createElement("p");
+
+    col.classList.add("col");
+    artistcard.classList.add("card", "border-0");
+    divImg.classList.add("m-2");
+    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border-0", "rounded-3", "mx-auto", "p-0");
+    cardBody.classList.add("card-body", "d-flex", "flex-column");
+    cardTitle.classList.add("card-title");
+    cardText.classList.add("text-muted");
+
+    artistcard.style.backgroundColor = "#171717";
+    cardImg.src = artist.picture;
+    cardTitle.textContent = artist.name;
+    cardImg.style.objectFit = "cover";
+
+    artistGrid.appendChild(col);
+    col.appendChild(artistcard);
+    artistcard.append(divImg, cardBody);
+    divImg.appendChild(cardImg);
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(cardText);
+
+    const cardAlbum = document.getElementById("cardAlbum4");
+
+    const row = document.createElement("div");
+    const col3 = document.createElement("div");
+    const albumImg = document.createElement("img");
+    const col6 = document.createElement("div");
+    const albumBody = document.createElement("div");
+    const albumTitle = document.createElement("h1");
+    const albumAutore = document.createElement("p");
+    const albumText = document.createElement("p");
+    const btnGroup = document.createElement("div");
+    const playBtn = document.createElement("button");
+    const saveBtn = document.createElement("button");
+    const dotBtn = document.createElement("button");
+
+    row.classList.add("row", "g-0");
+    col3.classList.add("col-3", "p-4", "align-content-center");
+    albumImg.classList.add("img-fluid");
+
+    col6.classList.add("col-9", "align-content-center");
+    albumBody.classList.add("card-body");
+    albumTitle.classList.add("card-title", "display-5", "fw-bold");
+    albumAutore.classList.add("card-text");
+    albumText.classList.add("card-text");
+    btnGroup.classList.add("btn-group");
+    playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
+    saveBtn.classList.add(
+      "badge",
+      "rounded-pill",
+      "border",
+      "border-1",
+      "border-light",
+      "py-3",
+      "px-4",
+      "mx-2",
+      "bg-black"
+    );
+    dotBtn.classList.add("border-0", "bg-transparent", "text-light");
+
+    albumImg.src = album.cover;
+    albumTitle.textContent = album.title;
+    albumAutore.textContent = artist.name;
+    albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
+    playBtn.innerText = "PLAY";
+    saveBtn.innerText = "SAVE";
+    dotBtn.innerHTML = `<i class="bi bi-three-dots fs-3 text-secondary"></i>`;
+
+    //Style
+    albumImg.style.objectFit = "cover";
+    playBtn.style.backgroundColor = "#1bd760";
+    playBtn.style.width = "6rem";
+    playBtn.style.fontSize = "1rem";
+    saveBtn.style.width = "6rem";
+    saveBtn.style.fontSize = "1rem";
+
+    cardAlbum.appendChild(row);
+    row.appendChild(col3);
+    col3.appendChild(albumImg);
+    row.appendChild(col6);
+    col6.appendChild(albumBody);
+    albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
+    btnGroup.append(playBtn, saveBtn, dotBtn);
+
+    playBtn.addEventListener("click", () => {
+      window.location.assign(`AlbumPage.html?artistId=${index}`);
+    });
+  })
+  .catch((error) => {
+    console.error("errore nel caricamento della list", error);
+  });
+//QUEEN
+fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
+  .then((response) => {
+    console.log(response);
+
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("caricamento della pagina");
+    }
+  })
+  .then((list) => {
+    console.log(list);
+
+    const artist = list.data[0].artist;
+    const album = list.data[2].album;
+
+    const artistGrid = document.getElementById("artistGrid");
+
+    const col = document.createElement("div");
+    const artistcard = document.createElement("div");
+    const divImg = document.createElement("div");
+    const cardImg = document.createElement("img");
+    const cardBody = document.createElement("div");
+    const cardTitle = document.createElement("h5");
+    const cardText = document.createElement("p");
+
+    col.classList.add("col");
+    artistcard.classList.add("card", "border-0");
+    divImg.classList.add("m-2");
+    cardImg.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border-0", "rounded-3", "mx-auto", "p-0");
+    cardBody.classList.add("card-body", "d-flex", "flex-column");
+    cardTitle.classList.add("card-title");
+    cardText.classList.add("text-muted");
+
+    artistcard.style.backgroundColor = "#171717";
+    cardImg.src = artist.picture;
+    cardTitle.textContent = artist.name;
+    cardImg.style.objectFit = "cover";
+
+    artistGrid.appendChild(col);
+    col.appendChild(artistcard);
+    artistcard.append(divImg, cardBody);
+    divImg.appendChild(cardImg);
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
 
@@ -135,477 +606,9 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
     albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
     btnGroup.append(playBtn, saveBtn, dotBtn);
 
-    playBtn.addEventListener("click", () => {});
-  })
-  .catch((error) => {
-    console.error("errore nel caricamento della list", error);
-  });
-//CARIBOU
-fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=caribou")
-  .then((response) => {
-    console.log(response);
-
-    if (response.ok) {
-      return response.json();
-    } else {
-      throw new Error("caricamento della pagina");
-    }
-  })
-  .then((list) => {
-    const artist = list.data[0].artist;
-    const album = list.data[1].album;
-
-    const artistGrid = document.getElementById("artistGrid");
-
-    const col = document.createElement("div");
-    const artistcard = document.createElement("div");
-    const cardImg = document.createElement("img");
-    const cardBody = document.createElement("div");
-    const cardTitle = document.createElement("h5");
-    const cardText = document.createElement("p");
-
-    col.classList.add("col");
-    artistcard.classList.add("card", "border-0");
-    cardImg.classList.add(
-      "card-img-top",
-      "img-fluid",
-      "img-thumbnail",
-      "border",
-      "border-5",
-      "border-dark",
-      "rounded-4",
-      "mx-auto"
-    );
-    cardBody.classList.add("card-body", "d-flex", "flex-column");
-    cardTitle.classList.add("card-title");
-    cardText.classList.add("text-muted");
-
-    cardImg.src = artist.picture;
-    cardTitle.textContent = artist.name;
-
-    artistGrid.appendChild(col);
-    col.appendChild(artistcard);
-    artistcard.append(cardImg, cardBody);
-    cardBody.appendChild(cardTitle);
-    cardBody.appendChild(cardText);
-
-    const cardAlbum = document.getElementById("cardAlbum4");
-
-    const row = document.createElement("div");
-    const col3 = document.createElement("div");
-    const albumImg = document.createElement("img");
-    const col6 = document.createElement("div");
-    const albumBody = document.createElement("div");
-    const albumTitle = document.createElement("h1");
-    const albumAutore = document.createElement("p");
-    const albumText = document.createElement("p");
-    const btnGroup = document.createElement("div");
-    const playBtn = document.createElement("button");
-    const saveBtn = document.createElement("button");
-    const dotBtn = document.createElement("button");
-
-    row.classList.add("row", "g-0");
-    col3.classList.add("col-3", "p-4", "align-content-center");
-    albumImg.classList.add("img-fluid");
-
-    col6.classList.add("col-9", "align-content-center");
-    albumBody.classList.add("card-body");
-    albumTitle.classList.add("card-title", "display-5", "fw-bold");
-    albumAutore.classList.add("card-text");
-    albumText.classList.add("card-text");
-    btnGroup.classList.add("btn-group");
-    playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add(
-      "badge",
-      "rounded-pill",
-      "border",
-      "border-1",
-      "border-light",
-      "py-3",
-      "px-4",
-      "mx-2",
-      "bg-black"
-    );
-    dotBtn.classList.add("border-0", "bg-transparent", "text-light");
-
-    albumImg.src = album.cover;
-    albumTitle.textContent = album.title;
-    albumAutore.textContent = artist.name;
-    albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
-    playBtn.innerText = "PLAY";
-    saveBtn.innerText = "SAVE";
-    dotBtn.innerHTML = `<i class="bi bi-three-dots fs-3 text-secondary"></i>`;
-
-    //Style
-    albumImg.style.objectFit = "cover";
-    playBtn.style.backgroundColor = "#1bd760";
-    playBtn.style.width = "6rem";
-    playBtn.style.fontSize = "1rem";
-    saveBtn.style.width = "6rem";
-    saveBtn.style.fontSize = "1rem";
-
-    cardAlbum.appendChild(row);
-    row.appendChild(col3);
-    col3.appendChild(albumImg);
-    row.appendChild(col6);
-    col6.appendChild(albumBody);
-    albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
-    btnGroup.append(playBtn, saveBtn, dotBtn);
-  })
-  .catch((error) => {
-    console.error("errore nel caricamento della list", error);
-  });
-//M83
-fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=m83")
-  .then((response) => {
-    console.log(response);
-
-    if (response.ok) {
-      return response.json();
-    } else {
-      throw new Error("caricamento della pagina");
-    }
-  })
-  .then((list) => {
-    console.log(list);
-
-    const artist = list.data[0].artist;
-    const album = list.data[1].album;
-
-    //Card artisti
-
-    const artistGrid = document.getElementById("artistGrid");
-
-    const col = document.createElement("div");
-    const artistcard = document.createElement("div");
-    const cardImg = document.createElement("img");
-    const cardBody = document.createElement("div");
-    const cardTitle = document.createElement("h5");
-    const cardText = document.createElement("p");
-
-    col.classList.add("col");
-    artistcard.classList.add("card", "border-0");
-    cardImg.classList.add(
-      "card-img-top",
-      "img-fluid",
-      "img-thumbnail",
-      "border",
-      "border-5",
-      "border-dark",
-      "rounded-4",
-      "mx-auto"
-    );
-    cardBody.classList.add("card-body", "d-flex", "flex-column");
-    cardTitle.classList.add("card-title");
-    cardText.classList.add("text-muted");
-
-    cardImg.src = artist.picture;
-    cardTitle.textContent = artist.name;
-
-    artistGrid.appendChild(col);
-    col.appendChild(artistcard);
-    artistcard.append(cardImg, cardBody);
-    cardBody.appendChild(cardTitle);
-    cardBody.appendChild(cardText);
-
-    //Card Album
-
-    const cardAlbum = document.getElementById("cardAlbum1");
-
-    const row = document.createElement("div");
-    const col3 = document.createElement("div");
-    const albumImg = document.createElement("img");
-    const col6 = document.createElement("div");
-    const albumBody = document.createElement("div");
-    const albumTitle = document.createElement("h1");
-    const albumAutore = document.createElement("p");
-    const albumText = document.createElement("p");
-    const btnGroup = document.createElement("div");
-    const playBtn = document.createElement("button");
-    const saveBtn = document.createElement("button");
-    const dotBtn = document.createElement("button");
-
-    row.classList.add("row", "g-0");
-    col3.classList.add("col-3", "p-4", "align-content-center");
-    albumImg.classList.add("img-fluid");
-
-    col6.classList.add("col-9", "align-content-center");
-    albumBody.classList.add("card-body");
-    albumTitle.classList.add("card-title", "display-5", "fw-bold");
-    albumAutore.classList.add("card-text");
-    albumText.classList.add("card-text");
-    btnGroup.classList.add("btn-group");
-    playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add(
-      "badge",
-      "rounded-pill",
-      "border",
-      "border-1",
-      "border-light",
-      "py-3",
-      "px-4",
-      "mx-2",
-      "bg-black"
-    );
-    dotBtn.classList.add("border-0", "bg-transparent", "text-light");
-
-    albumImg.src = album.cover;
-    albumTitle.textContent = album.title;
-    albumAutore.textContent = artist.name;
-    albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
-    playBtn.innerText = "PLAY";
-    saveBtn.innerText = "SAVE";
-    dotBtn.innerHTML = `<i class="bi bi-three-dots fs-3 text-secondary"></i>`;
-
-    //Style
-    albumImg.style.objectFit = "cover";
-    playBtn.style.backgroundColor = "#1bd760";
-    playBtn.style.width = "6rem";
-    playBtn.style.fontSize = "1rem";
-    saveBtn.style.width = "6rem";
-    saveBtn.style.fontSize = "1rem";
-
-    cardAlbum.appendChild(row);
-    row.appendChild(col3);
-    col3.appendChild(albumImg);
-    row.appendChild(col6);
-    col6.appendChild(albumBody);
-    albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
-    btnGroup.append(playBtn, saveBtn, dotBtn);
-  })
-  .catch((error) => {
-    console.error("errore nel caricamento della list", error);
-  });
-//MYTHANDROID
-fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=mythandroid")
-  .then((response) => {
-    console.log(response);
-
-    if (response.ok) {
-      return response.json();
-    } else {
-      throw new Error("caricamento della pagina");
-    }
-  })
-  .then((list) => {
-    console.log(list);
-
-    const artist = list.data[0].artist;
-    const album = list.data[1].album;
-
-    const artistGrid = document.getElementById("artistGrid");
-
-    const col = document.createElement("div");
-    const artistcard = document.createElement("div");
-    const cardImg = document.createElement("img");
-    const cardBody = document.createElement("div");
-    const cardTitle = document.createElement("h5");
-    const cardText = document.createElement("p");
-
-    col.classList.add("col");
-    artistcard.classList.add("card", "border-0");
-    cardImg.classList.add(
-      "card-img-top",
-      "img-fluid",
-      "img-thumbnail",
-      "border",
-      "border-5",
-      "border-dark",
-      "rounded-4",
-      "mx-auto"
-    );
-    cardBody.classList.add("card-body", "d-flex", "flex-column");
-    cardTitle.classList.add("card-title");
-    cardText.classList.add("text-muted");
-
-    cardImg.src = artist.picture;
-    cardTitle.textContent = artist.name;
-
-    artistGrid.appendChild(col);
-    col.appendChild(artistcard);
-    artistcard.append(cardImg, cardBody);
-    cardBody.appendChild(cardTitle);
-    cardBody.appendChild(cardText);
-
-    const cardAlbum = document.getElementById("cardAlbum2");
-
-    const row = document.createElement("div");
-    const col3 = document.createElement("div");
-    const albumImg = document.createElement("img");
-    const col6 = document.createElement("div");
-    const albumBody = document.createElement("div");
-    const albumTitle = document.createElement("h1");
-    const albumAutore = document.createElement("p");
-    const albumText = document.createElement("p");
-    const btnGroup = document.createElement("div");
-    const playBtn = document.createElement("button");
-    const saveBtn = document.createElement("button");
-    const dotBtn = document.createElement("button");
-
-    row.classList.add("row", "g-0");
-    col3.classList.add("col-3", "p-4", "align-content-center");
-    albumImg.classList.add("img-fluid");
-
-    col6.classList.add("col-9", "align-content-center");
-    albumBody.classList.add("card-body");
-    albumTitle.classList.add("card-title", "display-5", "fw-bold");
-    albumAutore.classList.add("card-text");
-    albumText.classList.add("card-text");
-    btnGroup.classList.add("btn-group");
-    playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add(
-      "badge",
-      "rounded-pill",
-      "border",
-      "border-1",
-      "border-light",
-      "py-3",
-      "px-4",
-      "mx-2",
-      "bg-black"
-    );
-    dotBtn.classList.add("border-0", "bg-transparent", "text-light");
-
-    albumImg.src = album.cover;
-    albumTitle.textContent = album.title;
-    albumAutore.textContent = artist.name;
-    albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
-    playBtn.innerText = "PLAY";
-    saveBtn.innerText = "SAVE";
-    dotBtn.innerHTML = `<i class="bi bi-three-dots fs-3 text-secondary"></i>`;
-
-    //Style
-    albumImg.style.objectFit = "cover";
-    playBtn.style.backgroundColor = "#1bd760";
-    playBtn.style.width = "6rem";
-    playBtn.style.fontSize = "1rem";
-    saveBtn.style.width = "6rem";
-    saveBtn.style.fontSize = "1rem";
-
-    cardAlbum.appendChild(row);
-    row.appendChild(col3);
-    col3.appendChild(albumImg);
-    row.appendChild(col6);
-    col6.appendChild(albumBody);
-    albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
-    btnGroup.append(playBtn, saveBtn, dotBtn);
-  })
-  .catch((error) => {
-    console.error("errore nel caricamento della list", error);
-  });
-//QUEEN
-fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
-  .then((response) => {
-    console.log(response);
-
-    if (response.ok) {
-      return response.json();
-    } else {
-      throw new Error("caricamento della pagina");
-    }
-  })
-  .then((list) => {
-    console.log(list);
-
-    const artist = list.data[0].artist;
-    const album = list.data[3].album;
-
-    const artistGrid = document.getElementById("artistGrid");
-
-    const col = document.createElement("div");
-    const artistcard = document.createElement("div");
-    const cardImg = document.createElement("img");
-    const cardBody = document.createElement("div");
-    const cardTitle = document.createElement("h5");
-    const cardText = document.createElement("p");
-
-    col.classList.add("col");
-    artistcard.classList.add("card", "border-0");
-    cardImg.classList.add(
-      "card-img-top",
-      "img-fluid",
-      "img-thumbnail",
-      "border",
-      "border-5",
-      "border-dark",
-      "rounded-4",
-      "mx-auto"
-    );
-    cardBody.classList.add("card-body", "d-flex", "flex-column");
-    cardTitle.classList.add("card-title");
-    cardText.classList.add("text-muted");
-
-    cardImg.src = artist.picture;
-    cardTitle.textContent = artist.name;
-
-    artistGrid.appendChild(col);
-    col.appendChild(artistcard);
-    artistcard.append(cardImg, cardBody);
-    cardBody.appendChild(cardTitle);
-    cardBody.appendChild(cardText);
-
-    const cardAlbum = document.getElementById("cardAlbum3");
-
-    const row = document.createElement("div");
-    const col3 = document.createElement("div");
-    const albumImg = document.createElement("img");
-    const col6 = document.createElement("div");
-    const albumBody = document.createElement("div");
-    const albumTitle = document.createElement("h1");
-    const albumAutore = document.createElement("p");
-    const albumText = document.createElement("p");
-    const btnGroup = document.createElement("div");
-    const playBtn = document.createElement("button");
-    const saveBtn = document.createElement("button");
-    const dotBtn = document.createElement("button");
-
-    row.classList.add("row", "g-0");
-    col3.classList.add("col-3", "p-4", "align-content-center");
-    albumImg.classList.add("img-fluid");
-
-    col6.classList.add("col-9", "align-content-center");
-    albumBody.classList.add("card-body");
-    albumTitle.classList.add("card-title", "display-5", "fw-bold");
-    albumAutore.classList.add("card-text");
-    albumText.classList.add("card-text");
-    btnGroup.classList.add("btn-group");
-    playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add(
-      "badge",
-      "rounded-pill",
-      "border",
-      "border-1",
-      "border-light",
-      "py-3",
-      "px-4",
-      "mx-2",
-      "bg-black"
-    );
-    dotBtn.classList.add("border-0", "bg-transparent", "text-light");
-
-    albumImg.src = album.cover;
-    albumTitle.textContent = album.title;
-    albumAutore.textContent = artist.name;
-    albumText.innerHTML = `Ascolta l'album di ${artist.name}`;
-    playBtn.innerText = "PLAY";
-    saveBtn.innerText = "SAVE";
-    dotBtn.innerHTML = `<i class="bi bi-three-dots fs-3 text-secondary"></i>`;
-
-    //Style
-    albumImg.style.objectFit = "cover";
-    playBtn.style.backgroundColor = "#1bd760";
-    playBtn.style.width = "6rem";
-    playBtn.style.fontSize = "1rem";
-    saveBtn.style.width = "6rem";
-    saveBtn.style.fontSize = "1rem";
-
-    cardAlbum.appendChild(row);
-    row.appendChild(col3);
-    col3.appendChild(albumImg);
-    row.appendChild(col6);
-    col6.appendChild(albumBody);
-    albumBody.append(albumTitle, albumAutore, albumText, btnGroup);
-    btnGroup.append(playBtn, saveBtn, dotBtn);
+    playBtn.addEventListener("click", () => {
+      window.location.assign(`AlbumPage.html?artistId=${index}`);
+    });
   })
   .catch((error) => {
     console.error("errore nel caricamento della list", error);
@@ -645,47 +648,46 @@ playList6.addEventListener("click", () => {
   window.location.assign("./playList.html");
 });
 
-
-
 // i tuoi preferiti
 window.addEventListener("DOMContentLoaded", () => {
   const favoritesContainer = document.getElementById("favoritesList");
-  favoritesContainer.classList.add("row", "gap-3"); 
 
   const savedArtists = JSON.parse(localStorage.getItem("savedArtists")) || [];
 
   savedArtists.forEach((artist) => {
-
     const col = document.createElement("div");
     const card = document.createElement("div");
+    const div = document.createElement("div");
     const img = document.createElement("img");
     const cardBody = document.createElement("div");
     const name = document.createElement("h5");
     const caption = document.createElement("p");
 
-
-    col.classList.add("col-2"); 
+    col.classList.add("col");
     card.classList.add("card", "border-0");
-    img.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border", "border-5", "border-dark", "rounded-4", "mx-auto");
+    div.classList.add("m-2");
+    img.classList.add("card-img-top", "img-fluid", "img-thumbnail", "border-0", "rounded-3", "mx-auto", "p-0");
     cardBody.classList.add("card-body", "d-flex", "flex-column");
     name.classList.add("card-title");
     caption.classList.add("text-muted");
 
-
+    card.style.backgroundColor = "#171717";
     img.src = artist.image;
+    img.style.objectFit = "cover";
+
     name.textContent = artist.name;
     caption.textContent = "";
 
-
+    favoritesContainer.appendChild(col);
+    col.appendChild(card);
+    card.appendChild(div);
+    div.appendChild(img);
+    card.appendChild(cardBody);
     cardBody.appendChild(name);
     cardBody.appendChild(caption);
-    card.appendChild(img);
-    card.appendChild(cardBody);
-    col.appendChild(card);
-    favoritesContainer.appendChild(col);
 
     card.addEventListener("click", () => {
-        window.location.href=`artist.html?autoreId=${artist.name}`;
+      window.location.href = `artist.html?autoreId=${artist.name}`;
+    });
   });
-})
-})
+});
