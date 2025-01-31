@@ -3,6 +3,7 @@ const id = params.get("artistId");
 
 const URLtracklist = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id}/top?limit=50`;
 
+
 let currentAudio = null;
 let currentTrackRow = null;
 
@@ -16,8 +17,27 @@ fetch(URLtracklist)
   })
   .then((songList) => {
 
-
     const divRow = document.getElementById("trackList");
+    const nameAlbum = document.getElementById("nameAlbum");
+    const nameAlbum2 = document.getElementById("nameAlbum2");
+    const nameArtist=document.getElementById("nameArtist");
+    const nameArtist2=document.getElementById("nameArtist2");
+    const rankAlbum = document.getElementById("rankAlbum");
+    const imageCoverAlbum= document.getElementById("imageCoverAlbum");
+    const imageCoverAlbum2= document.getElementById("imageCoverAlbum2");
+
+    
+    nameAlbum.textContent=songList.data[0].album.title;
+    nameAlbum2.textContent=songList.data[0].album.title;
+    nameArtist.textContent = songList.data[0].artist.name;
+    nameArtist2.textContent = songList.data[0].artist.name;
+    imageCoverAlbum.src = songList.data[0].album.cover;
+    imageCoverAlbum2.src = songList.data[0].album.cover;
+    rankAlbum.textContent = `rank album : ${songList.data[0].rank}`;
+
+    
+
+
     console.log(songList);
     songList.data.forEach((track, index) => {
       console.log(track);
@@ -228,3 +248,6 @@ function cercaArtista() {
 buttonSearch.addEventListener("click", () => {
   cercaArtista();
 });
+
+
+
