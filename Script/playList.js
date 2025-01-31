@@ -229,7 +229,7 @@ window.addEventListener("DOMContentLoaded", () => {
             });
 
             //Funzione per il player
-            anchorTrack.addEventListener("click", (e) => {
+            artistContainer.addEventListener("click", (e) => {
               // const riproduction = document.getElementById("riproduction");
               const audioPlayer = document.getElementById("audioPlayer");
               const nomeAuthor = document.getElementById("nameAuthor");
@@ -252,7 +252,7 @@ window.addEventListener("DOMContentLoaded", () => {
             });
 
             //Funzione per il player
-            anchorTrack1.addEventListener("click", (e) => {
+            artistContainer1.addEventListener("click", (e) => {
               // const riproduction = document.getElementById("riproduction");
               const audioPlayer = document.getElementById("audioPlayer");
               const nomeAuthor = document.getElementById("nameAuthor");
