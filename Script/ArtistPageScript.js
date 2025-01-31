@@ -1,13 +1,11 @@
 const params = new URLSearchParams(window.location.search);
 const autoreId = params.get("autoreId");
 
-
 if (autoreId) {
   console.log("Autore:", autoreId);
 } else {
   console.error("Parametro 'autoreId' non trovato nell'URL.");
 }
-
 
 // aside open e close
 const closeBtn = document.getElementById("close-btn");
@@ -25,7 +23,6 @@ openAside.addEventListener("click", (e) => {
 
   aside2.style = "display:block";
 });
-
 
 const URL = "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + autoreId;
 
@@ -45,22 +42,21 @@ fetch(URL)
     const sectionAlbum = document.getElementById("sectionAlbum");
     const nameArtist = document.getElementById("nameArtist");
 
-    nameArtist.textContent=autoreId;
+    nameArtist.textContent = autoreId;
     const ascoltatoriMensili = document.getElementById("ascoltatoriMensili");
-    ascoltatoriMensili.textContent=`3985760 ascoltatori mensili`;
+    ascoltatoriMensili.textContent = `3985760 ascoltatori mensili`;
 
-    album.data.forEach(listAlbum => {
+    album.data.forEach((listAlbum) => {
       // console.log(listAlbum.album.cover);
       const divAlbum = document.createElement("div");
       const divPAlbum = document.createElement("div");
       const divPAsc = document.createElement("div");
       const divPTime = document.createElement("div");
-      const divImage=document.createElement("div");
-      const pAlbum=document.createElement("p");
-      const pAsc=document.createElement("p");
-      const pTime=document.createElement("p");
-      const albumImage=document.createElement("img");
-
+      const divImage = document.createElement("div");
+      const pAlbum = document.createElement("p");
+      const pAsc = document.createElement("p");
+      const pTime = document.createElement("p");
+      const albumImage = document.createElement("img");
 
       divPAlbum.classList.add("col-3");
       divPAsc.classList.add("col-3");
@@ -72,26 +68,24 @@ fetch(URL)
       pAsc.classList.add("text-light");
       divAlbum.classList.add("row");
       albumImage.classList.add("mx-2");
-      albumImage.style="width:40px"
+      albumImage.style = "width:40px";
 
-      pAlbum.textContent=listAlbum.album.title;
-      pAsc.textContent=listAlbum.rank;
-      pTime.textContent=listAlbum.duration;
+      pAlbum.textContent = listAlbum.album.title;
+      pAsc.textContent = listAlbum.rank;
+      pTime.textContent = listAlbum.duration;
       albumImage.src = listAlbum.album.cover;
 
       divImage.appendChild(albumImage);
       divPAlbum.appendChild(pAlbum);
       divPAsc.appendChild(pAsc);
       divPTime.appendChild(pTime);
-      divAlbum.append(divImage,divPAlbum, divPAsc, divPTime);
+      divAlbum.append(divImage, divPAlbum, divPAsc, divPTime);
       sectionAlbum.appendChild(divAlbum);
-      
-     
-      divAlbum.addEventListener("click", ()=> {
-        
+
+      divAlbum.addEventListener("click", () => {
         const idArtist = listAlbum.artist.id;
-        window.location.href = `AlbumPage.html?artistId=${idArtist}`
-      })
+        window.location.href = `AlbumPage.html?artistId=${idArtist}`;
+      });
     });
     // list.data.forEach(album => {
     //   console.log(album.album.title)
@@ -100,23 +94,21 @@ fetch(URL)
     //   const pAsc=document.createElement("p");
     //   const pTime=document.createElement("p");
 
-
     //   // pAlbum.textContent=
-
 
     // });
 
     //  <div class="d-flex justify-content-between">
-                    //   <p>1 <img src="./assets/imgs/main/image-1.jpg" alt="img" width="50px" /> titolo</p>
-                    //   <p>ascolti</p>
-                    //   <p>time</p>
-                    // </div>
+    //   <p>1 <img src="./assets/imgs/main/image-1.jpg" alt="img" width="50px" /> titolo</p>
+    //   <p>ascolti</p>
+    //   <p>time</p>
+    // </div>
 
     // list.data.forEach((track, index) => {
     //   const albumCover = document.getElementById("albumCover");
     //   albumCover.style.backgroundColor = track.album.md5_image;
 
-      /*    
+    /*    
       const anchorTrack = document.createElement("a");
       const divNum = document.createElement("div");
       const pNum = document.createElement("p");
@@ -162,8 +154,8 @@ fetch(URL)
         nomeBrano.textContent = track.title;
         imageAuthor.src = track.album.cover;
  */
-      // collegare il bottone al preview, rendere dinamico il botton con play e pausa , controllare artist
-      /*   }); */
+    // collegare il bottone al preview, rendere dinamico il botton con play e pausa , controllare artist
+    /*   }); */
     // });
   })
   .catch((error) => {
@@ -187,8 +179,7 @@ buttonSearch.addEventListener("click", () => {
   cercaArtista();
 });
 
-
-// button following : 
+// button following :
 
 const followButton = document.getElementById("buttonFollow");
 
@@ -202,5 +193,5 @@ followButton.addEventListener("click", () => {
     savedArtists.push({ name: artistName, image: artistImage });
     localStorage.setItem("savedArtists", JSON.stringify(savedArtists));
   }
-  followButton.textContent="aggiunto a preferiti"
+  followButton.textContent = "Aggiunto a preferiti";
 });

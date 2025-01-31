@@ -36,16 +36,18 @@ a {
   #card-album-lg,
   #container-brani-lg,
   #barra-play-lg,
-  #barra-superiore-lg {
+  #barra-superiore-lg,
+  #nome-artista-lg {
     display: none;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   #card-album-md,
   #container-brani-md,
   #barra-play-md,
-  #barra-superiore-md {
+  #barra-superiore-md,
+  #nome-artista-md {
     display: none;
   }
 }
