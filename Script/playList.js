@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", () => {
   //Variabile per l'indice randomizzato
   let artistID;
   //Funzione per creare random playlist
-  const divRow = document.getElementById("track-list");
+  const divRow = document.getElementById("trackList");
   for (let i = 0; i < 10; i++) {
     artistID = Math.floor(Math.random() * 200);
     console.log(artistID);
@@ -77,12 +77,6 @@ window.addEventListener("DOMContentLoaded", () => {
         const pNum = document.createElement("p");
         divNum.appendChild(pNum);
 
-        const imageCover = document.createElement("img");
-        imageCover.classList.add("mb-3", "ms-2", "img-fluid");
-        imageCover.style.maxWidth = "30px";
-        imageCover.src = artistList.picture;
-        divNum.appendChild(imageCover);
-
         const divTitle = document.createElement("div");
         divTitle.classList.add("col-3");
         artistContainer.appendChild(divTitle);
@@ -101,12 +95,21 @@ window.addEventListener("DOMContentLoaded", () => {
           })
           .then((songList) => {
             console.log(songList.data);
+            //songList.data.forEach((track, index) => {
+            //  console.log(track);
+            //});
 
             //costruzione brani
             const titleTrack = document.createElement("p");
             titleTrack.textContent = songList.data[0].title_short ? songList.data[0].title_short : songList.data[0].title;
             titleTrack.classList.add("mb-0");
             anchorTrack.appendChild(titleTrack);
+
+            const imageCover = document.createElement("img");
+            imageCover.classList.add("mb-3", "ms-2", "img-fluid");
+            imageCover.style.maxWidth = "30px";
+            imageCover.src = songList.data[0].album.cover;
+            divNum.appendChild(imageCover);
 
             const artist = document.createElement("p");
             artist.classList.add("text-secondary");
@@ -161,16 +164,24 @@ window.addEventListener("DOMContentLoaded", () => {
             //Funzione per il player
             anchorTrack.addEventListener("click", (e) => {
               // const riproduction = document.getElementById("riproduction");
-
+              const audioPlayer = document.getElementById("audioPlayer");
               const nomeAuthor = document.getElementById("nameAuthor");
               const nomeBrano = document.getElementById("nameBrano");
               const nomeBrano1 = document.getElementById("nameBrano1");
               const imageAuthor = document.getElementById("imageAuthor");
+              const trackSong = songList.data[0].preview;
 
               nomeAuthor.textContent = artistList.name;
               nomeBrano.textContent = songList.data[0].title_short;
               nomeBrano1.textContent = songList.data[0].title_short;
               imageAuthor.src = songList.data[0].album.cover;
+
+              if (trackSong) {
+                audioPlayer.src = trackSong;
+                audioPlayer.play();
+              } else {
+                console.log("No preview available for this track.");
+              }
             });
           })
           .catch((error) => {
@@ -183,6 +194,19 @@ window.addEventListener("DOMContentLoaded", () => {
       });
   }
 });
+
+const playButton = document.getElementById("playButton");
+playButton.addEventListener("click", (track) => {
+  playPause(track);
+});
+
+function playPause(track) {
+  if (track !== null) {
+    audioPlayer.pause();
+  } else {
+    audioPlayer.play();
+  }
+}
 
 //Funzione per convertire la durata
 function durationConvert(seconds) {
