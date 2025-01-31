@@ -98,17 +98,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=oasis")
     albumText.classList.add("card-text");
     btnGroup.classList.add("btn-group");
     playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add(
-      "badge",
-      "rounded-pill",
-      "border",
-      "border-1",
-      "border-light",
-      "py-3",
-      "px-4",
-      "mx-2",
-      "bg-black"
-    );
+    saveBtn.classList.add("badge", "rounded-pill", "border", "border-1", "border-light", "py-3", "px-4", "mx-2", "bg-black");
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
     albumImg.src = album.cover;
@@ -219,17 +209,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=caribou")
     albumText.classList.add("card-text");
     btnGroup.classList.add("btn-group");
     playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add(
-      "badge",
-      "rounded-pill",
-      "border",
-      "border-1",
-      "border-light",
-      "py-3",
-      "px-4",
-      "mx-2",
-      "bg-black"
-    );
+    saveBtn.classList.add("badge", "rounded-pill", "border", "border-1", "border-light", "py-3", "px-4", "mx-2", "bg-black");
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
     albumImg.src = album.cover;
@@ -343,17 +323,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=m83")
     albumText.classList.add("card-text");
     btnGroup.classList.add("btn-group");
     playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add(
-      "badge",
-      "rounded-pill",
-      "border",
-      "border-1",
-      "border-light",
-      "py-3",
-      "px-4",
-      "mx-2",
-      "bg-black"
-    );
+    saveBtn.classList.add("badge", "rounded-pill", "border", "border-1", "border-light", "py-3", "px-4", "mx-2", "bg-black");
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
     albumImg.src = album.cover;
@@ -465,17 +435,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=mythandroid")
     albumText.classList.add("card-text");
     btnGroup.classList.add("btn-group");
     playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add(
-      "badge",
-      "rounded-pill",
-      "border",
-      "border-1",
-      "border-light",
-      "py-3",
-      "px-4",
-      "mx-2",
-      "bg-black"
-    );
+    saveBtn.classList.add("badge", "rounded-pill", "border", "border-1", "border-light", "py-3", "px-4", "mx-2", "bg-black");
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
     albumImg.src = album.cover;
@@ -586,17 +546,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
     albumText.classList.add("card-text");
     btnGroup.classList.add("btn-group");
     playBtn.classList.add("badge", "rounded-pill", "border", "border-0", "text-black", "py-3", "px-4", "me-2");
-    saveBtn.classList.add(
-      "badge",
-      "rounded-pill",
-      "border",
-      "border-1",
-      "border-light",
-      "py-3",
-      "px-4",
-      "mx-2",
-      "bg-black"
-    );
+    saveBtn.classList.add("badge", "rounded-pill", "border", "border-1", "border-light", "py-3", "px-4", "mx-2", "bg-black");
     dotBtn.classList.add("border-0", "bg-transparent", "text-light");
 
     albumImg.src = album.cover;
@@ -711,4 +661,11 @@ window.addEventListener("DOMContentLoaded", () => {
       window.location.href = `artist.html?autoreId=${artist.name}`;
     });
   });
+});
+
+const personalList = document.getElementById("personalList");
+personalList.addEventListener("click", (event) => {
+  let content = event.target.textContent;
+  localStorage.setItem("content", content);
+  window.location.href = "playList.html";
 });
