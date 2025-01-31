@@ -721,9 +721,9 @@
                 <div id="artistGrid" class="row row-cols-5 justify-content-between mt-2"></div>
               </div>
               <!--Card fisse-->
-              <div class="container p-0">
+              <div id="visualizzaTutto" class="container p-0" style="display: none">
                 <div class="row row-cols-5 justify-content-between mt-2">
-                  <div id="visualizzaTutto" class="col" style="display: none">
+                  <div class="col">
                     <div class="card border-0 rounded-3 p-1" style="background-color: #171717">
                       <div class="m-2">
                         <img
@@ -739,12 +739,76 @@
                       </div>
                     </div>
                   </div>
+                  <div class="col">
+                    <div class="card border-0 rounded-3 p-1" style="background-color: #171717">
+                      <div class="m-2">
+                        <img
+                          src="https://api.deezer.com/artist/416239/image"
+                          class="card-img-top img-fluid img-thumbnail border-0 rounded-3 mx-auto p-0"
+                          style="object-fit: cover"
+                          alt="album"
+                        />
+                      </div>
+                      <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Imagine Dragons</h5>
+                        <p class="text-muted"></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card border-0 rounded-3 p-1" style="background-color: #171717">
+                      <div class="m-2">
+                        <img
+                          src="https://api.deezer.com/artist/63750/image"
+                          class="card-img-top img-fluid img-thumbnail border-0 rounded-3 mx-auto p-0"
+                          style="object-fit: cover"
+                          alt="album"
+                        />
+                      </div>
+                      <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Coldplay</h5>
+                        <p class="text-muted"></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card border-0 rounded-3 p-1" style="background-color: #171717">
+                      <div class="m-2">
+                        <img
+                          src="https://api.deezer.com/artist/892/image"
+                          class="card-img-top img-fluid img-thumbnail border-0 rounded-3 mx-auto p-0"
+                          style="object-fit: cover"
+                          alt="album"
+                        />
+                      </div>
+                      <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Linkin Park</h5>
+                        <p class="text-muted"></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card border-0 rounded-3 p-1" style="background-color: #171717">
+                      <div class="m-2">
+                        <img
+                          src="https://api.deezer.com/artist/1/image"
+                          class="card-img-top img-fluid img-thumbnail border-0 rounded-3 mx-auto p-0"
+                          style="object-fit: cover"
+                          alt="album"
+                        />
+                      </div>
+                      <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">The Beatles</h5>
+                        <p class="text-muted"></p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!--Card fisse-->
+              <!--Artisti preferiti-->
               <h3 class="my-4">I tuoi preferiti</h3>
               <div class="container p-0"></div>
-              <div id="favoritesList" class="row row-cols-5 justify-content-between mt-2"></div>
+              <div id="favoritesList" class="row row-cols-5 mt-2"></div>
               <!-- qui dentro vengono inseriti i preferiti -->
             </div>
           </div>
@@ -880,11 +944,11 @@
         <!-- Album -->
         <div class="col-2 d-flex align-items-center pt-3">
           <img
-            src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/02b4d76c-e4da-4cbc-872c-1bf9ac49bafd/anim=false,width=450/ComfyUI_00289_.jpeg"
+            src="https://static.vecteezy.com/ti/vettori-gratis/p1/2249673-musica-nota-vettore-icona-canzone-melodia-melodia-piatto-vettore-simbolo-gratuito-vettoriale.jpg"
             alt="Copertina album"
             height="60"
           />
-          <div class="ms-2">
+          <div class="ms-2" style="display: none">
             <h5 class="my-1 fs-6">Nome Brano</h5>
             <p class="my-1 mb-0 fs-7">Autore</p>
           </div>
